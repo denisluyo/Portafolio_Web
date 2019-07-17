@@ -1,0 +1,441 @@
+/*Variables Definicion de Estilos*/ 
+:root{
+ /*colores*/
+    --principal-color:#5A69FD;
+    --textprincipal-color:#35363F;
+     /*tipografia*/
+     --
+}
+
+
+/*Fin Variables*/
+
+/*TODO*/
+
+html,body{
+    padding:0px;
+    margin:0px;
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    background-color: #F1F2FB;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: var(--textprincipal-color);
+
+}
+
+li{
+    text-decoration: none;
+}
+
+h1{
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 87px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+}
+
+
+h2{
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+h3{
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+
+
+
+p{
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.subtitulo{
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+/*FIn TODO*/
+
+/*INICIO NAVBAR*/
+
+
+nav{
+    display: flex;
+    background-color:white;
+    color: #7C7D83;
+    height:80px;
+    border-bottom: 0.5px solid #BCBDC9;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    padding-inline-start:0px;
+}
+
+nav li{
+    
+    padding-right:16px;
+    list-style: none;
+    width: 136px;
+    text-align: center;
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    height:32px;   
+}
+
+nav li a:hover{
+    text-decoration: none;
+    color:black;
+}
+nav li a:active{
+    text-decoration: none;
+    color: var(--principal-color)
+}
+
+nav li a{
+    text-decoration: none;
+    color:#7C7D83;
+}
+
+ul{
+    list-style-type: none;
+}
+
+/*clases*/
+.nav_options{;
+padding-left: 72px;
+}
+
+.brand_image{
+    width: 129px;
+    height: 48px;
+    background-position: center;
+    padding: 16px;
+    align-items: center;
+
+}
+
+
+/*FIN NAVBAR*/
+
+/*INICIO MIGA DE PAN-________*/
+
+.miga{
+    padding-left: 16px;
+    height:24px;
+    background-color:#F1F2FB;
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 24px;
+    align-items: center;
+  
+}
+
+.miga ul{
+    display: flex;
+    margin-block-start: 0px;
+    margin-block-end:0px;
+    padding-inline-start:0px;
+}
+.miga li{
+text-decoration: none;
+padding-left: 4px;
+
+
+}
+.miga li a{
+    text-decoration: none;
+    color:#7C7D83;
+}
+
+
+/*FIN MIGA DE PAN-________*/
+
+/*INICIO HEADER-________*/
+
+.headercontainer{
+    background-color: white;
+
+}
+
+.header{
+    width:85%;
+    margin:auto;
+    height:64px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+.userimage{
+    height:48px;
+
+}
+.userimage img{
+    width: 48px;
+    height:48px;
+    border-radius: 50%;
+    display: inline-block;   
+}
+.datosuser{
+    padding-left: 24px;
+}
+
+.datoprototipo{
+    width:85%;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    height:48px;
+    align-items: center;
+}
+.etiquetaprototipo{
+    background: linear-gradient(177.44deg, #B33FD0 -24.6%, #5A69FD 50.69%);
+    border-radius: 8px;
+    width: 144px;
+    height:32px;
+}
+.etiquetaprototipo p{
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    align-items: center;
+    text-align: center;
+    width:132px;
+    height:24px;
+    padding:4px;
+    color:white;
+}
+
+/*FIN MIGA HEADER-________*/
+
+/*INICIO SECCION PRINCIPAL-________*/
+
+.imagenprincipal{
+    height:400px;
+    background: linear-gradient(
+        rgba(124,125,131, 0.60), 
+        rgba(124,125,131, 0.60)
+      ), url(../images/main/imagenprincipal.png);
+    background-size:cover;
+   
+}
+
+.imagenprincipal h1{
+    padding:56px;
+    text-align: center;
+    color:white;
+    height:300px;
+}
+
+.resumen{
+    height:200px;
+    text-align: center;
+    background: white;
+}
+
+.resumen h2{
+    
+    padding-top: 8px;
+
+}
+.resumen p{
+    width: 85%;       
+    margin:auto;
+    padding-top:16px;
+  
+
+}
+/*FIN SECCION PRINCIPAL-________*/
+
+/*INICIO SECCION INFORMATIVA-________*/
+
+.boxresumen1{
+    height:184px;
+    width: 85%;       
+    margin:auto;
+
+}
+
+.boxintroduccion{
+    height:auto;
+    width: 85%;       
+    margin:auto;
+    display:flex;
+    justify-content: space-between;
+
+}
+.cardintroduccion{
+    margin:16px;
+    background:white;
+    width:456px;
+    box-shadow: 0px 5px 40px #BCBDC9;
+    border-radius: 8px;
+    align-content: center;
+
+}
+
+.cardintroduccion p{
+    align-items: center;
+    margin:16px;
+
+}
+
+.cardintroduccion h3{
+    margin:16px;
+
+}
+
+.titulos{
+    height:80px;
+    color:var(--principal-color);
+    align-items: center;
+    display: flex;
+}
+
+.titulos h2{
+    width: 85%;       
+    margin:auto;
+    
+}
+
+.boxcards{
+    width: 85%;       
+    margin:auto;
+    display:flex;
+    justify-content: space-between;
+    height:300px;
+    align-items: center;  
+}
+
+.contentcard{
+    width: 240px;
+    margin:16px;
+    height:264px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 40px #BCBDC9;
+    text-align: center;
+}
+
+.contentcard img{
+   margin:8px;
+}
+
+/*box2-________*/
+
+.boxskill{
+    height:450px;
+    background-color: white;
+}
+
+.skill2{
+    width:85%;
+    margin:auto;
+    background-color:white;
+    height:450px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skilltexto{
+    width: 424px;
+    margin-right: 16px;
+
+}
+
+.skillimage{
+    width:430px;
+}
+.skillimage img{
+    width:100%;
+    height:100%;
+}
+
+.skilltexto p{
+    padding-top: 16px;
+}
+.skilltexto h3{
+    padding-top: 16px;
+}
+
+/*Fin de box2-________*/
+.titulosection{
+    width: 85%;       
+    margin:auto;
+    height:80px;
+    color:var(--textprincipal-color);
+}
+
+.titulosection h2{
+    text-align: center;
+    line-height: 80px;
+}
+
+/*Inicio Section 2________*/
+
+.resumenbox{
+    background-color: var(--principal-color);
+    height:auto;
+}
+
+.boxresumen2{
+    width:85%;       
+    margin:auto;
+    text-align: center;
+  
+}
+
+.boxresumen2 p{
+    color: white;
+    padding: 4% 0% 4% 0%;
+}
+.subtitulosection{
+    width:85%;       
+    margin:auto;
+    height:48px;
+
+}
+.subtitulosection h3{
+    line-height:48px;
+}
