@@ -1,0 +1,297 @@
+/*
+CARDS
+
+Aqui pueden ver todos los estilos de todos los cards creados
+en el proyecto
+
+*/
+
+/*Inicio Card Experiencia*/
+
+
+.cardexperiencia{
+    display: flex;
+    padding:8px;
+    height:96px;
+    background: white;
+    box-shadow: var(--main-shadow);
+    border-radius: 8px;
+}
+
+.cardexperiencia h2{
+  color:var(--principal-color);
+
+}
+.cardexperiencia h3{
+    color:var(--principal-color);
+  
+  }
+
+.cardexperiencia h4{
+    padding-top:8px;
+    
+}
+
+
+.cardexperiencia img{
+padding: 24px 0px 0px 0px;
+}
+
+.cardexperiencia span{
+padding:16px 0px 0px 16px;
+    
+}
+/*Fin Card Experiencia*/
+
+
+/*Inicio Card Certificaciones*/
+
+.cardcertificaciones{
+    height:248px;
+    padding:8px;
+    background: white;
+    box-shadow: var(--half-shadow);
+}
+
+.cardcertificaciones h4{
+    color:var(--second-color);
+    
+    }
+
+/*Fin Card Certificaciones*/
+
+/*Inicio Card Skills*/
+
+.cardskills{
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--half-shadow);
+    height:384px;
+    padding:8px;
+}
+
+.cardskills h3{
+    color:var(--principal-color);
+
+}
+
+.barraskill{
+    padding-top:16px;
+    display: flex;
+    justify-content: space-between;
+}
+.barra{
+    height:64px;
+    width:80%;
+    position:relative;
+}
+
+
+.barrafondo{
+    margin-top:4px;
+    background-color: var(--gray2-color);
+    width:100%;
+    height:40px;
+    border-radius:8px;
+    position: absolute;
+ 
+
+}
+.barracolor{
+    margin-top:4px;
+    background:var(--principal-color);
+    width:0%;
+    height:40px;
+    border-radius: 8px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    position: absolute;
+}
+.porcentaje{
+    height: 50px;
+    padding-left:2px;
+    padding-top: 14px;
+    line-height: 50px;
+}
+.porcentaje h3{
+    color: var(--black-color);
+}
+
+/*Fin Card Skills*/
+
+/*Inicio Card Portafolio*/
+
+.cardportafolio a{
+    max-width:100%;
+    display:inline-block;
+}
+.cardportafolio{
+    border-radius: 8px;
+    background:white;
+    padding:16px;
+    position:relative;
+    box-shadow: var(--half-shadow);
+
+}
+.cardportafolio img{
+    border-radius: 8px;
+    max-width:100%;
+}
+
+.portafolio-overlay {
+    background: rgb(0, 0,0,.9);
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    }
+.portafolio-overlay p{
+    margin-top:8px;
+    width:90%;
+    text-align: center;
+}  
+
+.portafolio-overlay span{
+    margin:8px;
+    height:24px;
+    background: white;
+    color:var(--black-color);
+    border-radius:4px;
+    line-height:24px;
+    width:50%;
+    text-align: center;
+} 
+
+.cardportafolio:hover .portafolio-overlay{
+display: flex;
+}
+
+/*Inicio Card Portafolio*/
+
+/*Fin Card Icon*/
+.card_icon{
+    padding:8px;
+    background: white;
+    border-radius:8px;
+    box-shadow: var(--half-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .card_icon h4{
+        padding-top:8px;
+    }
+    .card_icon p{
+        padding-top:8px;
+    }
+
+/*Fin Card Icon*/    
+
+
+/*Inicio Card_intro*/    
+
+.card_intro{
+background: white;
+border-radius:8px;
+box-shadow: var(--half-shadow);
+padding:8px; 
+}
+
+
+.card_intro h4{
+    color:var(--principal-color);
+    padding-top:8px;
+    }
+
+.card_intro p{
+    line-height:20px;
+    padding-top:16px;
+    }
+
+/*Fin Card_Intro*/    
+
+/*Inicio Card_intro2*/
+.card_intro2{
+background: white;
+border-radius:8px;
+box-shadow: var(--purple-shadow);
+padding:8px; 
+text-align: center;
+
+}    
+
+.card_intro2 h1{
+    padding-top:8px;
+    }
+
+.card_intro2 p{
+    line-height:20px;
+    padding-top:16px;
+    }
+
+
+/*Fin Card_Intro2*/   
+
+
+/*Inicio Card-Portafolios*/   
+
+
+.cardscreen1{
+    width:80%;
+    margin:auto;
+    padding:8px;    
+    background: white;
+    border-radius: 16px;
+    height:auto;
+    box-shadow:var(--main-shadow);
+    display:flex;
+    }
+    
+    .screen1_img{
+        text-align: center;
+    }
+    
+    .screen1_txt h2{
+        padding-top:16px;
+    }
+    
+    
+    .screen1_txt p{
+        line-height: 25px;
+        padding-top:32px;
+    }
+    
+    .cardscreen2{
+        text-align: center;
+        padding:8px;    
+        background: white;
+        border-radius: 16px;
+        box-shadow:var(--main-shadow);
+    }
+    
+    .cardscreen2 h2{
+      padding-top:16px;
+    }
+    .cardscreen2 p{
+        line-height: 25px;
+        padding-top:16px;
+      }
+      
+    .cardscreen3{
+        display: flex;
+        padding:8px;    
+        background: white;
+        border-radius: 16px;
+        box-shadow:var(--main-shadow);
+    
+    } 
+    
+
+/*Fin Card-Portafolios*/   

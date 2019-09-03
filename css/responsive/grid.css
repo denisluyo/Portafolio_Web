@@ -1,0 +1,78 @@
+/*container>Row>column*/ 
+
+.container{
+    max-width:1152px;
+    margin: auto;
+}
+
+
+.row{
+    display: flex;
+}
+.col-1{
+    width:8.3333333333%;
+    padding:12px;
+}
+.col-2{
+    width:16.6666666666%;
+    padding:12px;
+}
+.col-3{
+    width:24.9999999999%;
+    padding:12px;
+}
+.col-4{
+    width:33.3333333332%;
+    padding:12px;
+}
+.col-5{
+    width:41.6666666665%;
+    padding:12px;
+}
+.col-6{
+    width:49.9999999998%;
+    padding:12px;
+}
+.col-7{
+    width:58.3333333331%;
+    padding:12px;
+}
+.col-8{
+    width:66.6666666664%;
+    padding:12px;
+}
+.col-9{
+    width:74.9999999997%;
+    padding:12px;
+}
+.col-10{
+    width:83.333333333%;
+    padding:12px;
+}
+.col-11{
+    width:91.6666666663%;
+    padding:12px;
+}
+.col-12{
+    width:100%;
+    padding:12px;
+}
+
+
+/*Fincontainer>Row>column*/ 
+
+/*Container Grid Columns*/
+
+/* Inicio Containers*/
+
+.container_grid{
+    display: grid;
+    grid-template-columns: minmax(320px,1152px);
+    height:auto;
+    justify-content: center;
+
+}
+/* Fin Containers*/
+
+
+/*Fin Grid Columns*/

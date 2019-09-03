@@ -1,0 +1,252 @@
+/*Estilos Proyectos*/
+
+
+
+
+/*Inicio  header*/
+
+#header_mobitrack{
+    background:url(../../images/headers/hero_mobitrack.jpg) no-repeat center;
+    background-size: cover;
+    height:424px;
+    align-items: center;
+}
+
+
+
+.text_header{
+    text-align: center;
+    color:white;
+}
+
+
+.text_header span{
+    color:var(--black-color);
+}
+
+/*Fin  header*/
+
+/*Inicio  introduction*/
+
+
+.container_introduction{
+padding:8px;
+display:grid;
+grid-template-columns: repeat(4,1fr);
+grid-template-areas: 
+                    'resumen resumen resumen resumen'
+                    'titulo titulo titulo titulo'
+                    'card1  card2 card3 card4';
+                    
+grid-gap: 24px;
+}
+
+
+.resumen2{
+    grid-area: resumen;
+}
+
+.titulos2{
+    color: var(--principal-color);
+
+}
+
+.titulo{
+    grid-area:titulo;
+
+}
+
+.card1{
+    grid-area:card1;
+}
+.card2{
+    grid-area:card2;
+}
+.card3{
+    grid-area:card3;
+}
+.card4{
+    grid-area:card4;
+}
+
+/*Fin introduction*/
+
+
+/*Inicio Section Challengue*/
+
+.container_resumen{
+    padding:8px;
+}
+
+.boxwhite{
+    background:white;
+}
+
+.resumen3 h2{
+    padding-top:8px;
+}
+.resumen3  h4{
+    line-height:25px;
+    padding-top:16px;
+}
+
+
+
+.container_user{
+padding:8px;
+display:grid;
+grid-template-columns: repeat(2,1fr);
+grid-template-areas: 
+                    'texto1 imagen1'
+                    'texto2 imagen2'
+                    'resumen resumen';
+                    
+grid-gap: 16px;
+
+}
+
+.user_image{
+    width: 100%;
+    display: flex;
+    justify-content: center;    
+
+}
+
+
+.user_image img{
+    width:100%;
+
+}
+
+.texto1{
+grid-area:texto1;
+}
+
+
+.texto2{
+grid-area:texto2;
+}
+
+.imagen1{
+    grid-area:imagen1;
+}
+
+.imagen2{
+    grid-area:imagen2;
+}
+.user_text p{
+padding-top:16px;
+line-height: 25px;
+
+}
+.user_text h3{
+padding-top:16px;
+}
+
+.user_resumen{
+    line-height: 1.5;
+    text-align: center;
+    grid-area:resumen;
+}
+/*Fin Section Challengue*/
+
+/*Inicio Section Research*/
+.leyend{
+    background: white;
+    height:auto;
+    display: flex;
+    justify-content: space-between;
+    line-height:32px;
+    padding:8px;
+}
+
+.slider_leyend img{
+    width:100%;
+    height:auto;
+
+}
+.container_cards{
+    padding:8px;
+    margin-top:16px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:24px;
+}
+
+
+    
+/*Fin Section Research*/
+
+/*Inicio Section Solution*/
+
+
+.boxheader_img{
+    margin-top:16px;
+
+}    
+.boxheader_img img{
+    width: 100%;
+    height: auto;
+    background-position:center;
+    background-size: cover;
+}
+
+.container_screen{
+    padding:8px;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+                        'titulo titulo'
+                        'screen1 screen1'
+                        'screen1 screen1'
+                        'screen2 screen3'
+                        'screen4 screen5';
+                        
+    grid-gap: 16px;
+}    
+
+.screen1{
+    grid-area:screen1;
+}
+.screen2{
+    grid-area:screen2;
+}
+.screen3{
+    grid-area:screen3;
+}
+.screen4{
+    grid-area:screen4;
+}
+.screen5{
+    grid-area:screen5;
+}
+
+
+.comentariodenis{
+    align-items: center;
+    padding:8px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.comentariodenis h3{
+   padding-left:16px;
+   line-height: 1.5;
+
+}
+
+
+.comentariodenis img{
+max-width:50%;
+height:auto;
+ }
+/*Fin Section Solution*/
+
+/*Inicio Mobirep*/
+
+
+
+
+
+/*Fin Mobirep*/

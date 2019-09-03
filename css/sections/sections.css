@@ -1,0 +1,286 @@
+/*
+Sections CSS
+
+Aqui van a poder visualizar los estilos de las secciones estandar que se usan en la web
+
+*/
+
+
+/*Nav Bar*/
+
+/*Fuente de Iconos*/
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../../fonts/icomoon.eot?qah0od');
+    src:  url('../../fonts/icomoon.eot?qah0od#iefix') format('embedded-opentype'),
+      url('../../fonts/icomoon.ttf?qah0od') format('truetype'),
+      url('../../fonts/icomoon.woff?qah0od') format('woff'),
+      url('../../fonts/icomoon.svg?qah0od#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-menu:before {
+    content: "\e900";
+  }
+  
+
+
+
+/*Fin Fuente de Iconos*/
+
+
+
+header{
+    position: relative;
+}
+.imginicio{
+    padding:2px 0px 2px 0px;
+}
+
+.menu{
+    line-height: 40px;
+    text-align: center;
+    Position:fixed;
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+    background:var(--black-color);
+    z-index: +5;
+    top:20px;
+    right:24px;
+    font-size:24px;
+    box-shadow: var(--purple-shadow);
+    color:white;
+    display:none;
+
+}
+
+.menu:hover{
+background:var(--principal-color);
+}
+
+    
+
+.inicio{
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    height:auto;
+    padding-left: 16px;
+   
+}
+
+.imginicio {
+    display: flex;
+    align-items: center;
+
+}
+
+.navoptions{
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 88px;
+    font-family: serif;
+}
+
+.navoptions a{
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    padding-right:16px;
+    text-decoration:none;
+}
+
+
+
+.migadepan{
+    height: 40px;
+}
+
+
+.migadepan ul{
+    padding-left: 16px;
+    line-height:40px;
+    background: var(--body-color)
+}
+.migadepan li{
+    display: inline;
+
+}
+
+/*termina navbar*/
+
+
+/*section profesion*/
+
+#profesion{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: +1;
+    box-shadow: var(--half-shadow);
+}
+
+.datosprofesion{
+    padding-left: 16px;
+    display: flex;
+    background: white;
+    height:64px;
+    align-items: center;
+}
+
+.textoprofesion{
+    padding-left: 24px;
+}
+.textoprofesion p{
+    padding-top:8px;
+}
+
+/*termina section profesion*/
+
+/*Inicio box-resumen1*/
+
+.resumen1{
+    background-color: white;
+    height:auto;
+    text-align:center;
+}
+.resumen1 h3{
+    line-height:1.5;
+}
+
+/*Fin box-resumen1*/
+
+
+/*Inicio box-resumen2*/
+
+.resumen2{
+    text-align: center;
+}
+.resumen2 h2{
+    padding-top:8px;
+}
+.resumen2 h4{
+
+    line-height:25px;
+    padding-top:16px;
+}
+
+
+
+/*Fin box-resumen2*/
+
+/*inicio Footer*/
+
+footer h3:hover{
+    color:var(--principal-color);
+}
+
+
+
+
+.footerlist1,.footerlist2,.footerlist3{
+    margin-top:32px;
+}
+
+
+.footerlist1 h3,.footerlist2 h3,.footerlist3 h3{
+    color:var(--gray-color);
+    line-height: 1.5;
+    margin:56px 0px 0px 0px;
+
+}
+
+.copyright h4{
+    padding-top:8px;
+    line-height: 25px;
+}
+.copyright span{
+color:var(--principal-color);
+}
+
+
+/*fin Footer*/
+
+/*Inicio section contacto*/
+
+#contactame{
+    background: var(--body-color);
+    height:auto;
+
+}
+
+.contactobox{
+    margin-top:8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contactoimg{
+ width:176px;
+}
+
+.contactotxt{
+    margin-top:16px;
+    text-align: center;
+}
+.contactotxt h2{
+    text-align: center;
+    color: var(--principal-color);
+    line-height: 1.5;
+}
+
+.data{
+border:0.5px solid #35363F;
+background-image: url(../../images/icons/enviarmail.svg);
+background-repeat:no-repeat;
+background-position:10px 10px; 
+box-shadow: var(--main-shadow);
+margin:16px;    
+width:290px;
+height:31px;
+border-radius: 8px;
+padding:8px 8px 8px 53px;
+line-height: 25px;
+}
+
+.data:focus{
+    border:2px solid var(--principal-color);
+
+}
+
+/*Fin section contacto*/
+
+
+/*Etiqueta Proyectos*/
+.infoproject{
+    height: 32px;
+    line-height: 32px;
+    display: flex;
+    padding:8px 16px 8px 16px;
+    justify-content: space-between;
+    }
+    
+
+    /*Fin de Etiqueta Proyectos*/
+    

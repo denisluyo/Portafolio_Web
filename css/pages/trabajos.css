@@ -1,0 +1,106 @@
+/*Estilos Trabajos*/
+
+/*Section Resumen*/
+
+#resumen_proyectos{
+        background: white;
+        display: grid;
+        grid-template-columns: minmax(320px,1152px);
+        height:auto;
+        justify-content: center;
+}
+
+.container_proyectos{
+    padding:8px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 
+                        'titulo titulo titulo'
+                        'resumen resumen resumen'
+                        'card1  card2 card3';
+                        
+    grid-gap: 24px;
+}
+
+.titulos2 {
+    grid-area: titulo;
+
+}
+
+.resumen1{
+height:auto;   
+text-align: left;
+grid-area:resumen;
+
+
+}
+
+.card1{
+padding:16px;    
+height:auto;    
+grid-area:card1;
+box-shadow: var(--purple-shadow);
+
+}
+
+.card2{
+height:auto;        
+grid-area:card2;
+box-shadow: var(--purple-shadow);
+}
+
+.card3{
+height:auto;        
+grid-area:card3;
+box-shadow: var(--purple-shadow);
+
+}
+
+/* Fin Section Resumen*/
+
+/*Section Trabajo*/
+
+#trabajos{
+    display: grid;
+    grid-template-columns: minmax(320px,1152px);
+    height:auto;
+    justify-content: center;
+    background: var(--body-color);
+
+}
+
+.container_trabajos{
+    padding:8px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 24px;
+    }
+
+
+.filtro_trabajos{
+text-align: left;   
+grid-column-end: span 3;
+height:56px;
+line-height: 56px;
+
+}
+
+.level-1{
+ text-align: center;   
+grid-row-end: span 6;
+
+}
+
+.level-2{
+text-align: center;      
+grid-row-end: span 3;  
+    }
+    
+ .level-3{
+ text-align: center;   
+grid-row-end: span 1; 
+
+ }   
+
+
+/*Section Trabajo*/

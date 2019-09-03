@@ -1,0 +1,166 @@
+/*
+Style CSS
+
+Aqui estarán los estilos que se usaran para todos los componentes atomicos de una página.
+Colores, sombras, texto, buttones,grids
+*/
+
+/*Definicion de estilos*/
+:Root   {
+
+    /*Colores*/
+    --principal-color:#5A69FD;
+    --body-color:#F1F2FB;
+    --celeste-color:#21D4FD;
+    --second-color:#B721FF;
+    --degrade-color:linear-gradient(168.24deg, #B33FD0 -24.6%, #5A69FD 50.69%);
+    --black-color:#35363F;
+    --gray-color:#7C7D83;
+    --gray2-color:#BCBDC9;
+    
+    /*Sombras*/
+    --main-shadow:0px 18px 40px rgba(196, 196, 196, 0.35);
+    --purple-shadow:0px 25px 48px rgba(90, 105, 253, 0.25);
+    --half-shadow:0px 18px 40px rgba(188, 189, 201, 0.3);
+    
+    /*Tipografia*/
+    
+    
+    }
+    /*Fin de Estilos*/
+
+
+
+/* Definicion Estandar*/
+
+body{
+    min-width:320px;
+
+}
+
+h1{
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+
+}
+
+h2{
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+
+}
+
+h3{
+
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+h4{
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+
+
+}
+body{
+    background: var(--body-color);
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    
+
+}
+
+a{
+    text-decoration: none;
+    color:var(--black-color);
+}
+
+
+.active{
+    color: var(--principal-color);            
+}
+
+/* Termina Definicion Estandar*/
+
+
+
+
+/*Inicio box-titulos2*/
+
+.titulos2 {
+    height:auto;
+    line-height:68px;
+    text-align: left;
+}
+/*Fin box-titulos2*/
+
+
+/*Inicio Button-Action*/
+
+
+.button-action:hover{
+    background:var(--principal-color);
+    box-shadow: var(--purple-shadow);
+    }
+
+.button-action{
+         margin-top:24px;
+         background:var(--black-color);
+         color:white; 
+         width:312px;
+         height:56px;
+         text-align: center;
+         line-height: 56px;
+         border-radius: 8px;
+    }
+    
+/*Fin Button-Action*/
+
+
+/*Inicio btnform*/
+
+
+.btn-form{
+    margin-top:16px;
+    margin-bottom:32px;
+    background:var(--black-color);
+    width:130px;
+    height:40px;
+    color:white;
+    border-radius: 8px;
+
+}
+
+.btn-form:hover{
+    background: var(--principal-color);
+    box-shadow: var(--purple-shadow);
+}
+
+/*Fin btnform*/
+
+
+/*Inicio Etiqueta*/
+
+.etiqueta{
+    width:132px;
+    height:32px;
+    background: var(--principal-color);
+    border-radius: 8px;
+    text-align: center;
+    color:white;
+    font-weight: 600;
+    line-height: 32px;
+    
+    }
+/*Fin Etiqueta*/
+    

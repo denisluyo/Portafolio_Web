@@ -1,0 +1,549 @@
+@media screen and (max-width: 990px){
+ 
+
+/*------------------/
+Inicio Pages
+-------------------*/
+
+/* Inicio Pages-Mobitrack*/ 
+    .container_introduction{
+        padding:8px;
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 
+                            'resumen resumen'
+                            'titulo titulo'
+                            'card1  card2' 
+                            'card3 card4';
+                            
+        grid-gap: 24px;
+        }
+
+
+
+.container_screen{
+    padding:8px;
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-areas: 
+                        'titulo'
+                        'screen1'
+                        'screen2'
+                        'screen3'
+                        'screen4'
+                        'screen5';
+                        
+    grid-gap: 16px;
+}    
+
+.cardscreen1{
+    width: auto;
+    margin: 0px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    }
+
+
+.cardscreen3{
+    text-align: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    }    
+
+.container_user{
+    padding:8px;
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-areas: 
+                        'imagen1'
+                        'texto1'
+                        'imagen2' 
+                        'texto2'
+                        'resumen';
+                        
+    grid-gap: 24px;
+    
+    }
+
+    .container_cards{
+        grid-template-columns: repeat(1,1fr);
+    }
+/* Fin Pages-Mobitrack*/ 
+
+/*------------------/
+Fin Pages
+-------------------*/
+
+
+
+}
+
+
+@media screen and (max-width: 860px){
+    
+/*Grid-________*/
+
+.row{
+    flex-wrap: wrap;
+}
+
+.col-s-1{
+    width:8.3333333333%;
+    padding:12px;
+}
+.col-s-2{
+    width:16.6666666666%;
+    padding:12px;
+}
+.col-s-3{
+    width:24.9999999999%;
+    padding:12px;
+}
+.col-s-4{
+    width:33.3333333332%;
+    padding:12px;
+}
+.col-s-5{
+    width:41.6666666665%;
+    padding:12px;
+}
+.col-s-6{
+    width:49.9999999998%;
+    padding:12px;
+}
+.col-s-7{
+    width:58.3333333331%;
+    padding:12px;
+}
+.col-s-8{
+    width:66.6666666664%;
+    padding:12px;
+}
+.col-s-9{
+    width:74.9999999997%;
+    padding:12px;
+}
+.col-s-10{
+    width:83.333333333%;
+    padding:12px;
+}
+.col-s-11{
+    width:91.6666666663%;
+    padding:12px;
+}
+.col-s-12{
+    width:100%;
+    padding:12px;
+}
+
+
+  /* Definicion Estandar*/
+  body{
+    font-size: 14px;
+
+}
+
+h1{
+    font-size:40px;
+
+}
+h2{
+
+    font-size: 36px;
+
+}
+h3{
+
+
+    font-size: 20px;
+
+
+}
+h4{
+
+    font-size: 16px;
+
+}
+/* Fin Definicion Estandar*/
+
+
+
+/*------------------/
+Inicio Index
+-------------------*/
+
+
+/*Nav Bar*/
+.inicio{
+    flex-direction: column;
+    justify-content: center;
+}
+.imginicio{
+    padding-top:4px;
+}
+/*Fin Bar*/
+
+
+
+/*Section Profesion*/
+.textoprofesion{
+    padding-left:8px;
+}
+.textoprofesion p{
+    padding-top:4px;
+}
+/*Fin Section Profesion*/
+
+/*Section Quien Soy*/
+.resumenprof{
+    display:none;
+
+}
+
+/*Fin Section Quien Soy*/
+
+/*Section Experiencia*/
+.skill2img{
+display:none;
+
+}
+
+/*Section Contacto*/
+.data{
+    margin:4px;
+}
+/*Fin Section Contacto*/
+
+.contactobox{
+    margin-top:8px;
+}
+
+.contactotxt{
+    margin-top:8px;
+}
+
+
+/*------------------/
+Fin Index
+-------------------*/
+
+
+
+/*------------------/
+Inicio Pages
+-------------------*/
+
+
+/*Pages-Trabajo*/
+
+.container_proyectos{
+    padding:8px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+                        'titulo titulo'
+                        'resumen resumen'
+                        'card1  card1'
+                        'card2 card2'
+                        'card3 card3';
+    grid-gap: 24px;
+}
+
+/*Fin  Pages-Trabajo*/
+
+
+/*------------------/
+Fin Pages
+-------------------*/
+
+
+
+}
+
+@media screen and (max-width: 736px){
+
+
+/*------------------/
+Inicio Index
+-------------------*/
+
+/*Nav Bar*/
+
+.menu{
+    display:block;
+}    
+
+.navoptions{
+background: rgba(255, 255,255, 0.9);   
+position: fixed;
+Left:0vw;
+top:-100vh;
+bottom:0;    
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100vw;
+height: 100vh;
+z-index:+4;
+transition:.3s;
+}
+.menuactivo{
+    top:0;
+    }
+
+
+
+/*Fin Bar*/
+
+/*------------------/
+Inicio Pages
+-------------------*/
+
+
+
+
+ /*Inicio Pages-Trabajos*/
+  .container_trabajos{
+   padding:8px;
+   display: grid;
+   grid-template-columns: repeat(1,100%);
+   grid-gap: 24px;
+            }
+ /* Fin Pages-Trabajos*/
+    
+/* Inicio Pages-Mobitrack*/ 
+
+   .container_introduction{
+    padding:8px;
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-areas: 
+                        'resumen'
+                        'titulo'
+                        'card1'
+                        'card2' 
+                        'card3' 
+                        'card4';
+                        
+    grid-gap: 24px;
+    }
+
+    .screen1_img img{
+   
+        width:50%;
+        height:auto;
+
+    }
+    /* Fin Pages-Mobitrack*/   
+
+    /* Inicio Page-MobiRep*/ 
+
+    .containercolors{
+        grid-template-columns: repeat(2,1fr);
+    }
+    /* Fin Page-MobiRep*/ 
+
+
+
+
+
+/*------------------/
+Fin Pages
+------------------*/
+}
+
+@media screen and (max-width:460px){
+
+/*------------------/
+Inicio Pages
+------------------*/
+
+    /* Inicio Page-MobiRep*/ 
+
+    .containercolors{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .container-screens{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-areas:
+                            'card1' 
+                            'card2'
+                            'card3'
+                            'card4'
+                            'card5' 
+                            'card6';
+        grid-gap: 16px;
+        
+        }
+
+        .container-components{
+            grid-template-columns:repeat(1,1fr);
+            grid-template-areas:'com1' 
+                                'com2'
+                                'com3';
+            grid-gap:16px;
+            }
+               
+
+    /* Fin Page-MobiRep*/ 
+
+
+
+/*------------------/
+Fin Pages
+------------------*/
+
+}
+
+
+@media screen and (max-width: 380px){
+
+
+    /*Grid-________*/
+    
+    .row{
+        flex-wrap: wrap;
+    }
+    
+    .col-s-1{
+        width:8.3333333333%;
+        padding:12px;
+    }
+    .col-s-2{
+        width:16.6666666666%;
+        padding:12px;
+    }
+    .col-s-3{
+        width:24.9999999999%;
+        padding:12px;
+    }
+    .col-s-4{
+        width:33.3333333332%;
+        padding:12px;
+    }
+    .col-s-5{
+        width:41.6666666665%;
+        padding:12px;
+    }
+    .col-s-6{
+        width:49.9999999998%;
+        padding:12px;
+    }
+    .col-s-7{
+        width:58.3333333331%;
+        padding:12px;
+    }
+    .col-s-8{
+        width:66.6666666664%;
+        padding:12px;
+    }
+    .col-s-9{
+        width:74.9999999997%;
+        padding:12px;
+    }
+    .col-s-10{
+        width:83.333333333%;
+        padding:12px;
+    }
+    .col-s-11{
+        width:91.6666666663%;
+        padding:12px;
+    }
+    .col-s-12{
+        width:100%;
+        padding:12px;
+    }
+    
+    
+/*------------------/
+Inicio Index
+-------------------*/
+    
+    /*Nav Bar*/
+
+
+
+    .inicio{
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 8px;
+    }
+
+
+    
+    .imginicio {
+        display: flex;
+        align-items: center;
+    
+    }
+    
+    .navoptions{
+        padding-right: 24px;
+    }
+    
+    .navoptions a{
+        font-family: Avenir Next;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        padding-right:8px;
+        text-decoration:none;
+    }
+    .imginicio{
+        padding-top:4px;
+    }
+    /*Fin Bar*/
+
+    /*Section Quien Soy*/
+    .resumenprof{
+        display:none;
+    
+    }
+    
+    /*Fin Section Quien Soy*/
+    /*Section Experiencia*/
+    .skill2img{
+    display:none;
+    
+    }
+    /*Fin Section Experiencia*/
+
+    /*Section Contacto*/
+    .data{
+        margin:4px;
+    }
+    /*Fin Section Contacto*/
+    
+    .contactobox{
+        margin-top:8px;
+    }
+    
+    .contactotxt{
+        margin-top:8px;
+    }
+
+    .data{
+        border:0.5px solid #35363F;
+        background-image: url(../../images/icons/enviarmail.svg);
+        background-repeat:no-repeat;
+        background-position:8px 8px; 
+        box-shadow: var(--main-shadow);
+        margin:4px;    
+        width:200px;
+        height:31px;
+        border-radius: 8px;
+        padding:4px 4px 4px 53px;
+        line-height: 25px;
+        }
+
+    /*Inicio Footer*/
+    /*Fin Footer*/
+    
+/*------------------/
+Fin Index
+-------------------*/
+
+    }

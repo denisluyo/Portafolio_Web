@@ -1,0 +1,170 @@
+
+
+
+
+
+/*Inicio section quiensoy*/
+.contquiensoy{
+position: relative;
+}
+
+.imagenprincipal img{
+    width: 100%;
+    height: auto;
+}
+.resumenprof{  
+position: absolute;     
+top:8px;
+right:5%;
+}
+
+.resumenprofsquare{
+box-shadow: var(--half-shadow);
+border-radius: 3px;
+margin:8px;
+width:268px;
+height:56px;
+background: white;
+}
+.resumenprofsquare h4{
+    padding-left: 8px;
+    padding-top: 3px;
+
+} 
+
+.resumenprofsquare p{
+    padding-left: 8px;
+} 
+
+.referencias12{
+    padding-top: 3px;
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: var(--gray-color);
+}
+.referenciasblue{
+        padding-top: 3px;
+        font-family: Avenir Next;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        color: var(--celeste-color);
+    
+
+}
+/*Final section quiensoy*/
+
+
+/*Inicio section experiencia*/
+
+
+.titulos{
+    height:auto;
+    line-height:68px;
+    text-align: center;
+}
+
+
+
+
+.skill2{
+    height:auto;
+}
+
+
+.skill2 h3 {
+    color: var(--principal-color);
+    padding-top:8px;
+}
+
+.skill2 h4 {
+    padding-top:8px;
+    line-height:25px;
+}
+
+.skill2img{
+    width:100%;
+    height:auto;
+}
+/*Final section Experiencia*/
+/*Slider1*/
+
+#slider1{
+    max-width: 100%;
+    height:480px;
+    background: url(../images/headers/hero_mobitrack.jpg) no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+#slider1 h1{
+    color:white;
+    margin-top:120px;
+}
+/*Final Slider1*/
+
+/*Inicio Certificaciones*/
+#certificaciones{
+    background: white;
+
+}
+
+
+.listado{
+    padding-top:16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.listado li{
+line-height:20px;
+
+}
+
+
+/*Fin Certificaciones */
+
+/*Inicio Skills*/
+
+/*Fin Skills*/
+
+/*Slider2*/
+
+#slider2{
+    height:480px;
+    background: url(../images/pages/mobirep/hero2.jpg) no-repeat top ;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#slider2 a:hover{
+background:var(--principal-color);
+}
+#slider2 a{
+     margin-top:24px;
+     background:var(--black-color);
+     color:white; 
+     width:312px;
+     height:56px;
+     text-align: center;
+     line-height: 56px;
+     border-radius: 8px;
+
+}
+
+#slider2 h1{
+    color:var(--black-color);
+    margin-top:120px;
+}
+/*Final Slider2*/
+
+
