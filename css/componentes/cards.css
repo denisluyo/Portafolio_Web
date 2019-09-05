@@ -170,10 +170,11 @@ padding:16px 0px 0px 16px;
     width:50%;
     text-align: center;
 } 
-/*
-.cardportafolio:hover .portafolio-overlay{
-display: flex;
-}*/
+
+.cardportafolio:hover{
+box-shadow: var(--purple-shadow);
+
+}
 
 /*Inicio Card Portafolio*/
 
