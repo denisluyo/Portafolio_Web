@@ -1,0 +1,145 @@
+/* Aqui estan los estilos usados solo en la pagina pukucafe*/
+
+/*Section Hero*/
+
+
+
+#hero{
+    background:url(../../images/pages/pukucafe/hero-puku.jpg) no-repeat center;
+    background-size: cover;
+    height:400px;
+    align-items: center;
+}
+
+
+.texto-hero{
+    text-align: center;
+    color: var(--black-color);
+}
+
+.texto-hero h1{
+ line-height:1.5;   
+text-align: center;
+}
+
+
+/* Fin Section Hero*/
+
+/* Section Rol*/
+
+.container-cards-icon{
+display: grid;
+grid-template-columns: repeat(4,1fr);
+grid-gap: 16px;
+
+}
+
+/* Fin Section Rol*/
+
+/* Section Reto*/
+.container-reto{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 16px;
+}
+
+
+.container-reto-descripcion h4 {
+    line-height: 25px;
+    padding-top:24px;
+
+
+}
+.container-reto-img{
+text-align: right;
+
+}
+
+.container-reto-img img{
+    text-align:right;
+    max-width: 100%;
+
+
+
+}
+/* Fin Section Reto*/
+
+/*Conociendo al Cliente*/
+
+.conociendo-hero img{
+width:100%;    
+max-width: 100%;
+
+}
+
+
+.resumen1{
+    background: none;
+    text-align: left;
+}
+
+.container-cards-introduccion{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-gap:16px;
+}
+
+.card_intro h4{
+color:var(--black-color);
+}
+
+.container-clientes{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 16px;
+}
+
+.container-clientes-img{
+
+    text-align: right;
+
+}
+
+.container-clientes-img img{ 
+    max-width:100%;
+
+
+}
+
+.container-clientes-descripcion h4{
+padding-top:24px;
+line-height: 25px;
+
+
+}
+
+/* Fin de Conociendo al Cliente*/
+
+/*Section Nuestra APP*/
+
+.resumen1 span{
+
+border-bottom: 1px solid white;
+
+}
+
+.container-cards-caracteristicas{
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 16px;
+
+
+}
+
+/* Final Section nuestra App*/
+
+/* Inicio Section Prototipo*/
+
+.container-screen-cards{       
+display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-gap:16px;
+}
+
+/* Final Section Prototipo*/

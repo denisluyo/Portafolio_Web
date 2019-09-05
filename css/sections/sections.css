@@ -284,3 +284,21 @@ line-height: 25px;
 
     /*Fin de Etiqueta Proyectos*/
     
+
+ /* Slider con leyenda */
+ 
+ .leyend{
+    background: white;
+    height:auto;
+    display: flex;
+    justify-content: space-between;
+    line-height:32px;
+    padding:8px;
+}
+
+.slider_leyend img{
+    width: 100%;
+    max-width:100%;
+    height:auto;
+
+}

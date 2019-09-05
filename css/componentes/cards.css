@@ -280,6 +280,11 @@ text-align: center;
         box-shadow:var(--main-shadow);
     }
     
+
+    .cardscreen2 img{
+        max-width: 100%;
+
+    }
     .cardscreen2 h2{
       padding-top:16px;
     }

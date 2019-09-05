@@ -72,6 +72,22 @@ Inicio Pages
     }
 /* Fin Pages-Mobitrack*/ 
 
+/* Page Puku Cafe*/
+
+.container-cards-icon{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 16px;
+    
+    }
+
+
+
+/* Fin Page Puku Cafe*/
+
+
+
+
 /*------------------/
 Fin Pages
 -------------------*/
@@ -389,6 +405,50 @@ Inicio Pages
                
 
     /* Fin Page-MobiRep*/ 
+
+/* Page Puku Cafe*/
+
+.container-cards-icon{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 16px;  
+    }
+
+.container-cards-introduccion{
+display: grid;
+grid-template-columns: repeat(1,1fr);
+grid-gap:16px;
+}
+
+.container-cards-caracteristicas{
+
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 16px;
+
+}
+.container-screen-cards{       
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap:16px;
+}
+
+.container-clientes{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 16px;
+}
+
+.container-reto{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 16px;
+}
+
+/* Fin Page Puku Cafe*/
+
+
+
 
 
 

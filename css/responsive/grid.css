@@ -70,6 +70,7 @@
     grid-template-columns: minmax(320px,1152px);
     height:auto;
     justify-content: center;
+    padding: 8px;
 
 }
 /* Fin Containers*/

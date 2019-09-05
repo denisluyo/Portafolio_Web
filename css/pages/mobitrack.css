@@ -151,20 +151,7 @@ padding-top:16px;
 /*Fin Section Challengue*/
 
 /*Inicio Section Research*/
-.leyend{
-    background: white;
-    height:auto;
-    display: flex;
-    justify-content: space-between;
-    line-height:32px;
-    padding:8px;
-}
 
-.slider_leyend img{
-    width:100%;
-    height:auto;
-
-}
 .container_cards{
     padding:8px;
     margin-top:16px;
