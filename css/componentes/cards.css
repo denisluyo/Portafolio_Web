@@ -139,17 +139,20 @@ padding:16px 0px 0px 16px;
 }
 
 .portafolio-overlay {
-    background: rgb(0, 0,0,.9);
+    background: rgb(255, 255,255,.9);
     position: absolute;
     left:0;
     right:0;
     bottom:0;
-    top:0;
-    display: none;
+    height:20%;
+    display: flex;
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color:var(--black-color);
     }
 .portafolio-overlay p{
     margin-top:8px;
@@ -160,17 +163,17 @@ padding:16px 0px 0px 16px;
 .portafolio-overlay span{
     margin:8px;
     height:24px;
-    background: white;
-    color:var(--black-color);
+    background:var(--principal-color);
+    color:white;
     border-radius:4px;
     line-height:24px;
     width:50%;
     text-align: center;
 } 
-
+/*
 .cardportafolio:hover .portafolio-overlay{
 display: flex;
-}
+}*/
 
 /*Inicio Card Portafolio*/
 
