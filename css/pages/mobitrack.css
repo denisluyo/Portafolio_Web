@@ -208,26 +208,6 @@ padding-top:16px;
     grid-area:screen5;
 }
 
-
-.comentariodenis{
-    align-items: center;
-    padding:8px;
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.comentariodenis h3{
-   padding-left:16px;
-   line-height: 1.5;
-
-}
-
-
-.comentariodenis img{
-max-width:50%;
-height:auto;
- }
 /*Fin Section Solution*/
 
 /*Inicio Mobirep*/

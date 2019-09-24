@@ -33,13 +33,27 @@ Colores, sombras, texto, buttones,grids
 
 /* Definicion Estandar*/
 
+/*Fuente-Tipografia*/
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('../../fonts/AvenirNext-Medium.woff2') format('woff2'),
+        url('../../fonts/AvenirNext-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+/*Fin Fuente*/
+
 body{
     min-width:320px;
 
 }
 
 h1{
-    font-family: Avenir Next;
+    font-family: 'Avenir Next';
     font-style: normal;
     font-weight: 500;
     font-size: 64px;
@@ -47,7 +61,7 @@ h1{
 }
 
 h2{
-    font-family: Avenir Next;
+    font-family: 'Avenir Next';
     font-style: normal;
     font-weight: 500;
     font-size: 36px;
@@ -56,14 +70,14 @@ h2{
 
 h3{
 
-    font-family: Avenir Next;
+    font-family: 'Avenir Next';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
 }
 
 h4{
-    font-family: Avenir Next;
+    font-family: 'Avenir Next';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -72,7 +86,7 @@ h4{
 }
 body{
     background: var(--body-color);
-    font-family: Avenir Next;
+    font-family: 'Avenir Next';
     font-style: normal;
     font-weight: normal;
     font-size: 15px;

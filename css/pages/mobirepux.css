@@ -1,0 +1,184 @@
+/* Aqui estan los estilos usados solo en la pagina Mobirep-UX*/
+
+.hero-principal{
+
+    background: url(../../images/pages/mobirepux/heromobirep.jpeg) no-repeat center;
+    background-size: cover;
+    height:500px;
+    align-items: center;
+}
+
+
+/*Section Reto*/
+#reto{
+background: white;       
+}
+
+.titulo2-morado{
+
+color:var(--principal-color);    
+
+}
+
+.resumen-left{
+    text-align: left;
+}
+
+.resumen-sinfondo{
+
+background:var(--body-color);
+}
+
+
+/*Final Section Reto */
+
+
+
+
+
+
+/*Section Rol*/
+
+.rol-cards-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:16px;
+
+}
+
+
+
+.card-insights-containers{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-gap:16px;
+}
+
+.card_intro{
+    text-align: center;
+    box-shadow: var(--purple-shadow);
+}
+
+.card_intro h1{
+    padding-top:16px;
+    }
+
+.card_intro p{
+    line-height:20px;
+    padding-top:16px;
+    padding-bottom:16px;
+    }    
+
+ /*Final Section Rol*/
+ 
+ /*Section Proceso de creacion*/
+
+.creacion-imagen {
+
+    text-align:center;
+
+
+}
+
+ .creacion-imagen img{
+
+    max-width: 100%;
+
+ }
+
+ .resumen1{
+line-height: 25px;
+ }
+.plataforma-cards-containers{
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:16px;
+}
+.card_intro-txtleft {
+    text-align:left;
+}
+
+ /*Final Proceso de Creación*/   
+
+ /*Section Concepto*/
+ .container-cards-icon{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:16px;
+
+ }
+
+ .card_icon-sinfondo{
+    padding:8px;
+    background:var(--body-color);
+    box-shadow:none;
+    }
+
+ /*Final Section Concepto*/
+
+ /*Section Interfaces*/
+
+
+ .interfaces-hero img{
+
+max-width: 100%;
+
+ }
+
+ .interfaces-hero-video video{
+
+    max-width: 100%;
+
+ }
+ .container-cards-screens{
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap:16px;
+    grid-template-areas: 'tablet1 tablet1'
+                         'tablet2 tablet3'
+                         'tablet4 tablet4';
+ }
+
+ .tablet1{
+     grid-area:tablet1;
+ }
+
+ .tablet2{
+    grid-area:tablet2;
+}
+.tablet3{
+    grid-area:tablet3;
+}
+.tablet4{
+    grid-area:tablet4;
+}
+
+
+.container-interfaces{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap:16px;
+}
+
+.container-interfaces-txt p{
+    padding-top:8px;
+    line-height: 24px;
+}
+
+.container-interfaces-img img{
+
+    max-width: 100%;
+
+}
+
+.container-cards-screen2{
+
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap:16px;
+
+}
+ /*Final Section Interfaces*/

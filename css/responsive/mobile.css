@@ -85,7 +85,15 @@ Inicio Pages
 
 /* Fin Page Puku Cafe*/
 
+/*Page MobirepUX*/
 
+.rol-cards-container{
+    grid-template-columns: repeat(2,1fr);
+
+}
+
+
+/*Fin MobirepUx*/
 
 
 /*------------------/
@@ -362,7 +370,45 @@ Inicio Pages
     /* Fin Page-MobiRep*/ 
 
 
+/*Page MobirepUX*/
 
+.rol-cards-container{
+    grid-template-columns: repeat(1,1fr);
+
+}
+
+.card-insights-containers{
+    grid-template-columns:repeat(1,1fr);
+
+}
+
+.plataforma-cards-containers{
+
+    grid-template-columns: repeat(1,1fr);
+
+}
+
+.container-cards-screens{
+
+    grid-template-columns: repeat(1,1fr);
+    grid-template-areas: 'tablet1'
+                         'tablet2' 
+                         'tablet3'
+                         'tablet4';
+ }
+
+ .container-interfaces{
+    grid-template-columns: repeat(1,1fr);
+}
+
+
+.container-cards-screen2{
+
+    grid-template-columns: repeat(1,1fr);
+
+}
+
+/*Fin MobirepUx*/
 
 
 /*------------------/

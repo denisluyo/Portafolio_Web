@@ -303,4 +303,43 @@ text-align: center;
     } 
     
 
+    .cardtablet1{
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        border-radius:16px;
+        box-shadow: var(--purple-shadow);
+        padding:16px;
+        
+    }
+
+    .cardtablet1-txt p {
+        line-height: 24px;
+        padding-top:16px;
+        padding-right:16px;
+        color:var(--gray2-color);
+    }
+    .cardtablet1-img img{
+
+        max-width: 100%;
+    }
+
+    .cardtablet2{
+        background:white;
+        text-align: center;
+        border-radius: 16px;
+        box-shadow: var(--purple-shadow);
+        padding:16px;
+    }
+
+    .cardtablet2 h3{
+
+        padding-top:8px;
+    }
+
+    .cardtablet2 p{
+        line-height:24px;
+        padding-top:16px;
+        color:var(--gray2-color);
+    }
 /*Fin Card-Portafolios*/   
