@@ -1,6 +1,6 @@
 
-
 /*Inicio section quiensoy*/
+
 .contquiensoy{
 position: relative;
 }
@@ -9,6 +9,7 @@ position: relative;
     width: 100%;
     height: auto;
 }
+
 .resumenprof{  
 position: absolute;     
 top:8px;
@@ -22,6 +23,7 @@ margin:8px;
 width:268px;
 height:56px;
 background: white;
+padding: 6px;
 }
 .resumenprofsquare h4{
     padding-left: 8px;
@@ -48,9 +50,9 @@ background: white;
         font-weight: bold;
         font-size: 12px;
         color: var(--principal-color);
-    
-
 }
+
+
 /*Final section quiensoy*/
 
 
@@ -86,6 +88,7 @@ background: white;
     height:auto;
 }
 /*Final section Experiencia*/
+
 /*Slider1*/
 
 #slider1{
