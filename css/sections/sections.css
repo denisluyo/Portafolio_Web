@@ -48,8 +48,12 @@ Aqui van a poder visualizar los estilos de las secciones estandar que se usan en
 
 
 header{
-    position: relative;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
+
 .imginicio{
     padding:2px 0px 2px 0px;
 }
@@ -79,6 +83,7 @@ background:var(--principal-color);
     
 
 .inicio{
+    
     background: white;
     display: flex;
     flex-wrap: wrap;
@@ -90,26 +95,37 @@ background:var(--principal-color);
 
 .imginicio {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     align-items: center;
 
+}
+
+.imginicio h2{
+    font-size: 1.5rem;
+}
+
+.imginicio img{
+    margin-right: 16px;
 }
 
 .navoptions{
     display: flex;
     flex-wrap: wrap;
     line-height: 88px;
-    font-family: serif;
+    font-family: Avenir Next;
 }
 
 .navoptions a{
-    font-family: Avenir Next;
     font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    padding-right:16px;
-    text-decoration:none;
+    font-weight: 200;
+    font-size: 20px;
+    padding-right:56px;
+   
 }
-
+.navoptions a:hover{
+  text-decoration: underline;
+}
 
 
 .migadepan{
@@ -165,8 +181,10 @@ background:var(--principal-color);
     background-color: white;
     height:auto;
     text-align:center;
+ 
 }
 .resumen1 h3{
+    font-size: 1.2rem;
     line-height:1.5;
 }
 
@@ -193,11 +211,20 @@ background:var(--principal-color);
 
 /*inicio Footer*/
 
+.footer{
+    background-color: #F9F9F9;
+    
+}
+
 footer h3:hover{
     color:var(--principal-color);
 }
 
-
+.footer_line{
+    border: 0.5px solid #e9ebf3;
+    width: 100%;
+    margin-bottom: 16px;
+}
 
 
 .footerlist1,.footerlist2,.footerlist3{
@@ -208,12 +235,19 @@ footer h3:hover{
 .footerlist1 h3,.footerlist2 h3,.footerlist3 h3{
     color:var(--gray-color);
     line-height: 1.5;
-    margin:56px 0px 0px 0px;
+    margin:16px 0px 0px 0px;
 
 }
 
+.copy{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+padding-bottom: 16px;
+}
 .copyright h4{
     padding-top:8px;
+    padding-right: 24px;
     line-height: 25px;
 }
 .copyright span{

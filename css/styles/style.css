@@ -20,7 +20,7 @@ Colores, sombras, texto, buttones,grids
     
     /*Sombras*/
     --main-shadow:0px 18px 40px rgba(196, 196, 196, 0.35);
-    --purple-shadow:0px 25px 48px rgba(90, 105, 253, 0.25);
+    --purple-shadow:0px 18px 40px rgba(188, 189, 201, 0.3);
     --half-shadow:0px 18px 40px rgba(188, 189, 201, 0.3);
     
     /*Tipografia*/
@@ -85,7 +85,7 @@ h4{
 
 }
 body{
-    background: var(--body-color);
+    background: white;
     font-family: 'Avenir Next';
     font-style: normal;
     font-weight: normal;

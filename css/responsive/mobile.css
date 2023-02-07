@@ -203,6 +203,7 @@ Inicio Index
 .inicio{
     flex-direction: column;
     justify-content: center;
+    min-height: 80px;
 }
 .imginicio{
     padding-top:4px;

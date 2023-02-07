@@ -14,16 +14,17 @@ en el proyecto
     padding:8px;
     height:96px;
     background: white;
-    box-shadow: var(--main-shadow);
+    box-shadow: var(--purple-shadow);
+    /* box-shadow: var(--main-shadow); */
     border-radius: 8px;
 }
 
 .cardexperiencia h2{
-  color:var(--principal-color);
+  color:var(--black-color);
 
 }
 .cardexperiencia h3{
-    color:var(--principal-color);
+    color:var(--black-color);
   
   }
 
@@ -121,64 +122,55 @@ padding:16px 0px 0px 16px;
 
 /*Inicio Card Portafolio*/
 
+
 .cardportafolio a{
     max-width:100%;
-    display:inline-block;
+    display:block;
+    padding: 8px;
 }
 .cardportafolio{
-    border-radius: 8px;
-    background:white;
-    padding:16px;
+    width:100%;
     position:relative;
-    box-shadow: var(--half-shadow);
+}
 
-}
-.cardportafolio img{
-    border-radius: 8px;
-    max-width:100%;
-}
+/* .cardportafolio figure{
+    width:100%;
+    
+} */
 
 .portafolio-overlay {
-    background: rgb(255, 255,255,.9);
-    position: absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:20%;
+    /* background: rgb(255, 255,255,.9); */
+    position: relative;
     display: flex;
-    border-radius: 8px;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-top: 8px;
     color:var(--black-color);
     }
 .portafolio-overlay p{
+    color:var(--gray);
     margin-top:8px;
-    width:90%;
-    text-align: center;
+    width:100%;
+    text-align: left;
 }  
 
 .portafolio-overlay span{
-    margin:8px;
-    height:24px;
-    background:var(--principal-color);
-    color:white;
-    border-radius:4px;
-    line-height:24px;
-    width:50%;
-    text-align: center;
+  
+    color:var(--gray2-color);
+    margin-top: 8px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
 } 
 
-.cardportafolio:hover{
-box-shadow: var(--purple-shadow);
+.cardportafolio a:hover{
+text-decoration: underline;
 
 }
 
 /*Inicio Card Portafolio*/
 
-/*Fin Card Icon*/
+/*Inicio Card Icon*/
 .card_icon{
     padding:8px;
     background: white;

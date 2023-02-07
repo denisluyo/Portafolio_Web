@@ -39,7 +39,7 @@ grid-area:resumen;
 padding:16px;    
 height:auto;    
 grid-area:card1;
-box-shadow: var(--purple-shadow);
+
 
 }
 
@@ -65,42 +65,131 @@ box-shadow: var(--purple-shadow);
     grid-template-columns: minmax(320px,1152px);
     height:auto;
     justify-content: center;
-    background: var(--body-color);
+    background: white;
 
 }
 
+
 .container_trabajos{
-    padding:8px;
+    margin-top: 24px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
     grid-gap: 24px;
     }
 
+/*Inicio imagenes  Trabajo*/
 
-.filtro_trabajos{
+.banca{ 
+    height:528px;
+    background-image: url(../../images/trabajos/portafolio/banca.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    box-sizing: border-box;
+    }
+
+.boxmis{ 
+    height:528px;
+    background-image: url(../../images/trabajos/portafolio/boxmis.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    box-sizing: border-box;
+    } 
+.agora{ 
+    height:528px;
+    background-image: url(../../images/trabajos/portafolio/designsystem.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    box-sizing: border-box;
+    }
+.alicorp{ 
+    height:528px;
+    background-image: url(../../images/trabajos/portafolio/nicosoft.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    box-sizing: border-box;
+    }    
+    .hogar{ 
+        height:528px;
+        background-image: url(../../images/trabajos/portafolio/apphogar.jpg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        box-sizing: border-box;
+        }
+        
+    .mobitrack{ 
+        height:528px;
+        background-image: url(../../images/trabajos/portafolio/mobitrack.jpg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        box-sizing: border-box;
+        } 
+    .mobirep{ 
+        height:528px;
+        background-image: url(../../images/trabajos/portafolio/mobirep.jpg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        box-sizing: border-box;
+        }  
+    .express{ 
+        height:528px;
+        background-image: url(../../images/trabajos/portafolio/express.jpg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        box-sizing: border-box;
+        }  
+        
+    .entel{ 
+        height:528px;
+        background-image: url(../../images/trabajos/portafolio/entel10k.jpg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        box-sizing: border-box;
+        } 
+      .spotiteva{ 
+        height:528px;
+        background-image: url(../../images/trabajos/portafolio/spotiteva.jpg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        box-sizing: border-box;
+        } 
+      .mibanco{ 
+        height:528px;
+        background-image: url(../../images/trabajos/portafolio/mibanco.jpg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        box-sizing: border-box;
+        }
+        .analytics{ 
+        height:528px;
+        background-image: url(../../images/trabajos/portafolio/analytics.jpg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        box-sizing: border-box;
+        }            
+        
+/* Fin imagenes Trabajo*/
+
+
+/* .filtro_trabajos{
 text-align: left;   
-grid-column-end: span 3;
 height:56px;
 line-height: 56px;
 
-}
+} */
 
-.level-1{
- text-align: center;   
-grid-row-end: span 4;
+/* .level-1{
+text-align: left;
 
 }
 
 .level-2{
-text-align: center;      
-grid-row-end: span 3;  
+    text-align: left;
     }
     
  .level-3{
- text-align: center;   
-grid-row-end: span 1; 
 
- }   
+    text-align: left;
+ }    */
 
 
 /*Section Trabajo*/
