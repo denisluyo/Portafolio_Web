@@ -180,7 +180,7 @@ background:var(--principal-color);
 .resumen1{
     background-color: white;
     height:auto;
-    text-align:center;
+    text-align:left;
  
 }
 .resumen1 h3{

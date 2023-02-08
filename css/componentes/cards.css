@@ -48,17 +48,18 @@ padding:16px 0px 0px 16px;
 /*Inicio Card Certificaciones*/
 
 .cardcertificaciones{
+    width: 100%;
     height:248px;
     padding:8px;
     background: white;
-    box-shadow: var(--half-shadow);
+    border-top: 0.5px solid var(--gray2-color);
 }
 
 .cardcertificaciones h4{
-    color:var(--second-color);
+    padding: 8px;
+    color:var(--black-color-color);
     
     }
-
 /*Fin Card Certificaciones*/
 
 /*Inicio Card Skills*/
@@ -66,13 +67,14 @@ padding:16px 0px 0px 16px;
 .cardskills{
     background: white;
     border-radius: 8px;
-    box-shadow: var(--half-shadow);
     height:384px;
-    padding:8px;
+    padding:16px;
 }
 
 .cardskills h3{
-    color:var(--principal-color);
+    color:var(--black-color-color);
+    font-size: 1.5rem;
+    margin-bottom: 4px;
 
 }
 
@@ -90,7 +92,7 @@ padding:16px 0px 0px 16px;
 
 .barrafondo{
     margin-top:4px;
-    background-color: var(--gray2-color);
+    background-color:#ECE7E7;
     width:100%;
     height:40px;
     border-radius:8px;
@@ -100,7 +102,7 @@ padding:16px 0px 0px 16px;
 }
 .barracolor{
     margin-top:4px;
-    background:var(--principal-color);
+    background:var(--celeste-color);
     width:0%;
     height:40px;
     border-radius: 8px;

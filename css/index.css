@@ -110,6 +110,8 @@ padding: 6px;
 /*Final Slider1*/
 
 /*Inicio Certificaciones*/
+
+
 #certificaciones{
     background: white;
 
@@ -117,7 +119,7 @@ padding: 6px;
 
 
 .listado{
-    padding-top:16px;
+    padding:8px;
     display: flex;
     justify-content: space-between;
 }
