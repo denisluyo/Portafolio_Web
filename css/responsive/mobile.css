@@ -29,13 +29,30 @@ Inicio Pages
                         'titulo'
                         'screen1'
                         'screen2'
-                        'screen3'
-                        'screen4'
-                        'screen5';
+                        'screen3';
                         
     grid-gap: 16px;
 }    
 
+
+.texto1{
+    flex-wrap: wrap;
+    }
+
+.texto2{
+    flex-wrap: wrap;
+}    
+
+.user_image{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}    
+
+.user_image img{
+    width:50%;
+    
+}    
 .cardscreen1{
     width: auto;
     margin: 0px;
@@ -57,11 +74,9 @@ Inicio Pages
     display:grid;
     grid-template-columns: repeat(1,1fr);
     grid-template-areas: 
-                        'imagen1'
+                        'resumen'
                         'texto1'
-                        'imagen2' 
-                        'texto2'
-                        'resumen';
+                        'texto2';
                         
     grid-gap: 24px;
     

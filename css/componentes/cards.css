@@ -174,7 +174,7 @@ text-decoration: underline;
 
 /*Inicio Card Icon*/
 .card_icon{
-    padding:8px;
+    padding:16px;
     background: white;
     border-radius:8px;
     box-shadow: var(--half-shadow);
@@ -242,18 +242,16 @@ text-align: center;
 
 
 .cardscreen1{
-    width:80%;
     margin:auto;
-    padding:8px;    
-    background: white;
+    padding:16px;    
+    background:var(--body-color);
     border-radius: 16px;
     height:auto;
-    box-shadow:var(--main-shadow);
     display:flex;
     }
     
     .screen1_img{
-        text-align: center;
+       text-align: center;
     }
     
     .screen1_txt h2{
@@ -268,10 +266,9 @@ text-align: center;
     
     .cardscreen2{
         text-align: center;
-        padding:8px;    
-        background: white;
+        padding:8px;   
         border-radius: 16px;
-        box-shadow:var(--main-shadow);
+        background:var(--body-color);
     }
     
 
@@ -280,7 +277,8 @@ text-align: center;
 
     }
     .cardscreen2 h2{
-      padding-top:16px;
+    width:400px;
+    padding-top:16px;
     }
     .cardscreen2 p{
         line-height: 25px;
@@ -290,12 +288,13 @@ text-align: center;
     .cardscreen3{
         display: flex;
         padding:8px;    
-        background: white;
         border-radius: 16px;
-        box-shadow:var(--main-shadow);
-    
+        background:var(--body-color);
     } 
     
+    .cardscreen3 .izquierda{
+        width: 250px;
+    }
 
     .cardtablet1{
         background: white;

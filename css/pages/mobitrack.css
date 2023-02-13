@@ -42,12 +42,30 @@ grid-gap: 24px;
 }
 
 
-.resumen2{
+.resumen1{
     grid-area: resumen;
 }
 
+.resumen1 .resumen_subtitle h3{
+    font-weight: 800;
+    font-size: 1.6rem;
+    line-height: normal;
+}
+
+.resumen1 p{
+font-family: 'Avenir Next';
+font-style: normal;
+font-weight: 200;
+font-size: 1.0rem;
+line-height: 150.26%;
+}
+
+.resumen_subtitle h4{
+    font-weight: 800;
+    font-size: 1.4;
+}
 .titulos2{
-    color: var(--principal-color);
+    color: var(--black-color-color);
 
 }
 
@@ -71,16 +89,21 @@ grid-gap: 24px;
 
 /*Fin introduction*/
 
-
+/*hero*/
+.imagenprincipal img{
+width: 100%;
+height: auto;
+}
+/*hero*/
 /*Inicio Section Challengue*/
 
 .container_resumen{
     padding:8px;
 }
 
-.boxwhite{
+/* .boxwhite{
     background:white;
-}
+} */
 
 .resumen3 h2{
     padding-top:8px;
@@ -92,24 +115,24 @@ grid-gap: 24px;
 
 
 
+
+
+
 .container_user{
 padding:8px;
 display:grid;
 grid-template-columns: repeat(2,1fr);
 grid-template-areas: 
-                    'texto1 imagen1'
-                    'texto2 imagen2'
-                    'resumen resumen';
+                    'resumen resumen'
+                    'texto1 texto1'
+                    'texto2 texto2';
                     
 grid-gap: 16px;
 
 }
 
 .user_image{
-    width: 100%;
-    display: flex;
-    justify-content: center;    
-
+    width: 80%;
 }
 
 
@@ -120,11 +143,17 @@ grid-gap: 16px;
 
 .texto1{
 grid-area:texto1;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
 }
 
 
 .texto2{
-grid-area:texto2;
+grid-area:texto1;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
 }
 
 .imagen1{
@@ -133,6 +162,10 @@ grid-area:texto2;
 
 .imagen2{
     grid-area:imagen2;
+}
+
+.user_text{
+    width: 85%;
 }
 .user_text p{
 padding-top:16px;
@@ -145,10 +178,49 @@ padding-top:16px;
 
 .user_resumen{
     line-height: 1.5;
-    text-align: center;
+    text-align: left;
     grid-area:resumen;
 }
 /*Fin Section Challengue*/
+
+
+/*tabs*/
+
+.tabs{
+    display: flex;
+    margin: 20px 0;
+    border-bottom:1px solid var(--gray2-color);
+    }
+    
+    .tab{
+            border: 0px;
+            border-bottom:5px solid var(--gray2-color);
+            background-color:white;
+            outline: none;
+            font-size: 18px;
+            margin-left: 24px;
+            color: var(--gray2-color);
+     }
+    
+
+      .tab.active {
+        color: var(--principal-color);
+        border-bottom:5px solid var(--principal-color);
+      }
+    
+      .tab-content {
+        padding: 20px;
+        background-color: white;
+        display: none;
+    
+      }
+
+      .tab-content.activo{
+        display: flex;
+
+      }
+    
+    /*end tabs*/
 
 /*Inicio Section Research*/
 
@@ -183,11 +255,9 @@ padding-top:16px;
     display:grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-areas: 
-                        'titulo titulo'
                         'screen1 screen1'
-                        'screen1 screen1'
-                        'screen2 screen3'
-                        'screen4 screen5';
+                        'screen2 screen2'
+                        'screen3 screen3';
                         
     grid-gap: 16px;
 }    
@@ -201,19 +271,53 @@ padding-top:16px;
 .screen3{
     grid-area:screen3;
 }
-.screen4{
+/* .screen4{
     grid-area:screen4;
 }
 .screen5{
     grid-area:screen5;
-}
+} */
 
 /*Fin Section Solution*/
 
-/*Inicio Mobirep*/
 
 
 
+/*Start carousel*/
+.container-carousel{
+    grid-area: screen2;
+    overflow: scroll;
 
+}
 
-/*Fin Mobirep*/
+.carousel{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+
+}
+
+/* .slide{
+    width: 500px;
+    height:500px;
+} */
+
+.container-buttons{
+    display: flex;
+    gap: 32px;
+}
+.buttons {
+  background-color: var(--principal-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: right;
+  border: none;
+}
+
+.buttons:hover{
+    background-color:var(--second-color);
+}
+
+/*Ehd Carousel*/

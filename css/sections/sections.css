@@ -148,13 +148,12 @@ background:var(--principal-color);
 
 /*section profesion*/
 
-#profesion{
-    position: -webkit-sticky; /* Safari */
+/* #profesion{
+    position: -webkit-sticky;
     position: sticky;
-    top: 0;
-    z-index: +1;
-    box-shadow: var(--half-shadow);
-}
+    top:-10;
+    z-index: 2;
+}*/
 
 .datosprofesion{
     padding-left: 16px;
