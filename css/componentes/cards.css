@@ -189,6 +189,10 @@ text-decoration: underline;
     .card_icon p{
         padding-top:8px;
     }
+.card_icon img{
+    padding-bottom: 8px;
+    
+    }
 
 /*Fin Card Icon*/    
 
