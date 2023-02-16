@@ -16,16 +16,16 @@
   }
 
 
-  window.addEventListener("load", function() {
-    var container = document.querySelector('#container');
-    var leftButton = document.querySelector('#left-button');
-    var rightButton = document.querySelector('#right-button');
+  // window.addEventListener("load", function() {
+  //   var container = document.querySelector('#container');
+  //   var leftButton = document.querySelector('#left-button');
+  //   var rightButton = document.querySelector('#right-button');
 
-    leftButton.addEventListener('click', function() {
-      container.scrollLeft -= 200;
-    });
+  //   leftButton.addEventListener('click', function() {
+  //     container.scrollLeft -= 200;
+  //   });
 
-    rightButton.addEventListener('click', function() {
-      container.scrollLeft += 200;
-    });
-  });
+  //   rightButton.addEventListener('click', function() {
+  //     container.scrollLeft += 200;
+  //   });
+  // });

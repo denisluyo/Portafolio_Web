@@ -22,7 +22,15 @@
 
 .text_header span{
     color:var(--black-color);
+    
 }
+
+.client-section{
+    border-bottom: 1px solid var(--gray2-color);
+    border-top: 1px solid var(--gray2-color);
+    border-style: dotted;
+}
+
 
 /*Fin  header*/
 
