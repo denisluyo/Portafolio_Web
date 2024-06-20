@@ -176,6 +176,11 @@ background:var(--principal-color);
 
 /*Inicio box-resumen1*/
 
+.resumentitulos{
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
 .resumen1{
     background-color: white;
     height:auto;
@@ -244,6 +249,7 @@ justify-content: space-between;
 flex-wrap: wrap;
 padding: 16px;
 }
+
 .copyright h4{
     padding-top:8px;
     padding-right: 24px;

@@ -81,11 +81,11 @@ padding:16px 0px 0px 16px;
 .barraskill{
     padding-top:16px;
     display: flex;
-    justify-content: space-between;
 }
 .barra{
     height:64px;
     width:80%;
+
     position:relative;
 }
 
@@ -112,11 +112,11 @@ padding:16px 0px 0px 16px;
 }
 .porcentaje{
     height: 50px;
-    padding-left:2px;
+    padding-left:8px;
     padding-top: 14px;
     line-height: 50px;
 }
-.porcentaje h3{
+.porcentaje h4{
     color: var(--black-color);
 }
 

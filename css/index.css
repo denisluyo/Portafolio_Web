@@ -58,7 +58,9 @@ padding: 6px;
 
 /*Inicio section experiencia*/
 
-
+#experiencia{
+    padding-top: 40px;
+}
 .titulos{
     height:auto;
     line-height:68px;
@@ -114,6 +116,7 @@ padding: 6px;
 
 #certificaciones{
     background: white;
+    padding-top: 40px;
 
 }
 
@@ -133,6 +136,9 @@ line-height:20px;
 /*Fin Certificaciones */
 
 /*Inicio Skills*/
+#skill{
+    padding-top: 40px;
+}
 
 /*Fin Skills*/
 
