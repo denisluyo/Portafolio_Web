@@ -5,6 +5,12 @@
 Inicio Pages
 -------------------*/
 
+/*Tabs*/
+
+.tabs{
+    overflow: scroll;
+}
+
 /* Inicio Pages-Mobitrack*/ 
     .container_introduction{
         padding:8px;
@@ -662,6 +668,10 @@ Inicio Index
         }
 
     /*Inicio Footer*/
+
+    footer{
+        padding: 16px;
+    }
     /*Fin Footer*/
     
 /*------------------/

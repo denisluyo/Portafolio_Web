@@ -12,6 +12,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href=""/>
     <title>Trabajos</title>
+<!--style tabs-->
+
+    <style>
+        
+    .tabs{
+        display: flex;
+        cursor: pointer;
+        padding: 16px;
+        overflow: scroll;
+    }
+    .tab{
+        border: 1px solid;
+        border-color: #7c7d83;
+        color: #35363F;
+        padding: 8px 16px;
+        border-radius: 8px;
+        margin-right: 16px;
+        min-width: 120px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+
+    }
+    .tab.active{
+        background-color: #35363F;
+        color: white;
+        border: 0px;
+    }
+    .tab-content{
+        display: none;
+
+    }
+    
+    .tab-content.active{
+        display: grid;
+   
+    }
+    </style>
+
+<!--End style tabs-->
+
 </head>
 <body>
 <!--Aquí empieza el nav bar-->
@@ -38,28 +79,7 @@
     <!-- Aqui acaba el nav bar-->
     
 
-    <!-- Miga de pan-->
-
-     <!-- <section id="profesion">
-        <div class="migadepan">
-            <ul>
-               <li></li><a href=""class="active">Portafolio</a></li>
-            </ul>   
-           </div> 
-        <div class="datosprofesion">
-            <div class="imgprofesion">
-                <img src="images/main/imgdenis2.png" alt="imgdenis2" width="48px"height="48px">
-            </div>
-            <div class="textoprofesion">
-                    <h3>Denis Luyo</h3>
-                    <p>Product Designer | Ux Strategist | Front Developer</p>
-                      
-            </div> 
-                 
-        </div>
-</section> -->
-
-   <!-- End breadcrumbs-->
+   
 
 <section id="resumen_proyectos">
         <br/>
@@ -69,7 +89,7 @@
          <h2>Portafolio</h2>  
         </div>
         <div class="resumen1">
-            <h3>Con una década de experiencia como Ux Designer | UX Lead | Product Designer, he liderado proyectos diversos en sectores como Salud, Banca, Industria Acuícola, Logística internacional, Deportes, Fintech, E-Commerce y Educación.<br/><br/>
+            <h3>Con mas de 10 años de experiencia como Ux Designer | UX Lead | Product Designer, he liderado diversos proyecto en sectores como Salud, Banca, Industria Acuícola, Logística internacional, Deportes, Fintech, E-Commerce y Educación.<br/><br/>
 
                 Desde aplicaciones web hasta desarrollos con Arduino, he trabajado con equipos ágiles para crear soluciones innovadoras.<br/>Mi pasión por el aprendizaje y la colaboración me impulsa a buscar constantemente nuevos desafíos y tecnologías.<br/><br/>
                 
@@ -114,8 +134,15 @@
          </div>
         </div>
         </div>  
-          
-        <div class="container_trabajos">
+        <div class="tabs">
+            <div class="tab active" data-tab="Product"><h4>Producto</h4></div>
+            <div class="tab" data-tab="DS"><h4>Design System</h4></div>
+            <div class="tab" data-tab="Concepts"><h4>Conceptos</h4></div>
+            <div class="tab" data-tab="Redesign"><h4>Rediseños</h4></div>
+        </div>   
+
+        <div class="container_trabajos tab-content active"  id="Product">
+         
 
             <div class="cardportafolio">
                 <a href="https://www.behance.net/gallery/152085215/Producto-de-Banca" target="_blank"> 
@@ -140,19 +167,6 @@
                 </a>      
                </div>
         
-              
-               <div class="cardportafolio">
-                <a href="https://www.notion.so/denisluyo/Creando-un-Design-System-d24e8d3aec5d4406b97735bbd1602c4d" target="_blank"> 
-                    <div class="agora"></div>
-                    <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                   <div class="portafolio-overlay">
-                       <h3>Design System</h3>
-                       <p>Creando un sistema de diseño</p>
-                       <span>LEAD | UX | UI</span>
-                   </div>
-                </a>      
-               </div>
-        
                <div class="cardportafolio">
                 <a href="https://www.notion.so/denisluyo/Proyecto-Nicosoft-ee19d951822d4cdbbc35801981bba839" target="_blank"> 
                     <div class="alicorp"></div>
@@ -161,18 +175,6 @@
                        <h3>Nicosoft-Alicorp</h3>
                        <p>Proyecto para la industria camaronera</p>
                        <span>UX | RESEARCH | UI</span>
-                   </div>
-                </a>      
-               </div> 
-        
-               <div class="cardportafolio">
-                <a href="https://www.notion.so/denisluyo/App-para-amoblar-d48f5f9d96074df99fb5804f54b95bc6" target="_blank"> 
-                    <div class="hogar"></div>
-                    <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                   <div class="portafolio-overlay">
-                    <h3>App Hogar</h3>
-                    <p>App para amoblar tu hogar</p>
-                    <span>UX | RESEARCH | UI</span>
                    </div>
                 </a>      
                </div> 
@@ -189,7 +191,7 @@
                 </a>      
                </div>
         
-                <div class="cardportafolio">
+                <div class="cardportafolio"> 
                     <a href="pages/mobirepux.html"> 
                         <div class="mobirep"></div>
                         <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
@@ -236,9 +238,36 @@
                     </div>  
                     </a>
                        </div>  
+                          
+        </div>
+        <div class="container_trabajos tab-content"  id="DS">
+               <div class="cardportafolio">
+                <a href="https://www.notion.so/denisluyo/Creando-un-Design-System-d24e8d3aec5d4406b97735bbd1602c4d" target="_blank"> 
+                    <div class="agora"></div>
+                    <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
+                   <div class="portafolio-overlay">
+                       <h3>Design System</h3>
+                       <p>Creando un sistema de diseño</p>
+                       <span>LEAD | UX | UI</span>
+                   </div>
+                </a>      
+               </div>
+        </div>
+        <div class="container_trabajos tab-content"  id="Concepts">
+        
+               <div class="cardportafolio">
+                <a href="https://www.notion.so/denisluyo/App-para-amoblar-d48f5f9d96074df99fb5804f54b95bc6" target="_blank"> 
+                    <div class="hogar"></div>
+                    <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
+                   <div class="portafolio-overlay">
+                    <h3>App Hogar</h3>
+                    <p>App para amoblar tu hogar</p>
+                    <span>UX | RESEARCH | UI</span>
+                   </div>
+                </a>      
+               </div> 
 
-
-                       <div class="cardportafolio">
+            <div class="cardportafolio">
                         <a href="https://www.notion.so/denisluyo/Redise-o-de-Dashboard-bc87c3492cc6474e8465e071bfeb2607" target="_blank"> 
                             <div class="mibanco"></div>
                             <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
@@ -248,8 +277,24 @@
                                 <span>UX | UI</span>
                            </div>
                         </a>      
-                       </div>  
-                       <div class="cardportafolio">
+             </div>  
+                          
+        </div>
+        <div class="container_trabajos tab-content"  id="Redesign">
+            
+               <div class="cardportafolio">
+                <a href="https://denisluyo.notion.site/Liderando-una-experiencia-digital-para-Log-stica-internacional-6b0429c83a5f4f729b14f67e86338507" target="_blank"> 
+                    <div class="boxmis"></div>
+                    <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
+                   <div class="portafolio-overlay">
+                       <h3>Logística internacional</h3>
+                       <p>Liderando una experiencia digital</p>
+                       <span>LEAD | UX | RESEARCH | UI</span>
+                   </div>
+                </a>      
+               </div>
+
+            <div class="cardportafolio">
                         <a href="https://www.behance.net/gallery/58311043/Analytics" target="_blank"> 
                             <div class="analytics"></div>
                            <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt="analytics trabajo denis"/></figure> -->
@@ -262,9 +307,6 @@
                        </div>   
                           
         </div>
-        
-
-    
 </section>
 
 <br/>
@@ -323,7 +365,7 @@
             
 </footer>
 
-
+<!-- Script menu-->
 <script>
     
 const menu = (document.querySelector('.navoptions'));
@@ -371,5 +413,25 @@ if
 
 
 </script>
+<!-- Script tabs-->
+<script>
+     document.addEventListener("DOMContentLoaded", function() {
+            const tabs = document.querySelectorAll(".tab");
+            const contents = document.querySelectorAll(".tab-content");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function() {
+                    const target = this.getAttribute("data-tab");
+
+                    tabs.forEach(t => t.classList.remove("active"));
+                    contents.forEach(c => c.classList.remove("active"));
+
+                    this.classList.add("active");
+                    document.getElementById(target).classList.add("active");
+                });
+            });
+        });
+</script>
+
 </body>
 </html>
