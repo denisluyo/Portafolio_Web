@@ -11,10 +11,11 @@ en el proyecto
 
 .cardexperiencia{
     display: flex;
-    padding:8px;
+    padding:16px;
     height:96px;
     background: white;
-    box-shadow: var(--purple-shadow);
+    border: 1px solid #f2f2f2;
+   /* box-shadow: var(--purple-shadow);*/
     /* box-shadow: var(--main-shadow); */
     border-radius: 8px;
 }

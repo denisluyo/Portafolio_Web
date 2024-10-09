@@ -36,7 +36,6 @@ grid-area:resumen;
 }
 
 .card1{
-padding:16px;    
 height:auto;    
 grid-area:card1;
 
@@ -46,13 +45,13 @@ grid-area:card1;
 .card2{
 height:auto;        
 grid-area:card2;
-box-shadow: var(--purple-shadow);
+/*box-shadow: var(--purple-shadow);*/
 }
 
 .card3{
 height:auto;        
 grid-area:card3;
-box-shadow: var(--purple-shadow);
+/*box-shadow: var(--purple-shadow);*/
 
 }
 
@@ -73,98 +72,111 @@ box-shadow: var(--purple-shadow);
 .container_trabajos{
     margin-top: 24px;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 24px;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 32px;
     }
 
 /*Inicio imagenes  Trabajo*/
 
 .banca{ 
-    height:528px;
+    height:320px;
     background-image: url(../../images/trabajos/portafolio/banca.jpg);
     background-repeat: no-repeat;
     background-size:cover;
     box-sizing: border-box;
+    border-radius: 24px;
     }
 
 .boxmis{ 
-    height:528px;
+    height:320px;
     background-image: url(../../images/trabajos/portafolio/boxmis.jpg);
     background-repeat: no-repeat;
     background-size:cover;
     box-sizing: border-box;
+    border-radius: 24px;
     } 
 .agora{ 
-    height:528px;
+    height:320px;
     background-image: url(../../images/trabajos/portafolio/designsystem.jpg);
     background-repeat: no-repeat;
     background-size:cover;
     box-sizing: border-box;
+    border-radius: 24px;
     }
 .alicorp{ 
-    height:528px;
+    height:320px;
     background-image: url(../../images/trabajos/portafolio/nicosoft.jpg);
     background-repeat: no-repeat;
     background-size:cover;
     box-sizing: border-box;
-    }    
+    border-radius: 24px;
+    } 
+      
     .hogar{ 
-        height:528px;
+        height:320px;
         background-image: url(../../images/trabajos/portafolio/apphogar.jpg);
         background-repeat: no-repeat;
         background-size:cover;
         box-sizing: border-box;
+        border-radius: 24px;
         }
         
     .mobitrack{ 
-        height:528px;
+        height:320px;
         background-image: url(../../images/trabajos/portafolio/mobitrack.jpg);
         background-repeat: no-repeat;
         background-size:cover;
         box-sizing: border-box;
+        border-radius: 24px;
         } 
     .mobirep{ 
-        height:528px;
+        height:320px;
         background-image: url(../../images/trabajos/portafolio/mobirep.jpg);
         background-repeat: no-repeat;
         background-size:cover;
         box-sizing: border-box;
+        border-radius: 24px;
         }  
     .express{ 
-        height:528px;
+        height:320px;
         background-image: url(../../images/trabajos/portafolio/express.jpg);
         background-repeat: no-repeat;
         background-size:cover;
         box-sizing: border-box;
+        border-radius: 24px;
         }  
         
     .entel{ 
-        height:528px;
+        height:320px;
         background-image: url(../../images/trabajos/portafolio/entel10k.jpg);
         background-repeat: no-repeat;
         background-size:cover;
         box-sizing: border-box;
+        border-radius: 24px;
         } 
       .spotiteva{ 
-        height:528px;
+        height:320px;
         background-image: url(../../images/trabajos/portafolio/spotiteva.jpg);
         background-repeat: no-repeat;
         background-size:cover;
         box-sizing: border-box;
+        border-radius: 24px;
         } 
       .mibanco{ 
-        height:528px;
+        height:320px;
         background-image: url(../../images/trabajos/portafolio/mibanco.jpg);
         background-repeat: no-repeat;
         background-size:cover;
         box-sizing: border-box;
+        border-radius: 24px;
         }
         .analytics{ 
-        height:528px;
+        height:320px;
         background-image: url(../../images/trabajos/portafolio/analytics.jpg);
         background-repeat: no-repeat;
         background-size:cover;
         box-sizing: border-box;
+        border-radius: 24px;
         }            
         
 /* Fin imagenes Trabajo*/
