@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Denis Luyo | Product Designer & UX Lead</title>
+    <meta name="description"
+        content="Professional portfolio of Denis Luyo, Product Designer & UX Lead with over 13 years of experience." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+</head>
+
+<body>
+    <input type="checkbox" id="menu-toggle" />
+    <div class="mobile-overlay"><label for="menu-toggle"></label></div>
+    <nav class="mobile-drawer">
+        <a href="#projects" onclick="document.getElementById('menu-toggle').checked=false">Projects</a>
+        <a href="#about-me" onclick="document.getElementById('menu-toggle').checked=false">About Me</a>
+        <a href="#skills" onclick="document.getElementById('menu-toggle').checked=false">Skills</a>
+        <a href="#certifications" onclick="document.getElementById('menu-toggle').checked=false">Certifications</a>
+        <a href="#contact" onclick="document.getElementById('menu-toggle').checked=false">Contact</a>
+        <div class="drawer-lang">
+            <a href="index.html">ES</a>
+            <span>|</span>
+            <span class="active">EN</span>
+        </div>
+    </nav>
+    <header class="glass">
+        <div class="logo" style="font-family: var(--font-headings); font-weight: 800; font-size: 1.2rem;">DL.</div>
+        <nav>
+            <ul>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="lang-switcher">
+            <a href="index.html">ES</a>
+            <span class="separator">|</span>
+            <span class="active">EN</span>
+        </div>
+        <label class="hamburger" for="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div id="hero-canvas"></div>
+            <h1 class="reveal" style="font-size: clamp(2.5rem, 10vw, 6rem); margin-bottom: 1rem; text-align: center;">
+                Denis
+                Luyo</h1>
+            <p class="reveal"
+                style="font-size: clamp(1.1rem, 4vw, 1.5rem); opacity: 0.8; max-width: 600px; text-align: center;">
+               UX Lead | DX Transformation & Design Systems Leader</p>
+            <div class="reveal" style="margin-top: 3rem;">
+                <a href="#projects" class="filter-chip active" style="text-decoration: none;">View My Work</a>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section id="stats" class="stats-bento">
+            <style>
+                @media (max-width: 768px) {
+                    .stats-bento {
+                        display: flex !important;
+                        flex-wrap: wrap !important;
+                        gap: 1.5rem !important;
+                        padding: 40px 5% !important;
+                    }
+
+                    .stats-bento .stat-item {
+                        flex: 1 1 calc(50% - 1.5rem);
+                        padding: 1.5rem !important;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .stats-bento .stat-item {
+                        flex: 1 1 100%;
+                    }
+                }
+            </style>
+            <div class="stat-item glass reveal">
+                <span class="stat-number">+13 years</span>
+                <p>Product Design</p>
+            </div>
+            <div class="stat-item glass reveal">
+                <span class="stat-number">+20</span>
+                <p>Mobile Projects</p>
+            </div>
+            <div class="stat-item glass reveal">
+                <span class="stat-number">+350</span>
+                <p>Students (Teaching)</p>
+            </div>
+        </section>
+
+        <!-- Bio -->
+        <section id="about-me" class="bio-section reveal">
+            <h2 class="section-title">Who am I?</h2>
+            <div class="bio-content">
+                <p>
+                    <strong>Product Designer with more than 13 years</strong> creating people-centered digital
+                    solutions,
+                    leading cross-functional teams and scaling design processes in technology, banking, healthcare,
+                    education
+                    and E-commerce companies.
+                </p>
+                <p>
+                    <strong>With strategic vision and facilitation skills, I have designed and optimized
+                        products</strong> that
+                    not only work, but inspire and generate business results.
+                </p>
+                <p>
+                    <strong>My approach combines design, data, and leadership.</strong> I believe in building scalable
+                    Design
+                    Systems, in the power of continuous discovery and in the strength of a motivated team. <strong>I
+                        have formed
+                        and guided design chapters,</strong> aligning business objectives with user needs and
+                    contributing to the
+                    professional growth of other designers.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section id="projects" class="projects">
+            <h2 class="section-title reveal">Featured Projects</h2>
+<!-- 
+            <div class="filter-container reveal">
+                <button class="filter-chip active" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="Product">Product</button>
+                <button class="filter-chip" data-filter="Design System">Design System</button>
+                <button class="filter-chip" data-filter="Concepts">Concepts</button>
+                <button class="filter-chip" data-filter="Redesigns">Redesigns</button>
+            </div> -->
+
+            <div class="grid" id="project-grid">
+                <a href="banca_en.html" class="project-card glass reveal" data-category="Product"
+                    style="text-decoration: none; display: flex; color: inherit;">
+                    <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+                        <div class="project-image" style="background-image: url(imgproyectos/banca.jpg);"></div>
+                        <span class="tag">Banking</span>
+                        <div class="content">
+                            <h3>Banking Product</h3>
+                            <p>End-to-end redesign of digital banking experience. -38% drop-off.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="logistica_en.html" class="project-card glass reveal" data-category="Product Redesigns"
+                    style="text-decoration: none; display: flex; color: inherit;">
+                    <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+                        <div class="project-image" style="background-image: url(imgproyectos/boxmis.jpg);"></div>
+                        <span class="tag">Logistics</span>
+                        <div class="content">
+                            <h3>International Logistics</h3>
+                            <p>Transformation of global digital experience.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="nicosoft_en.html" class="project-card glass reveal" data-category="Product"
+                    style="text-decoration: none; display: flex; color: inherit;">
+                    <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+                        <div class="project-image" style="background-image: url(imgproyectos/nicosoft.jpg);"></div>
+                        <span class="tag">Consumer</span>
+                        <div class="content">
+                            <h3>Nicosoft-Alicorp</h3>
+                            <p>Efficiency for the shrimp industry.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="mobitrack_en.html" class="project-card glass reveal" data-category="Product"
+                    style="text-decoration: none; display: flex; color: inherit;">
+                    <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+                        <div class="project-image" style="background-image: url(imgproyectos/mobitrack.jpg);"></div>
+                        <span class="tag">Tracking</span>
+                        <div class="content">
+                            <h3>Mobitrack</h3>
+                            <p>Optimization of logistics tracking.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="designsystem_en.html" class="project-card glass reveal" data-category="Design System"
+                    style="text-decoration: none; display: flex; color: inherit;">
+                    <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+                        <div class="project-image" style="background-image: url(imgproyectos/designsystem.jpg);"></div>
+                        <span class="tag">UI</span>
+                        <div class="content">
+                            <h3>Design System</h3>
+                            <p>Scalability and visual consistency.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="mobirep_en.html" class="project-card glass reveal" data-category="Product"
+                    style="text-decoration: none; display: flex; color: inherit;">
+                    <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+                        <div class="project-image" style="background-image: url(imgproyectos/mobirep.jpg);"></div>
+                        <span class="tag">Sales Force</span>
+                        <div class="content">
+                            <h3>MobiRep Program</h3>
+                            <p>Empowering the commercial team.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="skills-container reveal">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>UX & Strategy</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>User Research</span><span>90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Design Thinking / Lean UX</span><span>98%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="98%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Service Design</span><span>80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>UI & Design</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Design Systems</span><span>99%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="99%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Figma / Sketch</span><span>99%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="99%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Advanced Prototyping</span><span>99%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="99%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web & Mobile Dev</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>HTML5 / CSS3</span><span>80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Swift (iOS)</span><span>50%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="50%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>React Native / Flutter</span><span>50%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="50%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Leadership & Management</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Team Management</span><span>99%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="99%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Scrum / Agile</span><span>90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Business & Management</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Business Strategy</span><span>90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Product Discovery</span><span>95%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Digital Marketing</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Growth Hacking</span><span>80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>SEO / SEM</span><span>85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications" class="certs-section">
+            <h2 class="section-title reveal">Certifications</h2>
+            <div class="certs-grid">
+                <div class="cert-card glass reveal">
+                    <h3>Product Design</h3>
+                    <p>Design Sprint, Lean UX, Business Canvas, Digital Transformation.</p>
+                </div>
+                <div class="cert-card glass reveal">
+                    <h3>UX / UI</h3>
+                    <p>Research & Testing, UX Writing, UX Strategy, Information Architecture, AI.</p>
+                </div>
+                <div class="cert-card glass reveal">
+                    <h3>Leadership</h3>
+                    <p>Design Team Organization, Strategic Leadership.</p>
+                </div>
+                <div class="cert-card glass reveal">
+                    <h3>Front-end</h3>
+                    <p>HTML5, CSS3, Javascript, Swift (iOS), Interface Design.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2 class="section-title" style="color: white;">Work Together?</h2>
+        <p style="margin-bottom: 2rem; font-size: 1.2rem;">denisluyo@gmail.com</p>
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/denisluyo/" target="_blank">LinkedIn</a>
+            <a href="https://denisluyo.medium.com/" target="_blank">Medium</a>
+            <a href="https://github.com/denisluyo" target="_blank">GitHub</a>
+        </div>
+        <p style="margin-top: 3rem; opacity: 0.5;">&copy; 2024 Denis Luyo</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

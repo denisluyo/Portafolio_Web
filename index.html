@@ -1,437 +1,364 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <link rel="stylesheet" href="css/resets/reset.css">
-    <link rel="stylesheet" href="css/styles/style.css">
-    <link rel="stylesheet" href="css/sections/sections.css">
-    <link rel="stylesheet" href="css/componentes/cards.css">
-    <link rel="stylesheet" href="css/pages/trabajos.css">
-    <link rel="stylesheet" href="css/responsive/mobile.css">
-    <link rel="stylesheet" href="css/responsive/grid.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href=""/>
-    <title>Trabajos</title>
-<!--style tabs-->
-
-    <style>
-        
-    .tabs{
-        display: flex;
-        cursor: pointer;
-        padding: 16px;
-        overflow: scroll;
-    }
-    .tab{
-        border: 1px solid;
-        border-color: #7c7d83;
-        color: #35363F;
-        padding: 8px 8px;
-        border-radius: 8px;
-        margin-right: 16px;
-        min-width: 120px;
-        height: 24px;
-        line-height: 24px;
-        text-align: center;
-
-    }
-    .tab.active{
-        background-color: #35363F;
-        color: white;
-        border: 0px;
-    }
-    .tab-content{
-        display: none;
-
-    }
-    
-    .tab-content.active{
-        display: grid;
-   
-    }
-    </style>
-
-<!--End style tabs-->
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denis Luyo | Product Designer & UX Lead</title>
+  <meta name="description"
+    content="Portafolio profesional de Denis Luyo, Product Designer & UX Lead con más de 13 años de experiencia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Three.js CDN (Standard script instead of module for local file compatibility) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
 </head>
+
 <body>
-<!--Aquí empieza el nav bar-->
-    <header> 
-            <i class="icon-menu menu" id="burger-button"></i>
-        </div>
-        <nav>    
-        <div class="inicio">
-            <div class="imginicio">
-                <img src="images/main/isotipo.svg" width="40px" height="48px"/> 
-                <h2>Denis Luyo</h2>
-            </div>
-            <div class="navoptions">
-               <a href="index.html"class="active">Portafolio</a>
-               <a href="pages/quiensoy.html" >¿Quién soy?</a>
-              <!--- <a href="">Proyectos</a>
-               <a href="">Hobbies</a>-->
-               <a href="mailto:denisluyo@gmail.com" id="anclacontacto">Contáctame</a>
-            </div>
-        </div>
-        </nav> 
-    </header>
-
-    <!-- Aqui acaba el nav bar-->
-    
-
-   
-
-<section id="resumen_proyectos">
-        <br/>
-        <br/>
-    <div class="container_proyectos">
-        <div class="titulos2">
-         <h2>Portafolio</h2>  
-        </div>
-        <div class="resumen1">
-            <h3>Con mas de 10 años de experiencia como Ux Designer | UX Lead | Product Designer, he liderado diversos proyecto en sectores como Salud, Banca, Industria Acuícola, Logística internacional, Deportes, Fintech, E-Commerce y Educación.<br/><br/>
-
-                Desde aplicaciones web hasta desarrollos con Arduino, he trabajado con equipos ágiles para crear soluciones innovadoras.<br/>Mi pasión por el aprendizaje y la colaboración me impulsa a buscar constantemente nuevos desafíos y tecnologías.<br/><br/>
-                
-                Estoy emocionado por compartir algunos de mis proyectos destacados, donde he demostrado habilidades en liderazgo, investigación, diseño, gestión de proyectos y seguimiento.<br/><br/> ¡Juntos, podemos llevar la innovación al siguiente nivel!</h3>
-            </div>
-              <div class="cardexperiencia card1">
-                     <img src="images/icons/iconproyecto.png" width="40px" height="40px">
-                     <span>
-                          <h2>+20 Proyectos</h2>
-                          <h4>Mobile</h4>
-                     </span>
-                    </div> 
-               <div class="cardexperiencia card2">
-                     <img src="images/icons/mail.png" width="40px" height="40px">
-                     <span>
-                          <h2>+20 Proyectos</h2>
-                          <h4>Web</h4>
-                     </span>
-                    </div> 
-               <div class="cardexperiencia card3">
-                     <img src="images/icons/iconux.png" width="40px" height="40px">
-                     <span>
-                          <h2>+25 Proyectos</h2>
-                          <h4>Tablets</h4>
-                     </span>
-                    </div>             
- 
-
+  <input type="checkbox" id="menu-toggle" />
+  <div class="mobile-overlay"><label for="menu-toggle"></label></div>
+  <nav class="mobile-drawer">
+    <a href="#proyectos" onclick="document.getElementById('menu-toggle').checked=false">Proyectos</a>
+    <a href="#sobre-mi" onclick="document.getElementById('menu-toggle').checked=false">Sobre mí</a>
+    <a href="#skills" onclick="document.getElementById('menu-toggle').checked=false">Skills</a>
+    <a href="#certificaciones" onclick="document.getElementById('menu-toggle').checked=false">Certificaciones</a>
+    <a href="#contacto" onclick="document.getElementById('menu-toggle').checked=false">Contacto</a>
+    <div class="drawer-lang">
+      <span class="active">ES</span>
+      <span>|</span>
+      <a href="index_en.html">EN</a>
     </div>
-    <br/>
-    <br/>   
-</section>
+  </nav>
+  <header class="glass">
+    <div class="logo" style="font-family: var(--font-headings); font-weight: 800; font-size: 1.2rem;">DL.</div>
+    <nav>
+      <ul>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certificaciones">Certificaciones</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switcher">
+      <span class="active">ES</span>
+      <span class="separator">|</span>
+      <a href="index_en.html">EN</a>
+    </div>
+    <label class="hamburger" for="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </header>
 
-<section id="trabajos">
-    <div class="filtro_trabajos">
-        <div class="container">
-            <div class="row">
-                <div class="col-12"> 
-                         <h2>Algunos proyectos</h2>    
-                    </div>
-                   
-         </div>
-        </div>
-        </div>  
-        <div class="tabs">
-            <div class="tab active" data-tab="Product"><h5>Producto</h5></div>
-            <div class="tab" data-tab="DS"><h5>Design System</h5></div>
-            <div class="tab" data-tab="Concepts"><h5>Conceptos</h5></div>
-            <div class="tab" data-tab="Redesign"><h5>Rediseños</h5></div>
-        </div>   
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div id="hero-canvas"></div>
+      <h1 class="reveal" style="font-size: clamp(2.5rem, 10vw, 6rem); margin-bottom: 1rem; text-align: center;">Denis
+        Luyo
+      </h1>
+      <p class="reveal"
+        style="font-size: clamp(1.1rem, 4vw, 1.5rem); opacity: 0.8; max-width: 600px; text-align: center;">
+       UX Lead | DX Transformation & Design Systems Leader</p>
+      <div class="reveal" style="margin-top: 3rem;">
+        <a href="#proyectos" class="filter-chip active" style="text-decoration: none;">Ver Mi Trabajo</a>
+      </div>
+    </section>
 
-        <div class="container_trabajos tab-content active"  id="Product">
-         
+    <!-- Stats -->
+    <section id="stats" class="stats-bento">
+      <style>
+        @media (max-width: 768px) {
+          .stats-bento {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 1.5rem !important;
+            padding: 40px 5% !important;
+          }
 
-            <div class="cardportafolio">
-                <a href="https://www.behance.net/gallery/152085215/Producto-de-Banca" target="_blank"> 
-                    <div class="banca"></div>
-                   <div class="portafolio-overlay">
-                       <h3>Producto de Banca</h3>
-                       <p>Liderando un proyecto interno</p>
-                       <span>LEAD | UX | RESEARCH | UI</span>
-                   </div>
-                </a>      
-               </div>
-        
-               <div class="cardportafolio">
-                <a href="https://docs.google.com/presentation/d/14jmf__IXQoEzgSLLxoj-KgSPBxvkJf4HMda-5-HsSEo/edit?usp=sharing" target="_blank"> 
-                    <div class="boxmis"></div>
-                    <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                   <div class="portafolio-overlay">
-                       <h3>Logística internacional</h3>
-                       <p>Liderando una experiencia digital</p>
-                       <span>LEAD | UX | RESEARCH | UI</span>
-                   </div>
-                </a>      
-               </div>
-        
-               <div class="cardportafolio">
-                <a href="https://docs.google.com/presentation/d/1EZIsXUCjKoDHrUZvzexM1fpHqCJHWCBQNOb36A1KtYM/edit?usp=sharing" target="_blank"> 
-                    <div class="alicorp"></div>
-                   <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                   <div class="portafolio-overlay">
-                       <h3>Nicosoft-Alicorp</h3>
-                       <p>Proyecto para la industria camaronera</p>
-                       <span>UX | RESEARCH | UI</span>
-                   </div>
-                </a>      
-               </div> 
-        
-               <div class="cardportafolio">
-                <a href="https://docs.google.com/presentation/d/1VUEfs9NP4rtJrmD3JebNTUktXNCPR-5ZIuXS1nGhzDw/edit?usp=sharing" target="_blank"> 
-                    <div class="mobitrack"></div>
-                   <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                   <div class="portafolio-overlay">
-                       <h3>Mobitrack</h3>
-                       <p>Seguimiento para repartidores</p>
-                       <span>LEAD | UX | RESEARCH</span>
-                   </div>
-                </a>      
-               </div>
-        
-                <div class="cardportafolio"> 
-                    <a href="https://docs.google.com/presentation/d/1JS1UUVyqOF-dUFymoDzf4S61q_qHNUb4mrYDKZpa5os/edit?usp=sharing" target="_blank"> 
-                        <div class="mobirep"></div>
-                        <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                        <div class="portafolio-overlay">
-                            <h3>Programa MobiRep</h3>
-                               <p>Programa para Fuerza de Ventas</p>
-                               <span>LEAD | UX | RESEARCH | UI</span>
-                        </div>
-                     </a>      
-                    </div> 
-        
-               <div class="cardportafolio">
-                <a href="https://www.behance.net/gallery/93069849/Express-Platform" target="_blank"> 
-                    <div class="express"></div>
-                   <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                   <div class="portafolio-overlay">
-                       <h3>Express</h3>
-                       <p>Programa para Vendedores</p>
-                       <span>LEAD | UX | RESEARCH | UI</span>
-                   </div>
-                </a>      
-               </div> 
-        
-               <div class="cardportafolio">
-                <a href="https://www.notion.so/denisluyo/Entel-Primera-marat-n-virtual-87e37ca9239d4d7bb6c0450e28c71e80" target="_blank"> 
-                    <div class="entel"></div>
-                   <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                   <div class="portafolio-overlay">
-                       <h3>Entel 10k</h3>
-                       <p>Primera carrera virtual</p>
-                       <span>UX | UI</span>
-                   </div>
-                </a>      
-               </div>
-                
-                   <div class="cardportafolio">
-                    <a href="https://www.behance.net/gallery/58309447/Spotiteva" target="_blank"> 
-                        <div class="spotiteva"></div>
-                       <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                       <div class="portafolio-overlay">
-                           <h3>Spotiteva</h3>
-                           <p>App para Representantes Médicos</p>
-                           <span>UX | RESEARCH | UI</span>   
-                    </div>  
-                    </a>
-                       </div>  
-                          
-        </div>
-        <div class="container_trabajos tab-content"  id="DS">
-               <div class="cardportafolio">
-                <a href="https://docs.google.com/presentation/d/1KWgWXhFgkWlttLEr3xTxrV8p5MKzcngUKkCC9M9taQ4/edit?usp=sharing" target="_blank"> 
-                    <div class="agora"></div>
-                    <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                   <div class="portafolio-overlay">
-                       <h3>Design System</h3>
-                       <p>Creando un sistema de diseño</p>
-                       <span>LEAD | UX | UI</span>
-                   </div>
-                </a>      
-               </div>
-        </div>
-        <div class="container_trabajos tab-content"  id="Concepts">
-        
-               <div class="cardportafolio">
-                <a href="https://www.notion.so/denisluyo/App-para-amoblar-d48f5f9d96074df99fb5804f54b95bc6" target="_blank"> 
-                    <div class="hogar"></div>
-                    <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                   <div class="portafolio-overlay">
-                    <h3>App Hogar</h3>
-                    <p>App para amoblar tu hogar</p>
-                    <span>UX | RESEARCH | UI</span>
-                   </div>
-                </a>      
-               </div> 
+          .stats-bento .stat-item {
+            flex: 1 1 calc(50% - 1.5rem);
+            padding: 1.5rem !important;
+          }
+        }
 
-            <div class="cardportafolio">
-                        <a href="https://www.notion.so/denisluyo/Redise-o-de-Dashboard-bc87c3492cc6474e8465e071bfeb2607" target="_blank"> 
-                            <div class="mibanco"></div>
-                            <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                            <div class="portafolio-overlay">
-                                <h3>Dashboard Mi banco</h3>
-                                <p>Consultoría</p>
-                                <span>UX | UI</span>
-                           </div>
-                        </a>      
-             </div>  
-                          
-        </div>
-        <div class="container_trabajos tab-content"  id="Redesign">
-            
-               <div class="cardportafolio">
-                <a href="https://docs.google.com/presentation/d/14jmf__IXQoEzgSLLxoj-KgSPBxvkJf4HMda-5-HsSEo/edit?usp=sharing" target="_blank"> 
-                    <div class="boxmis"></div>
-                    <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt=""/></figure> -->
-                   <div class="portafolio-overlay">
-                       <h3>Logística internacional</h3>
-                       <p>Liderando una experiencia digital</p>
-                       <span>LEAD | UX | RESEARCH | UI</span>
-                   </div>
-                </a>      
-               </div>
+        @media (max-width: 480px) {
+          .stats-bento .stat-item {
+            flex: 1 1 100%;
+          }
+        }
+      </style>
+      <div class="stat-item glass reveal">
+        <span class="stat-number">+13 años</span>
+        <p>Product Design</p>
+      </div>
+      <div class="stat-item glass reveal">
+        <span class="stat-number">+20</span>
+        <p>Proyectos Mobile</p>
+      </div>
+      <div class="stat-item glass reveal">
+        <span class="stat-number">+350</span>
+        <p>Alumnos (Docencia)</p>
+      </div>
+    </section>
 
-            <div class="cardportafolio">
-                        <a href="https://www.behance.net/gallery/58311043/Analytics" target="_blank"> 
-                            <div class="analytics"></div>
-                           <!-- <figure><img src="images/trabajos/portafolio/Proceso.jpg" alt="analytics trabajo denis"/></figure> -->
-                           <div class="portafolio-overlay">
-                                <h3>Analytics</h3>
-                                <p>Plataforma Gerencial</p>
-                                <span>LEAD | UX | RESEARCH | UI</span>
-                           </div>
-                        </a>      
-                       </div>   
-                          
-        </div>
-</section>
+    <!-- Bio -->
+    <section id="sobre-mi" class="bio-section reveal">
+      <h2 class="section-title">¿Quién soy?</h2>
+      <div class="bio-content">
+        <p>
+          <strong>Product Designer con más de 13 años</strong> creando soluciones digitales centradas en las personas,
+          liderando equipos multifuncionales y escalando procesos de diseño en empresas de tecnología, banca, salud,
+          educación y E-commerce.
+        </p>
+        <p>
+          <strong>Con visión estratégica y habilidades de facilitación, he diseñado y optimizado productos</strong> que
+          no solo funcionan, sino que inspiran y generan resultados de negocio.
+        </p>
+        <p>
+          <strong>Mi enfoque une diseño, datos y liderazgo.</strong> Creo en la construcción de Design Systems
+          escalables, en la potencia del discovery continuo y en el poder de un equipo motivado. <strong>He formado y
+            guiado chapters de diseño,</strong> alineado objetivos de negocio con necesidades de usuarios y contribuido
+          al crecimiento profesional de otros diseñadores.
+        </p>
+      </div>
+    </section>
 
-<br/>
-<br/>
+    <!-- Projects Grid -->
+    <section id="proyectos" class="projects">
+      <h2 class="section-title reveal">Proyectos Destacados</h2>
 
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-3 col-s-6">
-                <div class="footerlist1">
-                    <a href="pages/quiensoy.html"><h3>¿Quién Soy?</h3></a>
-                    <a href="index.html"><h3 >Portafolio</h3></a>
-                    <a href="mailto:denisluyo@gmail.com"><h3 >Contáctame</h3></a>  
-                </div>
+     <!--  <div class="filter-container reveal">
+        <button class="filter-chip active" data-filter="all">Todos</button>
+        <button class="filter-chip" data-filter="Producto">Producto</button>
+        <button class="filter-chip" data-filter="Design System">Design System</button>
+        <button class="filter-chip" data-filter="Conceptos">Conceptos</button>
+        <button class="filter-chip" data-filter="Rediseños">Rediseños</button>
+      </div> -->
+
+      <div class="grid" id="project-grid">
+        <a href="banca.html" class="project-card glass reveal" data-category="Producto"
+          style="text-decoration: none; display: flex; color: inherit;">
+          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+            <div class="project-image" style="background-image: url(imgproyectos/banca.jpg);"></div>
+            <span class="tag">Banca</span>
+            <div class="content">
+              <h3>Producto de Banca</h3>
+              <p>Rediseño end-to-end de experiencia financiera digital. -38% abandono.</p>
             </div>
-            <!---<div class="col-4 col-s-6">
-                <div class="footerlist2">
-                <a href=""><h3>Hoobies</h3></a>
-                <a href=""><h3 >Proyectos Personales</h3></a>   
-                </div>
-            </div>-->
-          <!--   <div class="col-5 col-s-6">
-                <div class="footerlist3">
-                  <a href="mailto:denisluyo@gmail.com"><h3 >Contáctame</h3></a>  
-                </div>
-
-            </div> -->
-         
-        </div>
-        <div class="container">
-            <div class="footer_line">
-
+          </div>
+        </a>
+        <a href="logistica.html" class="project-card glass reveal" data-category="Producto Rediseños"
+          style="text-decoration: none; display: flex; color: inherit;">
+          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+            <div class="project-image" style="background-image: url(imgproyectos/boxmis.jpg);"></div>
+            <span class="tag">Logística</span>
+            <div class="content">
+              <h3>Logística internacional</h3>
+              <p>Transformación de experiencia digital global.</p>
             </div>
-            <div class="copy">
-                <div class="">
-
-                   
-                    <div class="copyright">
-                    <!--<img src="images/main/imgdenis.png" width="132px" height="132px">-->
-                    <h4>Página web creada por mi:<span>@denisluyo</span></h4>
-                    </div>
-
-
-                </div>
-                <div class="">
-                    <div class="socialicons">
-                                <a href="https://www.linkedin.com/in/denisluyo/"><img src="images/icons/social/linkedin.png" alt="" width="40px" height="40px"></a>
-                                <a href="https://www.behance.net/denisluyo"><img src="images/icons/social/behance.png" alt="" width="40px" height="40px"></a>  
-                                <a href="https://www.instagram.com/denislml/"><img src="images/icons/social/instagram.png" alt="" width="40px" height="40px"></a> 
-                                <a href="https://medium.com/@denisluyo"><img src="images/icons/social/medium.png" alt="" width="40px" height="40px"></a>
-                                <a href=""><img src="images/icons/social/github.png" alt="" width="40px" height="40px"></a>           
-                    </div>
-                </div>
+          </div>
+        </a>
+        <a href="nicosoft.html" class="project-card glass reveal" data-category="Producto"
+          style="text-decoration: none; display: flex; color: inherit;">
+          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+            <div class="project-image" style="background-image: url(imgproyectos/nicosoft.jpg);"></div>
+            <span class="tag">Consumo</span>
+            <div class="content">
+              <h3>Nicosoft-Alicorp</h3>
+              <p>Eficiencia para la industria camaronera.</p>
             </div>
+          </div>
+        </a>
+        <a href="mobitrack.html" class="project-card glass reveal" data-category="Producto"
+          style="text-decoration: none; display: flex; color: inherit;">
+          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+            <div class="project-image" style="background-image: url(imgproyectos/mobitrack.jpg);"></div>
+            <span class="tag">Tracking</span>
+            <div class="content">
+              <h3>Mobitrack</h3>
+              <p>Optimización de seguimiento logístico.</p>
+            </div>
+          </div>
+        </a>
+        <a href="designsystem.html" class="project-card glass reveal" data-category="Design System"
+          style="text-decoration: none; display: flex; color: inherit;">
+          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+            <div class="project-image" style="background-image: url(imgproyectos/designsystem.jpg);"></div>
+            <span class="tag">Lead UI</span>
+            <div class="content">
+              <h3>Design System</h3>
+              <p>Escalabilidad y coherencia visual.</p>
+            </div>
+          </div>
+        </a>
+        <a href="mobirep.html" class="project-card glass reveal" data-category="Producto"
+          style="text-decoration: none; display: flex; color: inherit;">
+          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
+            <div class="project-image" style="background-image: url(imgproyectos/mobirep.jpg);"></div>
+            <span class="tag">Fuerza Ventas</span>
+            <div class="content">
+              <h3>Programa MobiRep</h3>
+              <p>Empoderando al equipo comercial.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills-container reveal">
+      <h2 class="section-title">Habilidades Técnicas</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>UX & Strategy</h3>
+          <div class="skill-item">
+            <div class="skill-info"><span>User Research</span><span>90%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Design Thinking / Lean UX</span><span>98%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="98%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Service Design</span><span>80%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
+            </div>
+          </div>
         </div>
-            
-</footer>
+        <div class="skill-category">
+          <h3>UI & Design</h3>
+          <div class="skill-item">
+            <div class="skill-info"><span>Design Systems</span><span>99%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="99%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Figma / Sketch</span><span>99%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="99%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Prototipado Avanzado</span><span>99%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="99%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Web & Mobile Dev</h3>
+          <div class="skill-item">
+            <div class="skill-info"><span>HTML5 / CSS3</span><span>80%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Swift (iOS)</span><span>50%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="50%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>React Native / Flutter</span><span>50%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="50%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Liderazgo & Gestión</h3>
+          <div class="skill-item">
+            <div class="skill-info"><span>Gestión de Equipos</span><span>99%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="99%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Scrum / Agile</span><span>90%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Gestión y Negocios</h3>
+          <div class="skill-item">
+            <div class="skill-info"><span>Business Strategy</span><span>90%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Product Discovery</span><span>95%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="95%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Marketing Digital</h3>
+          <div class="skill-item">
+            <div class="skill-info"><span>Growth Hacking</span><span>80%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>SEO / SEM</span><span>85%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- Script menu-->
-<script>
-    
-const menu = (document.querySelector('.navoptions'));
-const burgerbutton = (document.querySelector('#burger-button'));
-const contactame = (document.querySelector('#anclacontacto'));
-const ipad = (window.matchMedia('screen and (max-width: 700px)'));
+    <!-- Certifications -->
+    <section id="certificaciones" class="certs-section">
+      <h2 class="section-title reveal">Certificaciones</h2>
+      <div class="certs-grid">
+        <div class="cert-card glass reveal">
+          <h3>Product Design</h3>
+          <p>Design Sprint, Lean UX, Business Canvas, Transformación Digital.</p>
+        </div>
+        <div class="cert-card glass reveal">
+          <h3>UX / UI</h3>
+          <p>Research & Testing, UX Writing, Estrategia UX, Arquitectura de Información, AI.</p>
+        </div>
+        <div class="cert-card glass reveal">
+          <h3>Liderazgo</h3>
+          <p>Organización de equipos de diseño, Liderazgo Estratégico.</p>
+        </div>
+        <div class="cert-card glass reveal">
+          <h3>Front-end</h3>
+          <p>HTML5, CSS3, Javascript, Swift (iOS), Diseño de Interfaces.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-ipad.addListener(validation);
-contactame.addEventListener('click',ocultarmenu);
-validation(ipad);
+  <footer id="contacto">
+    <h2 class="section-title" style="color: white;">¿Trabajamos juntos?</h2>
+    <p style="margin-bottom: 2rem; font-size: 1.2rem;">denisluyo@gmail.com</p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/denisluyo/" target="_blank">LinkedIn</a>
+      <a href="https://denisluyo.medium.com/" target="_blank">Medium</a>
+      <a href="https://github.com/denisluyo" target="_blank">GitHub</a>
+    </div>
+    <p style="margin-top: 3rem; opacity: 0.5;">&copy; 2024 Denis Luyo</p>
+  </footer>
 
-
-function validation(event){
-    if(event.matches){
-        burgerbutton.addEventListener('click',mostrarmenu);
-    }else{
-        burgerbutton.removeEventListener('click',mostrarmenu);
-
-
-    } 
-
-   }
-
-
- 
-
-
-
-function ocultarmenu(){
-menu.classList.remove('menuactivo');
-
-}
-
-function mostrarmenu(){
-if
-(menu.classList.contains('menuactivo')){
-    menu.classList.remove('menuactivo');
-}else
-{
-    menu.classList.add('menuactivo');
-    
-}
-
-}
-
-
-</script>
-<!-- Script tabs-->
-<script>
-     document.addEventListener("DOMContentLoaded", function() {
-            const tabs = document.querySelectorAll(".tab");
-            const contents = document.querySelectorAll(".tab-content");
-
-            tabs.forEach(tab => {
-                tab.addEventListener("click", function() {
-                    const target = this.getAttribute("data-tab");
-
-                    tabs.forEach(t => t.classList.remove("active"));
-                    contents.forEach(c => c.classList.remove("active"));
-
-                    this.classList.add("active");
-                    document.getElementById(target).classList.add("active");
-                });
-            });
-        });
-</script>
-
+  <script src="main.js"></script>
 </body>
+
 </html>

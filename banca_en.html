@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banking Product | UX Strategy & Product Design | Denis Luyo</title>
+    <meta name="description"
+        content="Banking product design case study: Digital transformation of the financial experience, led by Denis Luyo, Lead UX Designer in Lima, Peru. Figma, Design System, UX Research." />
+    <meta name="keywords"
+        content="banking UX design, fintech product design, banking product design, financial design system, UX Lead Lima, Denis Luyo, Figma, mobile banking, digital financial experience, UX Research, information architecture, product designer Peru" />
+    <meta name="author" content="Denis Luyo" />
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Banking Product | UX Strategy | Denis Luyo" />
+    <meta property="og:description"
+        content="How I redesigned the end-to-end banking experience for 2M+ users, reducing drop-off by 38% with a scalable Design System." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://denisluyo.com/banca.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <style>
+        :root {
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --section-spacing: 120px;
+            /* Banking accent: deep blue-indigo */
+            --accent: #3B82F6;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+        }
+
+        body {
+            background: #050509;
+        }
+
+        .project-hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: var(--accent);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: clamp(1.8rem, 10vw, 8.5rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            margin-bottom: 2rem;
+            background: linear-gradient(to bottom, #fff 40%, rgba(255, 255, 255, 0.4));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: left;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .hero-description {
+            font-size: 1.4rem;
+            max-width: 650px;
+            color: var(--text-dim);
+            line-height: 1.5;
+            margin-bottom: 4rem;
+        }
+
+        .project-meta-minimal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 3rem;
+        }
+
+        .meta-item-min {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .meta-item-min span {
+            font-size: 0.7rem;
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .meta-item-min p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+            margin: 0;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 10%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .scroll-line {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            animation: scrollAnim 2s infinite;
+        }
+
+        @keyframes scrollAnim {
+            0% {
+                left: -100%;
+            }
+
+            50% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .section-container {
+            padding: var(--section-spacing) 10%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .content-block h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content-block p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--card-bg);
+            border: 1px solid var(--surface-border);
+            padding: 2.5rem;
+            border-radius: 32px;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .highlight-box:hover {
+            border-color: var(--accent);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: #0a0a12;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        .image-placeholder1 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image:url(imglanding/banca1.jpg);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        .image-placeholder2 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image:url(imglanding/banca2.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        .image-placeholder3 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image:url(imglanding/banca3.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+
+        .image-placeholder label {
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .leadership-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leadership-badge svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 30px;
+            left: 10%;
+            z-index: 1000;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 24px;
+            border-radius: 100px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            background: var(--accent);
+        }
+
+        .learnings-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .learnings-list li {
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--surface-border);
+            display: flex;
+            gap: 20px;
+        }
+
+        .deliverable-card {
+            background: var(--card-bg);
+            border: 1px solid var(--surface-border);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+
+        .deliverable-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .deliverable-card h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .deliverable-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 992px) {
+            :root {
+                --section-spacing: 60px;
+            }
+
+            .project-hero {
+                padding: 0 5%;
+                height: auto;
+                min-height: 80vh;
+                padding-top: 120px;
+                padding-bottom: 60px;
+                align-items: flex-start !important;
+                text-align: left !important;
+            }
+
+            .hero-title {
+                font-size: clamp(1.8rem, 10vw, 4rem) !important;
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+                text-align: left !important;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+                margin-bottom: 2.5rem;
+                text-align: left !important;
+            }
+
+            .project-meta-minimal {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                padding-top: 2rem;
+                align-items: flex-start !important;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+
+            .grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+
+            .section-container {
+                padding: var(--section-spacing) 5%;
+            }
+
+            .back-nav {
+                left: 5%;
+                top: 20px;
+            }
+
+            #banking-sphere-3d,
+            #flow-visualization-3d {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 300px !important;
+            }
+
+            canvas {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem !important;
+            }
+
+            .hero-tag {
+                margin-bottom: 1.2rem;
+                padding: 6px 12px;
+                font-size: 0.65rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .meta-item-min p {
+                font-size: 0.95rem;
+            }
+
+            .content-block h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg-canvas" style="position: fixed; inset: 0; z-index: -1;"></div>
+
+    <nav class="back-nav">
+        <a href="index_en.html" class="back-btn">← Back to List</a>
+    </nav>
+
+    <header class="project-hero">
+        <div class="hero-content">
+            <span class="hero-tag reveal">
+                <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Lead UX · UI-Kit · User Interface · Web
+            </span>
+            <h1 class="hero-title reveal">
+                Banking<br>Product
+            </h1>
+            <p class="hero-description reveal">
+                Build a product that helps banks manage daily customer operations, tasks, sales, and follow-ups.
+            </p>
+
+            <div class="project-meta-minimal reveal">
+                <div class="meta-item-min"><span>ROLE</span>
+                    <p>Lead UX/UI</p>
+                </div>
+                <div class="meta-item-min"><span>CLIENT</span>
+                    <p>Caja de Ahorros</p>
+                </div>
+                <div class="meta-item-min"><span>TOOLS</span>
+                    <p>Figma, Miro</p>
+                </div>
+                <div class="meta-item-min"><span>DURATION</span>
+                    <p>Discovery to Delivery</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator reveal">
+            <div class="scroll-line"></div>
+            <span>EXPLORE CASE</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- RESUMEN -->
+        <section id="resumen" class="section-container">
+            <div class="grid-2">
+                <div class="content-block reveal">
+                    <h2>Project Overview</h2>
+                    <p>
+                        As <strong>Lead UX/UI</strong>, the main goal was to design a reusable, intuitive interface that would enable agents at a leading banking institution in Panama (Caja de Ahorros) to efficiently manage customers and digital channels, and strengthen its market positioning.
+                    </p>
+                    <div class="leadership-badge">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        Lead Design · Reusable Interface · Customizable UI-Kit
+                    </div>
+                    <p>
+                        The work involved leading the design by organizing projects, conducting key interviews across user profiles, and developing a <strong>customizable, brand-tokenized UI Kit</strong>.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <div id="banking-sphere-3d" style="width: 100%; height: 400px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EL PROBLEMA ACTUAL -->
+        <section id="problema" class="section-container">
+            <div class="grid-2">
+                <div class="reveal">
+                    <div class="image-placeholder1"></div>
+                </div>
+                <div class="content-block reveal">
+                    <h2
+                        style="background: linear-gradient(to right, #fff, #ef4444); -webkit-background-clip: text; background-clip: text;">
+                        The Current Problem</h2>
+                    <p>Banking agents in Panama spend most of their time trying to log into multiple systems at once to consolidate a single customer’s data. This fragmentation creates critical inefficiencies and endless waiting times.</p>
+                    <div class="highlight-box">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">Critical Initial Indicators</h4>
+                        <ul
+                            style="font-size: 1rem; margin-bottom: 0; color: var(--text-dim); list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 0.8rem;"><strong
+                                    style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">17
+                                    min</strong> Approximate time per agent interaction.</li>
+                            <li style="margin-bottom: 0.8rem;"><strong
+                                    style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">+05</strong>
+                                Systems accessed to solve one issue.</li>
+                            <li style="margin-bottom: 0.8rem;"><strong
+                                    style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">03/10</strong>
+                                Agent satisfaction with their tools.</li>
+                            <li><strong
+                                    style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">75%</strong>
+                                Difficulty onboarding new team members to the systems.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- USUARIOS -->
+        <section id="usuarios" class="section-container" style="background: rgba(59, 130, 246, 0.03);">
+            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+                <h2>System Users</h2>
+                <p>The product needed to consolidate operations for multiple customer-facing roles within the institution, each with specific needs.</p>
+            </div>
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Reception</h3>
+                    <p style="font-size: 0.95rem;">Primary user at branch entry. Assigns tickets, reviews appointments, and routes customers into a queue.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Account Executive</h3>
+                    <p style="font-size: 0.95rem;">Manages digital channels and serves customers. The goal was to centralize their tools.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Call Center Agent</h3>
+                    <p style="font-size: 0.95rem;">Resolves issues instantly and remotely. Needs a consolidated view of digital channels.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Supervisor</h3>
+                    <p style="font-size: 0.95rem;">Branch or team lead. Oversees key metrics such as inventory control and service status.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTRATEGIA Y PROCESOS -->
+        <section id="estrategia" class="section-container">
+            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+                <h2>Work Process</h2>
+                <p>I implemented a structured flow of Design Analytics and Sprints to align stakeholders and tackle goals at the root, grounding decisions in actionable research.</p>
+            </div>
+
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <div
+                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
+                        01</div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Discovery</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-dim);">Identify processes or problems at the early stage of a digital interaction.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.2rem; font-size: 0.85rem; color: #aaa;">
+                        <li>Remote workshops</li>
+                        <li>Client Interviews</li>
+                        <li>Finding facts / User pains</li>
+                    </ul>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <div
+                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
+                        02</div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Definition</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-dim);">Align all teams as one, deciding which metrics to improve through a concise MVP.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <div
+                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
+                        03</div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Design</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-dim);">Define initial flows into a scalable, valuable stage through interactive prototypes and testing.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <div
+                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
+                        04</div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Delivery</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-dim);">Hand off to development with everything needed to start, documenting tokens and components.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUCIONES -->
+        <section id="soluciones" class="section-container">
+            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+                <h2 style="margin-bottom: 1rem;">The Solution: A 360° Customer View</h2>
+                <p>A way to keep all customer information at the executive’s fingertips to resolve issues instantly and proactively identify what we can truly offer.</p>
+            </div>
+
+            <!-- Insights / Arquitectura -->
+            <div class="grid-2" style="margin-bottom: 100px;">
+                <div class="content-block reveal">
+                    <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 1.5rem;">Architecture & Integrated Selling</h3>
+                    <p>After a few alignment workshops, I worked on a functional architecture. The sales module would remain visible regardless of the customer’s process or issue, enabling “cross-selling” or “down-selling.”</p>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; border-left: 4px solid var(--accent);">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.5rem;"><strong>98%</strong> of agents feel systems need more visibility.</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>98%</strong> need better, more accurate sales suggestions.</li>
+                            <li><strong>8/10</strong> customers come only to solve problems, overlooking business opportunities.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div id="flow-visualization-3d" style="width: 100%; height: 350px;"></div>
+                </div>
+            </div>
+
+            <!-- Dashboard Final -->
+            <div class="grid-2" style="margin-bottom: 60px;">
+                <div class="reveal" style="order: 2;">
+                    <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 1.5rem;">Centralized Customer Products</h3>
+                    <p>All relevant customer information consolidated in a single dashboard: Accounts, Cards (payments, statements, rates), Loans, and Investments—intuitively navigable in one place.</p>
+                    <p style="margin-top: 1rem;">Before arriving at this final view, we worked intensively with <strong>paper mockups</strong> and activities to map a coherent <strong>User Flow</strong> before moving into final high-fidelity design.</p>
+                </div>
+                <div class="content-block reveal" style="order: 1;">
+                    <div class="image-placeholder2" style="aspect-ratio: 4/3;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTADOS -->
+        <!-- RESULTADOS E INDICADORES -->
+        <section id="resultados" class="section-container" style="background: rgba(59, 130, 246, 0.03);">
+            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+                <h2>Success Metrics</h2>
+                <p>Data captured through surveys and system data after 6 months of implementation.</p>
+            </div>
+
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
+                <div class="stat-item glass reveal" style="padding: 2.5rem;">
+                    <span class="stat-number" style="color: #10B981; font-size: 3.5rem;">90%</span>
+                    <p style="font-size: 1.1rem; color: white; margin-top: 1rem;">Average service time was reduced (from 17 minutes to much smaller fractions).</p>
+                </div>
+                <div class="stat-item glass reveal" style="padding: 2.5rem;">
+                    <span class="stat-number" style="color: #3B82F6; font-size: 3.5rem;">01</span>
+                    <p style="font-size: 1.1rem; color: white; margin-top: 1rem;">The number of systems was reduced—from 5+ fragmented tools to 1 unified ecosystem.</p>
+                </div>
+                <div class="stat-item glass reveal" style="padding: 2.5rem;">
+                    <span class="stat-number" style="color: #3B82F6; font-size: 3.5rem;">10%</span>
+                    <p style="font-size: 1.1rem; color: white; margin-top: 1rem;">Onboarding difficulty for new team members dropped dramatically (previously 75%).</p>
+                </div>
+            </div>
+
+            <!-- Impacto Operativo -->
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 4rem;">
+                <div class="reveal">
+                    <h4
+                        style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
+                        Client</h4>
+                    <p style="font-size: 1rem;">Thanks to the system architecture, the client was able to connect all their systems to integrate and resolve requests faster.</p>
+                </div>
+                <div class="reveal">
+                    <h4
+                        style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
+                        User</h4>
+                    <p style="font-size: 1rem;">Executives reduced <strong style="color: white;">service time by 50%</strong>. The biggest benefit is cutting down cross-checks across multiple systems, increasing effectiveness.</p>
+                </div>
+                <div class="reveal">
+                    <h4
+                        style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
+                        Team</h4>
+                    <p style="font-size: 1rem;">I developed a workflow so new designers can onboard faster.</p>
+                </div>
+                <div class="reveal">
+                    <h4
+                        style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
+                        Scale</h4>
+                    <p style="font-size: 1rem;">Our product can be replicated in any bank and adapted to new needs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- UI KIT Y APRENDIZAJES -->
+        <section id="aprendizajes" class="section-container">
+            <!-- UI KIT -->
+            <div class="grid-2" style="margin-bottom: 100px;">
+                <div class="content-block reveal">
+                    <h2 style="margin-bottom: 1.5rem;">Scalable UI Kit</h2>
+                    <p>Because the product would be reused across multiple clients and adapted to each one, our library needed to be tokenized and organized in a way that can be replicated without friction.</p>
+                    <p style="margin-top: 1rem; color: var(--text-dim);">I aligned with the development team to create the central component library, atomically separating buttons, text fields, inputs, and navigation tabs that all projects can share.</p>
+                </div>
+                <div class="reveal">
+                    <div class="image-placeholder3" style="aspect-ratio: 16/9;">
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin-bottom: 3rem;">Personal Learnings</h2>
+            <div class="highlight-box reveal"
+                style="border-left: 4px solid var(--accent); margin-bottom: 3rem; background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);">
+                <p
+                    style="font-size: 1.3rem; font-weight: 500; font-style: italic; color: white; margin: 0; line-height: 1.6;">
+                    "The banking industry has multiple profiles and processes to tackle. I enjoyed contributing to one of them and improving the metrics."
+                </p>
+            </div>
+
+            <ul class="learnings-list reveal">
+                <li>
+                    <div style="font-size: 2rem; color: var(--accent);">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <path d="M3 15h6" />
+                            <path d="M3 18h6" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">Component Library</h4>
+                        <p>I created the component architecture ensuring maximum technical and design scalability.</p>
+                    </div>
+                </li>
+                <li>
+                    <div style="font-size: 2rem; color: var(--accent);">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">Aligned Research</h4>
+                        <p>Working with clear goals and KPIs from the start substantially accelerates empathetic research.</p>
+                    </div>
+                </li>
+                <li>
+                    <div style="font-size: 2rem; color: var(--accent);">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">Structured Processes</h4>
+                        <p>I implemented a 2-week Design Sprints framework to organize and address all business objectives.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Have a similar challenge?</h2>
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/denisluyo/" target="_blank" class="back-link"
+                style="padding: 15px 40px; font-size: 1.2rem;">Let’s talk on LinkedIn</a>
+        </div>
+        <p style="margin-top: 3rem; opacity: 0.5;">&copy; 2024 Denis Luyo. Product Design & UX Lead.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // --- Banking Sphere: Network Nodes (Trust & Connections) ---
+        const initSphere = () => {
+            const container = document.getElementById('banking-sphere-3d');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            container.appendChild(renderer.domElement);
+
+            const group = new THREE.Group();
+
+            // Icosahedron wireframe (fintech/network feel)
+            const geometry = new THREE.IcosahedronGeometry(2, 2);
+            const material = new THREE.MeshBasicMaterial({ color: '#3B82F6', wireframe: true, transparent: true, opacity: 0.15 });
+            group.add(new THREE.Mesh(geometry, material));
+
+            // Inner solid sphere
+            const innerGeom = new THREE.SphereGeometry(1.2, 16, 16);
+            const innerMat = new THREE.MeshBasicMaterial({ color: '#3B82F6', transparent: true, opacity: 0.05 });
+            group.add(new THREE.Mesh(innerGeom, innerMat));
+
+            // Floating points
+            const pGeom = new THREE.BufferGeometry();
+            const pPos = new Float32Array(300 * 3);
+            for (let i = 0; i < 300 * 3; i++) pPos[i] = (Math.random() - 0.5) * 6;
+            pGeom.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+            group.add(new THREE.Points(pGeom, new THREE.PointsMaterial({ color: '#60A5FA', size: 0.04 })));
+
+            scene.add(group);
+            camera.position.z = 6;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                group.rotation.y += 0.003;
+                group.rotation.x += 0.001;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        // --- Flow Visualization: Layered Rings (User Flows) ---
+        const initFlow = () => {
+            const container = document.getElementById('flow-visualization-3d');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            container.appendChild(renderer.domElement);
+
+            const group = new THREE.Group();
+            const colors = ['#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE', '#EFF6FF'];
+            for (let i = 0; i < 5; i++) {
+                const geom = new THREE.TorusGeometry(1 + i * 0.35, 0.025, 16, 100);
+                const mat = new THREE.MeshBasicMaterial({ color: colors[i], transparent: true, opacity: 0.5 - i * 0.05 });
+                const ring = new THREE.Mesh(geom, mat);
+                ring.rotation.x = Math.PI / (2 + i * 0.3);
+                group.add(ring);
+            }
+            scene.add(group);
+            camera.position.z = 5;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                group.rotation.z += 0.004;
+                group.rotation.y += 0.002;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        // --- Background Stars ---
+        const initBG = () => {
+            const container = document.getElementById('bg-canvas');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+            const geometry = new THREE.BufferGeometry();
+            const points = new Float32Array(1500 * 3);
+            for (let i = 0; i < 1500 * 3; i++) points[i] = (Math.random() - 0.5) * 15;
+            geometry.setAttribute('position', new THREE.BufferAttribute(points, 3));
+            const star = new THREE.Points(geometry, new THREE.PointsMaterial({ color: '#ffffff', size: 0.005, transparent: true, opacity: 0.2 }));
+            scene.add(star);
+            camera.position.z = 5;
+            const animate = () => {
+                requestAnimationFrame(animate);
+                star.rotation.y += 0.0002;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        const setupResize = (renderer, camera, container) => {
+            if (!container) return;
+            window.addEventListener('resize', () => {
+                const width = container.offsetWidth;
+                const height = container.offsetHeight;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+            });
+        };
+
+        const sphereData = initSphere();
+        const flowData = initFlow();
+        const bgData = initBG();
+
+        if (sphereData) setupResize(sphereData.renderer, sphereData.camera, document.getElementById('banking-sphere-3d'));
+        if (flowData) setupResize(flowData.renderer, flowData.camera, document.getElementById('flow-visualization-3d'));
+
+        window.addEventListener('resize', () => {
+            if (bgData) {
+                bgData.renderer.setSize(window.innerWidth, window.innerHeight);
+                bgData.camera.aspect = window.innerWidth / window.innerHeight;
+                bgData.camera.updateProjectionMatrix();
+            }
+        });
+    </script>
+</body>
+
+</html>

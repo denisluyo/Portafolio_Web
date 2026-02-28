@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fintech Design System | Lead UX | Denis Luyo</title>
+    <meta name="description"
+        content="Case study: Creation and management of a robust Design System to align brand and scale the digital ecosystem of a growing Fintech." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <style>
+        :root {
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --section-spacing: 120px;
+        }
+
+        body {
+            background: #050505;
+        }
+
+        .project-hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            color: var(--primary);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: clamp(1.8rem, 10vw, 8.5rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            margin-bottom: 2rem;
+            background: linear-gradient(to bottom, #fff 40%, rgba(255, 255, 255, 0.4));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: left;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .hero-description {
+            font-size: 1.4rem;
+            max-width: 650px;
+            color: var(--text-dim);
+            line-height: 1.5;
+            margin-bottom: 4rem;
+        }
+
+        .project-meta-minimal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 3rem;
+        }
+
+        .meta-item-min {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .meta-item-min span {
+            font-size: 0.7rem;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .meta-item-min p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+            margin: 0;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 10%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .scroll-line {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            animation: scrollAnim 2s infinite;
+        }
+
+        @keyframes scrollAnim {
+            0% {
+                left: -100%;
+            }
+
+            50% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .section-container {
+            padding: var(--section-spacing) 10%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .content-block h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content-block p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--card-bg);
+            border: 1px solid var(--surface-border);
+            padding: 2.5rem;
+            border-radius: 32px;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .highlight-box:hover {
+            border-color: var(--primary);
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: #0a0a0a;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+         .image-placeholder1 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image: url(imglanding/ds1.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+         .image-placeholder2 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image: url(imglanding/ds2.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+         .image-placeholder3 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image: url(imglanding/ds3.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+         .image-placeholder4 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image: url(imglanding/ds4.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+
+        .image-placeholder label {
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .leadership-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leadership-badge svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 30px;
+            left: 10%;
+            z-index: 1000;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 24px;
+            border-radius: 100px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            background: var(--primary);
+        }
+
+        .learnings-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .learnings-list li {
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--surface-border);
+            display: flex;
+            gap: 20px;
+        }
+
+        @media (max-width: 992px) {
+            :root {
+                --section-spacing: 60px;
+            }
+
+            .project-hero {
+                padding: 0 5%;
+                height: auto;
+                min-height: 80vh;
+                padding-top: 120px;
+                padding-bottom: 60px;
+                align-items: flex-start !important;
+                text-align: left !important;
+            }
+
+            .hero-title {
+                font-size: clamp(1.8rem, 10vw, 4rem) !important;
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+                text-align: left !important;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+                margin-bottom: 2.5rem;
+                text-align: left !important;
+            }
+
+            .project-meta-minimal {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                padding-top: 2rem;
+                align-items: flex-start !important;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+
+            .grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+
+            .section-container {
+                padding: var(--section-spacing) 5%;
+            }
+
+            .back-nav {
+                left: 5%;
+                top: 20px;
+            }
+
+            #logistic-sphere-3d,
+            #ia-visualization-3d {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 300px !important;
+            }
+
+            canvas {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem !important;
+            }
+
+            .hero-tag {
+                margin-bottom: 1.2rem;
+                padding: 6px 12px;
+                font-size: 0.65rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .meta-item-min p {
+                font-size: 0.95rem;
+            }
+
+            .content-block h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg-canvas" style="position: fixed; inset: 0; z-index: -1;"></div>
+
+    <nav class="back-nav">
+        <a href="index_en.html" class="back-btn">← Back to List</a>
+    </nav>
+
+    <header class="project-hero">
+        <div class="hero-content">
+            <span class="hero-tag reveal">
+                <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Case Study
+            </span>
+            <h1 class="hero-title reveal">
+                Design<br>System
+            </h1>
+            <p class="hero-description reveal">
+                Creation and management of a robust Design System to align the brand and scale the digital ecosystem of a growing Fintech.
+            </p>
+
+            <div class="project-meta-minimal reveal">
+                <div class="meta-item-min"><span>ROLE</span>
+                    <p>Lead UX</p>
+                </div>
+                <div class="meta-item-min"><span>YEAR</span>
+                    <p>2022</p>
+                </div>
+                <div class="meta-item-min"><span>INDUSTRY</span>
+                    <p>Fintech / Retail</p>
+                </div>
+                <div class="meta-item-min"><span>KEY ACHIEVEMENT</span>
+                    <p>1 Design System · 3 Sub-brands</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator reveal">
+            <div class="scroll-line"></div>
+            <span>EXPLORE CASE</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- RESUMEN -->
+        <section id="resumen" class="section-container">
+            <div class="grid-2">
+                <div class="content-block reveal">
+                    <h2>Overview</h2>
+                    <p>
+                        The client, a promising <strong>fast-growing Fintech</strong>, needed a robust Design System that would not only align the brand, but also enable agile, structured expansion of its digital ecosystem.
+                    </p>
+                    <div class="leadership-badge">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        Led a team of 7 designers
+                    </div>
+                    <p>
+                        My mission was to lead a <strong>team of 7 designers</strong>, running 7 Design Thinking workshops and creating a system that integrated <strong>3 sub-brands</strong> into a single library of <strong>30 UI components and 40 variants</strong>.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <div id="logistic-sphere-3d" style="width: 100%; height: 400px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EL DESAFÍO -->
+        <section id="desafio" class="section-container">
+            <div class="grid-2">
+                <div class="reveal">
+                    <div class="image-placeholder1"></div>
+                </div>
+                <div class="content-block reveal">
+                    <h2
+                        style="background: linear-gradient(to right, #fff, #ef4444); -webkit-background-clip: text; background-clip: text;">
+                        The Challenge</h2>
+                    <p>With digital products already in production, the design lacked consistency, creating a fragmented user experience and making it difficult to scale the system.</p>
+                    <div class="highlight-box" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">Ecosystem Fragmentation</h4>
+                        <p style="font-size: 1rem; margin-bottom: 0;">Digital products in production without a unified visual language, causing brand inconsistency and user confusion.</p>
+                    </div>
+                    <div class="highlight-box" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">Compromised Scalability</h4>
+                        <p style="font-size: 1rem; margin-bottom: 0;">Without a foundational system, each new product or feature required redesigning from scratch, increasing development cost and slowing the team down.</p>
+                    </div>
+                    <p>The central challenge: <strong>How do we design a flexible and robust system</strong> that supports the fintech’s growth and ambitions while integrating 3 sub-brands?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTRATEGIA Y PROCESOS -->
+        <section id="estrategia" class="section-container">
+            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+                <h2>Strategy and Build</h2>
+                <p>We mapped all stakeholders and ran <strong>7 Design Thinking workshops</strong> to understand not only what they needed, but also their concerns about the concept of a design system.</p>
+            </div>
+            <div class="grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
+                    <h3 style="margin-bottom: 1.5rem;">System Principles</h3>
+                    <p style="font-size: 1rem;">We defined clear principles inspired by top Design Systems: <strong>consistency, accessibility, and modularity</strong>. These became the compass for every design decision.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
+                    <h3 style="margin-bottom: 1.5rem;">Style Guides</h3>
+                    <p style="font-size: 1rem;">We developed detailed guidelines including typography, color palettes, and iconography, ensuring every visual element contributes to a cohesive and accessible experience.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
+                    <h3 style="margin-bottom: 1.5rem;">Before/After Comparisons</h3>
+                    <p style="font-size: 1rem;">We presented before-and-after comparisons to demonstrate the system’s value—showing how it solved existing problems and unlocked new possibilities.</p>
+                </div>
+            </div>
+            <div class="image-placeholder2 reveal" style="margin-top: 40px; aspect-ratio: 21/9;"></div>
+        </section>
+
+        <!-- SOLUCIONES -->
+        <section id="soluciones" class="section-container">
+            <h2 style="margin-bottom: 4rem;">High-Impact Solutions</h2>
+
+            <!-- Fundamentos -->
+            <div class="grid-2">
+                <div class="content-block reveal">
+                    <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">1. Design System Foundations</h3>
+                    <p>We built a solid foundation inspired by the best Design Systems in the market, with clear principles guiding every decision.</p>
+                    <ul style="color: var(--text-dim); line-height: 2;">
+                        <li><strong>30 Master UI Components</strong> with modular architecture.</li>
+                        <li><strong>40 Variants</strong> covering all states and interactions.</li>
+                        <li><strong>3 Integrated Sub-brands</strong> within one coherent system.</li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <div class="image-placeholder3"></div>
+                </div>
+            </div>
+
+            <!-- Integración -->
+            <div class="grid-2" style="margin-bottom: 100px;">
+                <div class="reveal">
+                    <div id="ia-visualization-3d" style="width: 100%; height: 350px;"></div>
+                </div>
+                <div class="content-block reveal">
+                    <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">2. Scrum Integration & Tools</h3>
+                    <p>We aligned the workflow with <strong>agile methodologies (Scrum)</strong>, making the Design System an integral and continuous part of product development.</p>
+                    <p>This allowed the system to <strong>evolve organically</strong> without requiring a team dedicated exclusively to its maintenance.</p>
+                </div>
+            </div>
+
+            <!-- Documentación -->
+            <div class="grid-2">
+                <div class="content-block reveal">
+                    <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">3. Documentation and Governance</h3>
+                    <p>We created detailed guidelines describing how to use the components and the underlying principles, ensuring consistent application across all products.</p>
+                    <p>From design tokens to accessibility guidelines and Storybook, the documentation was designed so design and engineering teams could work in full sync.</p>
+                </div>
+                <div class="reveal">
+                    <div class="image-placeholder4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTADOS -->
+        <section id="resultados" class="section-container" style="background: rgba(16, 185, 129, 0.03);">
+            <h2 class="section-title">Tangible Results</h2>
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 4rem;">
+                <div class="stat-item glass reveal" style="padding: 3rem;">
+                    <span class="stat-number" style="color: #10b981;">1</span>
+                    <p style="font-size: 1.2rem;">A unified Design System created from scratch, covering 3 distinct sub-brands.</p>
+                </div>
+                <div class="stat-item glass reveal" style="padding: 3rem;">
+                    <span class="stat-number" style="color: #10b981;">30+</span>
+                    <p style="font-size: 1.2rem;">Master UI components with 40 variants that accelerate development timelines.</p>
+                </div>
+                <div class="stat-item glass reveal" style="padding: 3rem;">
+                    <span class="stat-number" style="color: #10b981;">7</span>
+                    <p style="font-size: 1.2rem;">Design Thinking workshops facilitated with stakeholders from multiple areas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENTREGABLES CLAVES -->
+        <section id="entregables" class="section-container">
+            <h2 style="margin-bottom: 4rem;">Key Deliverables</h2>
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; width: 100%;">
+                <div class="deliverable-card reveal">
+                    <h4>Style Guides</h4>
+                    <p>Visual identity, design principles, tone, and communication style.</p>
+                </div>
+                <div class="deliverable-card reveal">
+                    <h4>Component Library</h4>
+                    <p>30 components with 40 variants, patterns, and responsive layouts.</p>
+                </div>
+                <div class="deliverable-card reveal">
+                    <h4>Design Tokens</h4>
+                    <p>Technical specs and tokens for design-dev integration.</p>
+                </div>
+                <div class="deliverable-card reveal">
+                    <h4>Storybook Documentation</h4>
+                    <p>Guidelines for component usage, interaction, accessibility, and governance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- APRENDIZAJES -->
+        <section id="aprendizajes" class="section-container">
+            <h2 style="margin-bottom: 4rem;">Learnings and Leadership</h2>
+            <ul class="learnings-list reveal">
+                <li>
+                    <div style="font-size: 2rem; color: var(--primary);">01</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">Collaboration and Continuous Communication</h4>
+                        <p>The most valuable lesson was that a successful Design System depends on consensus and adoption across all teams. Without smooth communication, the system won’t thrive.</p>
+                    </div>
+                </li>
+                <li>
+                    <div style="font-size: 2rem; color: var(--primary);">02</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">The System Is a Living Organism</h4>
+                        <p>A Design System isn’t a static project. It must evolve alongside the company and its products, so we planned for maintenance and continuous evolution from day one.</p>
+                    </div>
+                </li>
+                <li>
+                    <div style="font-size: 2rem; color: var(--primary);">03</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">Simplicity and Consistency as the Foundation</h4>
+                        <p>Benchmarking against the best systems in the market confirmed that success lies in simplicity. A complex system that nobody uses is worse than a simple one adopted by everyone.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Do you have a similar challenge?</h2>
+        <div class="socials">
+            <a href="index.html" class="back-link" style="padding: 15px 40px; font-size: 1.2rem;">Let's talk on LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // --- Detailed 3D Sphere (Complexity) ---
+        const initSphere = () => {
+            const container = document.getElementById('logistic-sphere-3d');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            container.appendChild(renderer.domElement);
+
+            const group = new THREE.Group();
+            const geometry = new THREE.SphereGeometry(2, 32, 32);
+            const material = new THREE.MeshBasicMaterial({ color: '#7C3AED', wireframe: true, transparent: true, opacity: 0.2 });
+            const sphere = new THREE.Mesh(geometry, material);
+            group.add(sphere);
+
+            const pGeom = new THREE.BufferGeometry();
+            const pCount = 200;
+            const pPos = new Float32Array(pCount * 3);
+            for (let i = 0; i < pCount * 3; i++) pPos[i] = (Math.random() - 0.5) * 5;
+            pGeom.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+            const points = new THREE.Points(pGeom, new THREE.PointsMaterial({ color: '#10B981', size: 0.05 }));
+            group.add(points);
+
+            scene.add(group);
+            camera.position.z = 6;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                group.rotation.y += 0.003;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        // --- IA / Service Blueprint Visualization ---
+        const initIA = () => {
+            const container = document.getElementById('ia-visualization-3d');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            container.appendChild(renderer.domElement);
+
+            const group = new THREE.Group();
+            for (let i = 0; i < 5; i++) {
+                const geom = new THREE.TorusGeometry(1 + i * 0.4, 0.02, 16, 100);
+                const mat = new THREE.MeshBasicMaterial({ color: i % 2 === 0 ? '#7C3AED' : '#10B981', transparent: true, opacity: 0.4 });
+                const ring = new THREE.Mesh(geom, mat);
+                ring.rotation.x = Math.PI / 2.2;
+                group.add(ring);
+            }
+            scene.add(group);
+            camera.position.z = 5;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                group.rotation.z += 0.005;
+                group.rotation.y += 0.002;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        const initBG = () => {
+            const container = document.getElementById('bg-canvas');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+            const geometry = new THREE.BufferGeometry();
+            const points = new Float32Array(1500 * 3);
+            for (let i = 0; i < 1500 * 3; i++) points[i] = (Math.random() - 0.5) * 15;
+            geometry.setAttribute('position', new THREE.BufferAttribute(points, 3));
+            const star = new THREE.Points(geometry, new THREE.PointsMaterial({ color: '#ffffff', size: 0.005, transparent: true, opacity: 0.2 }));
+            scene.add(star);
+            camera.position.z = 5;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                star.rotation.y += 0.0002;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        const setupResize = (renderer, camera, container) => {
+            if (!container) return;
+            window.addEventListener('resize', () => {
+                const width = container.offsetWidth;
+                const height = container.offsetHeight;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+            });
+        };
+
+        const sphereData = initSphere();
+        const iaData = initIA();
+        const bgData = initBG();
+
+        if (sphereData) setupResize(sphereData.renderer, sphereData.camera, document.getElementById('logistic-sphere-3d'));
+        if (iaData) setupResize(iaData.renderer, iaData.camera, document.getElementById('ia-visualization-3d'));
+
+        window.addEventListener('resize', () => {
+            if (bgData) {
+                bgData.renderer.setSize(window.innerWidth, window.innerHeight);
+                bgData.camera.aspect = window.innerWidth / window.innerHeight;
+                bgData.camera.updateProjectionMatrix();
+            }
+        });
+    </script>
+</body>
+
+</html>

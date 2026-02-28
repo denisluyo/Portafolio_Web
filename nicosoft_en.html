@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicosoft · Shrimp Farming Digitization | UX Strategy | Denis Luyo</title>
+    <meta name="description"
+        content="Case study of web and mobile product design for the shrimp farming industry." />
+    <meta name="keywords"
+        content="UX Design agritech, product design nicosoft, shrimp farming product design, Design System" />
+    <meta name="author" content="Denis Luyo" />
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Nicosoft | UX Strategy | Denis Luyo" />
+    <meta property="og:description"
+        content="Digitizing processes in the shrimp farming industry. Web and mobile platforms to optimize workflows." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://denisluyo.com/nicosoft.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <style>
+        :root {
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --section-spacing: 120px;
+            /* Banking accent: deep blue-indigo */
+            --accent: #3B82F6;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+        }
+
+        body {
+            background: #050509;
+        }
+
+        .project-hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: var(--accent);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: clamp(1.8rem, 10vw, 8.5rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            margin-bottom: 2rem;
+            background: linear-gradient(to bottom, #fff 40%, rgba(255, 255, 255, 0.4));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: left;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .hero-description {
+            font-size: 1.4rem;
+            max-width: 650px;
+            color: var(--text-dim);
+            line-height: 1.5;
+            margin-bottom: 4rem;
+        }
+
+        .project-meta-minimal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 3rem;
+        }
+
+        .meta-item-min {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .meta-item-min span {
+            font-size: 0.7rem;
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .meta-item-min p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+            margin: 0;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 10%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .scroll-line {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            animation: scrollAnim 2s infinite;
+        }
+
+        @keyframes scrollAnim {
+            0% {
+                left: -100%;
+            }
+
+            50% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .section-container {
+            padding: var(--section-spacing) 10%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .content-block h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content-block p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--card-bg);
+            border: 1px solid var(--surface-border);
+            padding: 2.5rem;
+            border-radius: 32px;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .highlight-box:hover {
+            border-color: var(--accent);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: #0a0a12;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+           .image-placeholder1 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image: url(imglanding/nico1.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+          .image-placeholder2 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image: url(imglanding/nico2.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+          .image-placeholder3 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image: url(imglanding/nico3.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+
+        .image-placeholder label {
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .leadership-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leadership-badge svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 30px;
+            left: 10%;
+            z-index: 1000;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 24px;
+            border-radius: 100px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            background: var(--accent);
+        }
+
+        .learnings-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .learnings-list li {
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--surface-border);
+            display: flex;
+            gap: 20px;
+        }
+
+        .deliverable-card {
+            background: var(--card-bg);
+            border: 1px solid var(--surface-border);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+
+        .deliverable-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .deliverable-card h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .deliverable-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 992px) {
+            :root {
+                --section-spacing: 60px;
+            }
+
+            .project-hero {
+                padding: 0 5%;
+                height: auto;
+                min-height: 80vh;
+                padding-top: 120px;
+                padding-bottom: 60px;
+                align-items: flex-start !important;
+                text-align: left !important;
+            }
+
+            .hero-title {
+                font-size: clamp(1.8rem, 10vw, 4rem) !important;
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+                text-align: left !important;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+                margin-bottom: 2.5rem;
+                text-align: left !important;
+            }
+
+            .project-meta-minimal {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                padding-top: 2rem;
+                align-items: flex-start !important;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+
+            .grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+
+            .section-container {
+                padding: var(--section-spacing) 5%;
+            }
+
+            .back-nav {
+                left: 5%;
+                top: 20px;
+            }
+
+            #banking-sphere-3d,
+            #flow-visualization-3d {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 300px !important;
+            }
+
+            canvas {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem !important;
+            }
+
+            .hero-tag {
+                margin-bottom: 1.2rem;
+                padding: 6px 12px;
+                font-size: 0.65rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .meta-item-min p {
+                font-size: 0.95rem;
+            }
+
+            .content-block h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg-canvas" style="position: fixed; inset: 0; z-index: -1;"></div>
+
+    <nav class="back-nav">
+        <a href="index_en.html" class="back-btn">← Back to List</a>
+    </nav>
+
+    <header class="project-hero">
+        <div class="hero-content">
+            <span class="hero-tag reveal">
+                <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                UX/UI Consultant · Product Designer
+            </span>
+            <h1 class="hero-title reveal">
+                Shrimp Farming<br>Digitization
+            </h1>
+            <p class="hero-description reveal">
+                Digitizing shrimp farming processes with Nicosoft, improving operational visibility and optimizing data-driven decisions.
+            </p>
+
+            <div class="project-meta-minimal reveal">
+                <div class="meta-item-min"><span>ROLE</span>
+                    <p>Product Designer</p>
+                </div>
+                <div class="meta-item-min"><span>CLIENT</span>
+                    <p>Nicosoft</p>
+                </div>
+                <div class="meta-item-min"><span>TOOLS</span>
+                    <p>Figma, Miro</p>
+                </div>
+                <div class="meta-item-min"><span>YEAR</span>
+                    <p>2020</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator reveal">
+            <div class="scroll-line"></div>
+            <span>EXPLORE CASE</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- RESUMEN -->
+        <section id="resumen" class="section-container">
+            <div class="grid-2">
+                <div class="content-block reveal">
+                    <h2>Starting the journey</h2>
+                    <p>
+                        This project focused on <strong>digitizing processes</strong> in the shrimp farming industry. As Product Designer and UX/UI Consultant, I worked on research, workflow design, and creating interfaces for web and mobile platforms.
+                    </p>
+                    <div class="leadership-badge">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        Product Design · Web & Mobile · Research
+                    </div>
+                    <p>
+                        The goal was to improve operational visibility and optimize data-driven decisions. We achieved a <strong>40% reduction in development time</strong> and a <strong>20% improvement in support efficiency</strong> thanks to a standardized design system and optimized flows.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <div id="banking-sphere-3d" style="width: 100%; height: 400px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EL PROBLEMA ACTUAL -->
+        <section id="problema" class="section-container">
+            <div class="grid-2">
+                <div class="reveal">
+                    <div class="image-placeholder1"></div>
+                </div>
+                <div class="content-block reveal">
+                    <h2
+                        style="background: linear-gradient(to right, #fff, #ef4444); -webkit-background-clip: text; background-clip: text;">
+                        Key Problems</h2>
+                    <p>The main goal was to understand shrimp farm operations in order to identify opportunities where digital solutions could optimize production and improve daily visibility of stocking projects.</p>
+                    <div class="highlight-box">
+                        <ul
+                            style="font-size: 1rem; margin-bottom: 0; color: var(--text-dim); list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 1.5rem;"><strong
+                                    style="color: #ef4444; font-size: 1.1rem; display: block; margin-bottom: 0.3rem;">Undigitized
+                                    processes</strong> There was no digital system in place, which created disorganization and made it difficult to scale the operation.</li>
+                            <li style="margin-bottom: 1.5rem;"><strong
+                                    style="color: #ef4444; font-size: 1.1rem; display: block; margin-bottom: 0.3rem;">Unstructured
+                                    workforce</strong> There were no defined flows for creating digital products or for coordinating development and business teams.</li>
+                            <li><strong
+                                    style="color: #ef4444; font-size: 1.1rem; display: block; margin-bottom: 0.3rem;">Need
+                                    for visibility</strong> Farm managers needed a platform that provided a clear, real-time view of the progress of their projects.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- USUARIOS -->
+        <section id="usuarios" class="section-container" style="background: rgba(59, 130, 246, 0.03);">
+            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+                <h2>Our Approach</h2>
+                <p>To understand operations, I conducted in-depth research with the team at several shrimp farms, observing their processes and daily operational needs firsthand.</p>
+            </div>
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">User Research</h3>
+                    <p style="font-size: 0.95rem;">We spoke with farm managers to understand their daily needs and created journey maps to identify key pain points.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Workflows</h3>
+                    <p style="font-size: 0.95rem;">I designed and standardized UX/UI workflows (wireframes and diagrams) before handing them off to the development team, giving clarity to the business.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Web/Mobile Architecture</h3>
+                    <p style="font-size: 0.95rem;">I created a site map for the web and mobile versions, building specific modules to support decision-making with new integrations.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Design Systems</h3>
+                    <p style="font-size: 0.95rem;">I built the interfaces while collaborating on a custom design system that standardized components and accelerated all updates.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTRATEGIA Y PROCESOS -->
+        <section id="estrategia" class="section-container">
+            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+                <h2>Project Deliverables</h2>
+                <p>Our collaboration with Nicosoft produced clear artifacts across research, structure, and design, to be adopted by stakeholders and speed up the next development stages.</p>
+            </div>
+
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <div
+                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
+                        01</div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Research Report</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-dim);">Includes field interviews with key users, journey maps, and user profiles detailing production processes.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <div
+                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
+                        02</div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Wireframes & Flows</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-dim);">UX/UI flow diagrams and wireframes that defined the structure of web and mobile interfaces.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <div
+                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
+                        03</div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Site Map</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-dim);">A detailed site map that structured the digital product and made it easier to add functionality.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <div
+                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
+                        04</div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Design System</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-dim);">A standardized UI Kit with reusable components and design tokens ensuring consistency.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+                    <div
+                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
+                        05</div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">High-Fidelity Prototypes</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-dim);">Interactive prototypes for web and mobile interfaces, testing key functionality (operations and analytics).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUCIONES -->
+        <section id="soluciones" class="section-container">
+            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+                <h2 style="margin-bottom: 1rem;">The Solution: Real-Time Visibility and Control</h2>
+                <p>The digital platforms ultimately gave shrimp farm managers and on-site staff the ability to oversee the full production cycle in a single, centralized view.</p>
+            </div>
+
+            <!-- Insights / Arquitectura -->
+            <div class="grid-2" style="margin-bottom: 100px;">
+                <div class="content-block reveal">
+                    <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 1.5rem;">Operational Analysis and Progress</h3>
+                    <p>Specific modules designed for real-time analysis of cultivation data, from water parameters and feed usage to animal growth.</p>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; border-left: 4px solid var(--accent);">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.5rem;"><strong style="color: #60A5FA;">Visibility:</strong>
+                                Full dashboard by hectares and ponds.</li>
+                            <li style="margin-bottom: 0.5rem;"><strong style="color: #60A5FA;">Metrics:</strong>
+                                Automatic consolidation of biological variables.</li>
+                            <li><strong style="color: #60A5FA;">Control:</strong> Confident management of stocking and harvests.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div id="flow-visualization-3d" style="width: 100%; height: 350px;"></div>
+                </div>
+            </div>
+
+            <!-- Dashboard Final -->
+            <div class="grid-2" style="margin-bottom: 60px;">
+                <div class="reveal" style="order: 2;">
+                    <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 1.5rem;">Multi-platform Web & Mobile</h3>
+                    <p>Multiple native and web interfaces developed to resolve disconnected communication between supply plants and on-farm teams.</p>
+                    <p style="margin-top: 1rem;">For mobile users, the priority was enabling fast operational routines (data capture) out in the field. For managerial roles (web), the interfaces focused on <strong>Data Viz</strong>.
+                    </p>
+                </div>
+                <div class="content-block reveal" style="order: 1;">
+                    <div class="image-placeholder2" style="aspect-ratio: 4/3;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTADOS -->
+        <!-- RESULTADOS E INDICADORES -->
+        <section id="resultados" class="section-container" style="background: rgba(59, 130, 246, 0.03);">
+            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+                <h2>Success Metrics</h2>
+                <p>Improvements observed in the first quarter after Nicosoft’s launch.</p>
+            </div>
+
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
+                <div class="stat-item glass reveal" style="padding: 2.5rem;">
+                    <span class="stat-number" style="color: #10B981; font-size: 3.5rem;">40%</span>
+                    <p style="font-size: 1.1rem; color: white; margin-top: 1rem;">Reduction in development time thanks to the design system.</p>
+                </div>
+                <div class="stat-item glass reveal" style="padding: 2.5rem;">
+                    <span class="stat-number" style="color: #3B82F6; font-size: 3.5rem;">30%</span>
+                    <p style="font-size: 1.1rem; color: white; margin-top: 1rem;">Increase in operational efficiency, reducing errors by 30%.</p>
+                </div>
+                <div class="stat-item glass reveal" style="padding: 2.5rem;">
+                    <span class="stat-number" style="color: #3B82F6; font-size: 3.5rem;">20%</span>
+                    <p style="font-size: 1.1rem; color: white; margin-top: 1rem;">Fewer support requests by empowering end users with visibility.</p>
+                </div>
+            </div>
+
+            <!-- Impacto Operativo -->
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 4rem;">
+                <div class="reveal">
+                    <h4
+                        style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
+                        Visibility</h4>
+                    <p style="font-size: 1rem;">Digitization enabled farm managers to see progress and stocking bottlenecks in real time.</p>
+                </div>
+                <div class="reveal">
+                    <h4
+                        style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
+                        Standards</h4>
+                    <p style="font-size: 1rem;">The UX design flow adopted across the organization improved productivity and clarity in dev team deliveries.</p>
+                </div>
+                <div class="reveal">
+                    <h4
+                        style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
+                        Clear Mapping</h4>
+                    <p style="font-size: 1rem;">With a new architecture and scalable site map, building new features is now faster and safer.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- UI KIT Y APRENDIZAJES -->
+        <section id="aprendizajes" class="section-container">
+            <!-- UI KIT -->
+            <div class="grid-2" style="margin-bottom: 100px;">
+                <div class="content-block reveal">
+                    <h2 style="margin-bottom: 1.5rem;">A Standardized Design System</h2>
+                    <p>Building reusable components (inputs, cards, navigation) was vital to ensure speed and scalability in an industry with continuous demands.</p>
+                    <p style="margin-top: 1rem; color: var(--text-dim);">Delivered with its corresponding tokens (typography, colors, spacing) and a robust set of guidelines to ensure consistency across web and mobile interfaces for different roles.</p>
+                </div>
+                <div class="reveal">
+                    <div class="image-placeholder3" style="aspect-ratio: 16/9;">
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin-bottom: 3rem;">Personal Learnings</h2>
+            <div class="highlight-box reveal"
+                style="border-left: 4px solid var(--accent); margin-bottom: 3rem; background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);">
+                <p
+                    style="font-size: 1.3rem; font-weight: 500; font-style: italic; color: white; margin: 0; line-height: 1.6;">
+                    "Understanding the shrimp farm routine in person changed our perspective so that digital truly becomes an enabler, not an operational barrier."
+                </p>
+            </div>
+
+            <ul class="learnings-list reveal">
+                <li>
+                    <div style="font-size: 2rem; color: var(--accent);">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <path d="M3 15h6" />
+                            <path d="M3 18h6" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">Workflows Claros</h4>
+                        <p>Setting delivery standards (Wireframes → Validations → Assets) from the start is crucial when digitizing traditional operations for the first time.</p>
+                    </div>
+                </li>
+                <li>
+                    <div style="font-size: 2rem; color: var(--accent);">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">Continuous Documentation</h4>
+                        <p>Documenting the entire UX/UI process, variables, and rationale from discovery to delivery later multiplied the speed of creating new features.</p>
+                    </div>
+                </li>
+                <li>
+                    <div style="font-size: 2rem; color: var(--accent);">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">Cross-Functional Collaboration</h4>
+                        <p>Integrating perspectives from developers to stakeholders and field operators refined the UX and produced a more robust, successfully adopted product.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Have a similar challenge?</h2>
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/denisluyo/" target="_blank" class="back-link"
+                style="padding: 15px 40px; font-size: 1.2rem;">Let’s talk on LinkedIn</a>
+        </div>
+        <p style="margin-top: 3rem; opacity: 0.5;">&copy; 2024 Denis Luyo. Product Design & UX Lead.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // --- Banking Sphere: Network Nodes (Trust & Connections) ---
+        const initSphere = () => {
+            const container = document.getElementById('banking-sphere-3d');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            container.appendChild(renderer.domElement);
+
+            const group = new THREE.Group();
+
+            // Icosahedron wireframe (fintech/network feel)
+            const geometry = new THREE.IcosahedronGeometry(2, 2);
+            const material = new THREE.MeshBasicMaterial({ color: '#3B82F6', wireframe: true, transparent: true, opacity: 0.15 });
+            group.add(new THREE.Mesh(geometry, material));
+
+            // Inner solid sphere
+            const innerGeom = new THREE.SphereGeometry(1.2, 16, 16);
+            const innerMat = new THREE.MeshBasicMaterial({ color: '#3B82F6', transparent: true, opacity: 0.05 });
+            group.add(new THREE.Mesh(innerGeom, innerMat));
+
+            // Floating points
+            const pGeom = new THREE.BufferGeometry();
+            const pPos = new Float32Array(300 * 3);
+            for (let i = 0; i < 300 * 3; i++) pPos[i] = (Math.random() - 0.5) * 6;
+            pGeom.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+            group.add(new THREE.Points(pGeom, new THREE.PointsMaterial({ color: '#60A5FA', size: 0.04 })));
+
+            scene.add(group);
+            camera.position.z = 6;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                group.rotation.y += 0.003;
+                group.rotation.x += 0.001;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        // --- Flow Visualization: Layered Rings (User Flows) ---
+        const initFlow = () => {
+            const container = document.getElementById('flow-visualization-3d');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            container.appendChild(renderer.domElement);
+
+            const group = new THREE.Group();
+            const colors = ['#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE', '#EFF6FF'];
+            for (let i = 0; i < 5; i++) {
+                const geom = new THREE.TorusGeometry(1 + i * 0.35, 0.025, 16, 100);
+                const mat = new THREE.MeshBasicMaterial({ color: colors[i], transparent: true, opacity: 0.5 - i * 0.05 });
+                const ring = new THREE.Mesh(geom, mat);
+                ring.rotation.x = Math.PI / (2 + i * 0.3);
+                group.add(ring);
+            }
+            scene.add(group);
+            camera.position.z = 5;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                group.rotation.z += 0.004;
+                group.rotation.y += 0.002;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        // --- Background Stars ---
+        const initBG = () => {
+            const container = document.getElementById('bg-canvas');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+            const geometry = new THREE.BufferGeometry();
+            const points = new Float32Array(1500 * 3);
+            for (let i = 0; i < 1500 * 3; i++) points[i] = (Math.random() - 0.5) * 15;
+            geometry.setAttribute('position', new THREE.BufferAttribute(points, 3));
+            const star = new THREE.Points(geometry, new THREE.PointsMaterial({ color: '#ffffff', size: 0.005, transparent: true, opacity: 0.2 }));
+            scene.add(star);
+            camera.position.z = 5;
+            const animate = () => {
+                requestAnimationFrame(animate);
+                star.rotation.y += 0.0002;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        const setupResize = (renderer, camera, container) => {
+            if (!container) return;
+            window.addEventListener('resize', () => {
+                const width = container.offsetWidth;
+                const height = container.offsetHeight;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+            });
+        };
+
+        const sphereData = initSphere();
+        const flowData = initFlow();
+        const bgData = initBG();
+
+        if (sphereData) setupResize(sphereData.renderer, sphereData.camera, document.getElementById('banking-sphere-3d'));
+        if (flowData) setupResize(flowData.renderer, flowData.camera, document.getElementById('flow-visualization-3d'));
+
+        window.addEventListener('resize', () => {
+            if (bgData) {
+                bgData.renderer.setSize(window.innerWidth, window.innerHeight);
+                bgData.camera.aspect = window.innerWidth / window.innerHeight;
+                bgData.camera.updateProjectionMatrix();
+            }
+        });
+    </script>
+</body>
+
+</html>
