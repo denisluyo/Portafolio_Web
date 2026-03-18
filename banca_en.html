@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Banking Product | UX Strategy & Product Design | Denis Luyo</title>
-    <meta name="description"
-        content="Banking product design case study: Digital transformation of the financial experience, led by Denis Luyo, Lead UX Designer in Lima, Peru. Figma, Design System, UX Research." />
-    <meta name="keywords"
-        content="banking UX design, fintech product design, banking product design, financial design system, UX Lead Lima, Denis Luyo, Figma, mobile banking, digital financial experience, UX Research, information architecture, product designer Peru" />
-    <meta name="author" content="Denis Luyo" />
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="Banking Product | UX Strategy | Denis Luyo" />
-    <meta property="og:description"
-        content="How I redesigned the end-to-end banking experience for 2M+ users, reducing drop-off by 38% with a scalable Design System." />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://denisluyo.com/banca.html" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Banking Product | UX Strategy &amp; Product Design | Denis Luyo</title>
+<meta content="Banking product design case study: Digital transformation of the financial experience, led by Denis Luyo, Lead UX Designer in Lima, Peru. Figma, Design System, UX Research." name="description"/>
+<meta content="banking UX design, fintech product design, banking product design, financial design system, UX Lead Lima, Denis Luyo, Figma, mobile banking, digital financial experience, UX research, information architecture, product designer Peru" name="keywords"/>
+<meta content="Denis Luyo" name="author"/>
+<!-- Open Graph / Social -->
+<meta content="Banking Product | UX Strategy | Denis Luyo" property="og:title"/>
+<meta content="How I redesigned an end-to-end banking experience, reducing friction with a scalable design system." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://denisluyo.com/banca.html" property="og:url"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="style.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<style>
         :root {
             --card-bg: rgba(255, 255, 255, 0.02);
             --section-spacing: 120px;
@@ -44,6 +41,32 @@
             overflow: hidden;
             text-align: left;
         }
+
+/* Hero image overlay (same effect as frameworkmetricas) */
+.hero-bg-placeholder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, #050509 0%, rgba(5, 5, 9, 0.35) 55%, transparent 100%),
+        url('imglanding/banca4.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    opacity: 0.85;
+    animation: hero-pan 20s ease-in-out infinite alternate;
+}
+
+@keyframes hero-pan {
+    from { transform: scale(1) translateX(0); }
+    to { transform: scale(1.08) translateX(-2%); }
+}
+
+
 
         .hero-content {
             position: relative;
@@ -416,7 +439,21 @@
                 max-width: 100% !important;
                 height: auto !important;
             }
-        }
+        
+
+.hero-bg-placeholder {
+    width: 100%;
+    right: 0;
+    opacity: 0.22;
+    mask-image: none;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(59,130,246,0.18), transparent 55%),
+        linear-gradient(180deg, rgba(5,5,9,0.85) 0%, rgba(5,5,9,0.35) 50%, rgba(5,5,9,1) 100%),
+        url('imglanding/banca4.png');
+    background-size: cover;
+    background-position: center;
+}
+}
 
         @media (max-width: 480px) {
             .hero-title {
@@ -442,357 +479,265 @@
             }
         }
     </style>
-</head>
-
+</link></head>
 <body>
-    <div id="bg-canvas" style="position: fixed; inset: 0; z-index: -1;"></div>
-
-    <nav class="back-nav">
-        <a href="index_en.html" class="back-btn">← Back to List</a>
-    </nav>
-
-    <header class="project-hero">
-        <div class="hero-content">
-            <span class="hero-tag reveal">
-                <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-                Lead UX · UI-Kit · User Interface · Web
-            </span>
-            <h1 class="hero-title reveal">
-                Banking<br>Product
-            </h1>
-            <p class="hero-description reveal">
-                Build a product that helps banks manage daily customer operations, tasks, sales, and follow-ups.
-            </p>
-
-            <div class="project-meta-minimal reveal">
-                <div class="meta-item-min"><span>ROLE</span>
-                    <p>Lead UX/UI</p>
-                </div>
-                <div class="meta-item-min"><span>CLIENT</span>
-                    <p>Caja de Ahorros</p>
-                </div>
-                <div class="meta-item-min"><span>TOOLS</span>
-                    <p>Figma, Miro</p>
-                </div>
-                <div class="meta-item-min"><span>DURATION</span>
-                    <p>Discovery to Delivery</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="scroll-indicator reveal">
-            <div class="scroll-line"></div>
-            <span>EXPLORE CASE</span>
-        </div>
-    </header>
-
-    <main>
-        <!-- RESUMEN -->
-        <section id="resumen" class="section-container">
-            <div class="grid-2">
-                <div class="content-block reveal">
-                    <h2>Project Overview</h2>
-                    <p>
-                        As <strong>Lead UX/UI</strong>, the main goal was to design a reusable, intuitive interface that would enable agents at a leading banking institution in Panama (Caja de Ahorros) to efficiently manage customers and digital channels, and strengthen its market positioning.
-                    </p>
-                    <div class="leadership-badge">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        Lead Design · Reusable Interface · Customizable UI-Kit
-                    </div>
-                    <p>
-                        The work involved leading the design by organizing projects, conducting key interviews across user profiles, and developing a <strong>customizable, brand-tokenized UI Kit</strong>.
-                    </p>
-                </div>
-                <div class="reveal">
-                    <div id="banking-sphere-3d" style="width: 100%; height: 400px;"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- EL PROBLEMA ACTUAL -->
-        <section id="problema" class="section-container">
-            <div class="grid-2">
-                <div class="reveal">
-                    <div class="image-placeholder1"></div>
-                </div>
-                <div class="content-block reveal">
-                    <h2
-                        style="background: linear-gradient(to right, #fff, #ef4444); -webkit-background-clip: text; background-clip: text;">
-                        The Current Problem</h2>
-                    <p>Banking agents in Panama spend most of their time trying to log into multiple systems at once to consolidate a single customer’s data. This fragmentation creates critical inefficiencies and endless waiting times.</p>
-                    <div class="highlight-box">
-                        <h4 style="color: white; margin-bottom: 0.5rem;">Critical Initial Indicators</h4>
-                        <ul
-                            style="font-size: 1rem; margin-bottom: 0; color: var(--text-dim); list-style-type: none; padding-left: 0;">
-                            <li style="margin-bottom: 0.8rem;"><strong
-                                    style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">17
-                                    min</strong> Approximate time per agent interaction.</li>
-                            <li style="margin-bottom: 0.8rem;"><strong
-                                    style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">+05</strong>
-                                Systems accessed to solve one issue.</li>
-                            <li style="margin-bottom: 0.8rem;"><strong
-                                    style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">03/10</strong>
-                                Agent satisfaction with their tools.</li>
-                            <li><strong
-                                    style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">75%</strong>
-                                Difficulty onboarding new team members to the systems.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- USUARIOS -->
-        <section id="usuarios" class="section-container" style="background: rgba(59, 130, 246, 0.03);">
-            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
-                <h2>System Users</h2>
-                <p>The product needed to consolidate operations for multiple customer-facing roles within the institution, each with specific needs.</p>
-            </div>
-            <div class="grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
-                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
-                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Reception</h3>
-                    <p style="font-size: 0.95rem;">Primary user at branch entry. Assigns tickets, reviews appointments, and routes customers into a queue.</p>
-                </div>
-                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
-                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Account Executive</h3>
-                    <p style="font-size: 0.95rem;">Manages digital channels and serves customers. The goal was to centralize their tools.</p>
-                </div>
-                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
-                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Call Center Agent</h3>
-                    <p style="font-size: 0.95rem;">Resolves issues instantly and remotely. Needs a consolidated view of digital channels.</p>
-                </div>
-                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
-                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Supervisor</h3>
-                    <p style="font-size: 0.95rem;">Branch or team lead. Oversees key metrics such as inventory control and service status.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ESTRATEGIA Y PROCESOS -->
-        <section id="estrategia" class="section-container">
-            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
-                <h2>Work Process</h2>
-                <p>I implemented a structured flow of Design Analytics and Sprints to align stakeholders and tackle goals at the root, grounding decisions in actionable research.</p>
-            </div>
-
-            <div class="grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
-                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
-                    <div
-                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
-                        01</div>
-                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Discovery</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-dim);">Identify processes or problems at the early stage of a digital interaction.</p>
-                    <ul style="margin-top: 1rem; padding-left: 1.2rem; font-size: 0.85rem; color: #aaa;">
-                        <li>Remote workshops</li>
-                        <li>Client Interviews</li>
-                        <li>Finding facts / User pains</li>
-                    </ul>
-                </div>
-                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
-                    <div
-                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
-                        02</div>
-                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Definition</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-dim);">Align all teams as one, deciding which metrics to improve through a concise MVP.</p>
-                </div>
-                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
-                    <div
-                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
-                        03</div>
-                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Design</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-dim);">Define initial flows into a scalable, valuable stage through interactive prototypes and testing.</p>
-                </div>
-                <div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
-                    <div
-                        style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">
-                        04</div>
-                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Delivery</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-dim);">Hand off to development with everything needed to start, documenting tokens and components.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SOLUCIONES -->
-        <section id="soluciones" class="section-container">
-            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
-                <h2 style="margin-bottom: 1rem;">The Solution: A 360° Customer View</h2>
-                <p>A way to keep all customer information at the executive’s fingertips to resolve issues instantly and proactively identify what we can truly offer.</p>
-            </div>
-
-            <!-- Insights / Arquitectura -->
-            <div class="grid-2" style="margin-bottom: 100px;">
-                <div class="content-block reveal">
-                    <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 1.5rem;">Architecture & Integrated Selling</h3>
-                    <p>After a few alignment workshops, I worked on a functional architecture. The sales module would remain visible regardless of the customer’s process or issue, enabling “cross-selling” or “down-selling.”</p>
-                    <div
-                        style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; border-left: 4px solid var(--accent);">
-                        <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 0.5rem;"><strong>98%</strong> of agents feel systems need more visibility.</li>
-                            <li style="margin-bottom: 0.5rem;"><strong>98%</strong> need better, more accurate sales suggestions.</li>
-                            <li><strong>8/10</strong> customers come only to solve problems, overlooking business opportunities.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="reveal">
-                    <div id="flow-visualization-3d" style="width: 100%; height: 350px;"></div>
-                </div>
-            </div>
-
-            <!-- Dashboard Final -->
-            <div class="grid-2" style="margin-bottom: 60px;">
-                <div class="reveal" style="order: 2;">
-                    <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 1.5rem;">Centralized Customer Products</h3>
-                    <p>All relevant customer information consolidated in a single dashboard: Accounts, Cards (payments, statements, rates), Loans, and Investments—intuitively navigable in one place.</p>
-                    <p style="margin-top: 1rem;">Before arriving at this final view, we worked intensively with <strong>paper mockups</strong> and activities to map a coherent <strong>User Flow</strong> before moving into final high-fidelity design.</p>
-                </div>
-                <div class="content-block reveal" style="order: 1;">
-                    <div class="image-placeholder2" style="aspect-ratio: 4/3;"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RESULTADOS -->
-        <!-- RESULTADOS E INDICADORES -->
-        <section id="resultados" class="section-container" style="background: rgba(59, 130, 246, 0.03);">
-            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
-                <h2>Success Metrics</h2>
-                <p>Data captured through surveys and system data after 6 months of implementation.</p>
-            </div>
-
-            <div class="grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
-                <div class="stat-item glass reveal" style="padding: 2.5rem;">
-                    <span class="stat-number" style="color: #10B981; font-size: 3.5rem;">90%</span>
-                    <p style="font-size: 1.1rem; color: white; margin-top: 1rem;">Average service time was reduced (from 17 minutes to much smaller fractions).</p>
-                </div>
-                <div class="stat-item glass reveal" style="padding: 2.5rem;">
-                    <span class="stat-number" style="color: #3B82F6; font-size: 3.5rem;">01</span>
-                    <p style="font-size: 1.1rem; color: white; margin-top: 1rem;">The number of systems was reduced—from 5+ fragmented tools to 1 unified ecosystem.</p>
-                </div>
-                <div class="stat-item glass reveal" style="padding: 2.5rem;">
-                    <span class="stat-number" style="color: #3B82F6; font-size: 3.5rem;">10%</span>
-                    <p style="font-size: 1.1rem; color: white; margin-top: 1rem;">Onboarding difficulty for new team members dropped dramatically (previously 75%).</p>
-                </div>
-            </div>
-
-            <!-- Impacto Operativo -->
-            <div class="grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 4rem;">
-                <div class="reveal">
-                    <h4
-                        style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
-                        Client</h4>
-                    <p style="font-size: 1rem;">Thanks to the system architecture, the client was able to connect all their systems to integrate and resolve requests faster.</p>
-                </div>
-                <div class="reveal">
-                    <h4
-                        style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
-                        User</h4>
-                    <p style="font-size: 1rem;">Executives reduced <strong style="color: white;">service time by 50%</strong>. The biggest benefit is cutting down cross-checks across multiple systems, increasing effectiveness.</p>
-                </div>
-                <div class="reveal">
-                    <h4
-                        style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
-                        Team</h4>
-                    <p style="font-size: 1rem;">I developed a workflow so new designers can onboard faster.</p>
-                </div>
-                <div class="reveal">
-                    <h4
-                        style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
-                        Scale</h4>
-                    <p style="font-size: 1rem;">Our product can be replicated in any bank and adapted to new needs.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- UI KIT Y APRENDIZAJES -->
-        <section id="aprendizajes" class="section-container">
-            <!-- UI KIT -->
-            <div class="grid-2" style="margin-bottom: 100px;">
-                <div class="content-block reveal">
-                    <h2 style="margin-bottom: 1.5rem;">Scalable UI Kit</h2>
-                    <p>Because the product would be reused across multiple clients and adapted to each one, our library needed to be tokenized and organized in a way that can be replicated without friction.</p>
-                    <p style="margin-top: 1rem; color: var(--text-dim);">I aligned with the development team to create the central component library, atomically separating buttons, text fields, inputs, and navigation tabs that all projects can share.</p>
-                </div>
-                <div class="reveal">
-                    <div class="image-placeholder3" style="aspect-ratio: 16/9;">
-                    </div>
-                </div>
-            </div>
-
-            <h2 style="margin-bottom: 3rem;">Personal Learnings</h2>
-            <div class="highlight-box reveal"
-                style="border-left: 4px solid var(--accent); margin-bottom: 3rem; background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);">
-                <p
-                    style="font-size: 1.3rem; font-weight: 500; font-style: italic; color: white; margin: 0; line-height: 1.6;">
-                    "The banking industry has multiple profiles and processes to tackle. I enjoyed contributing to one of them and improving the metrics."
-                </p>
-            </div>
-
-            <ul class="learnings-list reveal">
-                <li>
-                    <div style="font-size: 2rem; color: var(--accent);">
-                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                            <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4" />
-                            <polyline points="14 2 14 8 20 8" />
-                            <path d="M3 15h6" />
-                            <path d="M3 18h6" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 style="margin-bottom: 0.5rem; color: white;">Component Library</h4>
-                        <p>I created the component architecture ensuring maximum technical and design scalability.</p>
-                    </div>
-                </li>
-                <li>
-                    <div style="font-size: 2rem; color: var(--accent);">
-                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                            <circle cx="11" cy="11" r="8" />
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 style="margin-bottom: 0.5rem; color: white;">Aligned Research</h4>
-                        <p>Working with clear goals and KPIs from the start substantially accelerates empathetic research.</p>
-                    </div>
-                </li>
-                <li>
-                    <div style="font-size: 2rem; color: var(--accent);">
-                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 style="margin-bottom: 0.5rem; color: white;">Structured Processes</h4>
-                        <p>I implemented a 2-week Design Sprints framework to organize and address all business objectives.</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    </main>
-
-    <footer id="contacto">
-        <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Have a similar challenge?</h2>
-        <div class="socials">
-            <a href="https://www.linkedin.com/in/denisluyo/" target="_blank" class="back-link"
-                style="padding: 15px 40px; font-size: 1.2rem;">Let’s talk on LinkedIn</a>
-        </div>
-        <p style="margin-top: 3rem; opacity: 0.5;">&copy; 2024 Denis Luyo. Product Design & UX Lead.</p>
-    </footer>
-
-    <script src="main.js"></script>
-    <script>
+<div id="bg-canvas" style="position: fixed; inset: 0; z-index: -1;"></div>
+<nav class="back-nav">
+<a class="back-btn" href="index.html">← Back to projects</a>
+</nav>
+<header class="project-hero">
+<div class="hero-bg-placeholder"></div>
+<div class="hero-content">
+<span class="hero-tag reveal">Lead UX · Product Strategy · Design System · Web</span>
+<h1 class="hero-title reveal">App
+Banking domain</h1>
+<p class="hero-description reveal">I designed a reusable MVP to centralize the customer view, reduce operational friction, and speed up banking servicing.</p>
+<div class="project-meta-minimal reveal">
+<div class="meta-item-min"><span>ROLE</span>
+<p>UX/UI Consultant</p>
+</div>
+<div class="meta-item-min"><span>CLIENT</span>
+<p>Savings Bank</p>
+</div>
+<div class="meta-item-min"><span>TOOLS</span>
+<p>Figma, Miro</p>
+</div>
+<div class="meta-item-min"><span>DURATION</span>
+<p>MVP · V1</p>
+</div>
+</div>
+</div>
+<div class="scroll-indicator reveal">
+<div class="scroll-line"></div>
+<span>EXPLORE CASE</span>
+</div>
+</header>
+<main>
+<!-- RESUMEN -->
+<section class="section-container" id="resumen">
+<div class="grid-2">
+<div class="content-block reveal">
+<h2>Overview</h2>
+<p>I partnered with business and engineering to shape a <strong>reusable banking product</strong> that consolidates customer information, tasks, and follow‑ups into a single view.</p>
+<div class="leadership-badge"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>Research · Arquitectura · MVP · UI-Kit</div>
+<p>My contribution was defining key flows, the initial information architecture, product guidelines, and a component library adaptable across banks.</p>
+</div>
+<div class="reveal">
+<div id="banking-sphere-3d" style="width: 100%; height: 400px;"></div>
+</div>
+</div>
+</section>
+<!-- EL PROBLEMA ACTUAL -->
+<section class="section-container" id="problema">
+<div class="grid-2">
+<div class="reveal">
+<div class="image-placeholder1"></div>
+</div>
+<div class="content-block reveal">
+<h2 style="background: linear-gradient(to right, #fff, #ef4444); -webkit-background-clip: text; background-clip: text;">The challenge</h2>
+<p>To understand a single customer, the bank had to check up to 10 systems. This slowed servicing, increased friction, and complicated daily operations.</p>
+<div class="highlight-box">
+<h4 style="color: white; margin-bottom: 0.5rem;">Key issues identified</h4>
+<ul style="font-size: 1rem; margin-bottom: 0; color: var(--text-dim); list-style-type: none; padding-left: 0;"><li style="margin-bottom: 0.8rem;"><strong style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">30 min</strong> average servicing time before the product.</li><li style="margin-bottom: 0.8rem;"><strong style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">10</strong> systems were consulted to consolidate information.</li><li style="margin-bottom: 0.8rem;"><strong style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">Alta</strong> dependency on manual rules and approvals.</li><li><strong style="color: #ef4444; font-size: 1.4rem; display: inline-block; width: 80px;">Baja</strong> clarity of the initial product flows and structure.</li></ul>
+</div>
+</div>
+</div>
+</section>
+<!-- USUARIOS -->
+<section class="section-container" id="usuarios" style="background: rgba(59, 130, 246, 0.03);">
+<div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+<h2>Key users</h2>
+<p>The system was designed for multiple banking roles, prioritizing operations, servicing, and commercial follow‑up.</p>
+</div>
+<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+<div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+<h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Account Executive</h3>
+<p style="font-size: 0.95rem;">Accesses the 360° customer view and resolves requests with full context.</p>
+</div>
+<div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+<h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Sales Rep</h3>
+<p style="font-size: 0.95rem;">Identifies sales opportunities without leaving the servicing flow.</p>
+</div>
+<div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+<h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Administrator</h3>
+<p style="font-size: 0.95rem;">Manages tasks, rules, and operational follow‑up for the team.</p>
+</div>
+<div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+<h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Manager</h3>
+<p style="font-size: 0.95rem;">Reviews overall status, performance, and service traceability.</p>
+</div>
+</div>
+</section>
+<!-- ESTRATEGIA Y PROCESOS -->
+<section class="section-container" id="estrategia">
+<div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+<h2>How I approached it</h2>
+<p>I ran the project in short sprints, with workshops and frequent validations to align product, design, and technical feasibility.</p>
+</div>
+<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
+<div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+<div style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">01</div>
+<h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Discovery</h3>
+<p style="font-size: 0.95rem; color: var(--text-dim);">I reviewed the mapped needs, interviewed business and legal, and identified gaps in users, flows, and product structure.</p>
+<ul style="margin-top: 1rem; padding-left: 1.2rem; font-size: 0.85rem; color: #aaa;"><li>Internal interviews</li><li>Pain points & needs</li><li>Baseline hypotheses</li></ul>
+</div>
+<div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+<div style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">02</div>
+<h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Definition</h3>
+<p style="font-size: 0.95rem; color: var(--text-dim);">I aligned the initial information architecture and prioritized the MVP with the PO and the technical lead.</p>
+<ul style="margin-top: 1rem; padding-left: 1.2rem; font-size: 0.85rem; color: #aaa;"><li>MVP v1</li><li>Critical flows</li><li>Feasible scope</li></ul></div>
+<div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+<div style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">03</div>
+<h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Design</h3>
+<p style="font-size: 0.95rem; color: var(--text-dim);">I produced mockups and proposals to validate with the client and turn decisions into tangible screens.</p>
+<ul style="margin-top: 1rem; padding-left: 1.2rem; font-size: 0.85rem; color: #aaa;"><li>Mockups</li><li>Client validation</li><li>Short iterations</li></ul></div>
+<div class="highlight-box reveal" style="border-top: 4px solid var(--accent);">
+<div style="color: var(--accent); font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 2px;">04</div>
+<h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Delivery</h3>
+<p style="font-size: 0.95rem; color: var(--text-dim);">I documented components, guidelines, and deliverables to enable development kickoff.</p>
+<ul style="margin-top: 1rem; padding-left: 1.2rem; font-size: 0.85rem; color: #aaa;"><li>UI-Kit</li><li>Handoff</li><li>Reusable baseline</li></ul></div>
+</div>
+</section>
+<!-- SOLUCIONES -->
+<section class="section-container" id="soluciones">
+<div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+<h2 style="margin-bottom: 1rem;">The solution</h2>
+<p>A 360° customer view that brings information, tasks, and sales opportunities into one product.</p>
+</div>
+<!-- Insights / Arquitectura -->
+<div class="grid-2" style="margin-bottom: 100px;">
+<div class="content-block reveal">
+<h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 1.5rem;">Architecture built for operations and sales</h3>
+<p>I defined a baseline architecture where customer information and the commercial module coexist in the same flow—without losing operational context.</p>
+<div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; border-left: 4px solid var(--accent);">
+<ul style="list-style: none; padding: 0; margin: 0;"><li style="margin-bottom: 0.5rem;">MVP defined to validate quickly with the client.</li><li style="margin-bottom: 0.5rem;">Architecture aligned with engineering from day one.</li><li style="">Reusable baseline para personalizar por banco.</li></ul>
+</div>
+</div>
+<div class="reveal">
+<div id="flow-visualization-3d" style="width: 100%; height: 350px;"></div>
+</div>
+</div>
+<!-- Dashboard Final -->
+<div class="grid-2" style="margin-bottom: 60px;">
+<div class="reveal" style="order: 2;">
+<h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 1.5rem;">Single customer view</h3>
+<p>The concept consolidated products, key data, follow‑ups, and commercial context into a clear dashboard to reduce context switching.</p>
+<p style="margin-top: 1rem;">Before the final UI, I worked through <strong>flows, information architecture, and mockups</strong> to ensure the solution was clear and technically feasible.</p>
+</div>
+<div class="content-block reveal" style="order: 1;">
+<div class="image-placeholder2" style="aspect-ratio: 4/3;"></div>
+</div>
+</div>
+</section>
+<!-- RESULTADOS -->
+<!-- RESULTADOS E INDICADORES -->
+<section class="section-container" id="resultados" style="background: rgba(59, 130, 246, 0.03);">
+<div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+<h2>Impact</h2>
+<p>Estimated results from the first bank implementation.</p>
+</div>
+<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
+<div class="stat-item glass reveal" style="padding: 2.5rem;">
+<span class="stat-number" style="color: #10B981; font-size: 3.5rem;">67%</span>
+<p style="font-size: 1.1rem; color: white; margin-top: 1rem;">Reduction in servicing time, from ~30 min to ~10 min.</p>
+</div>
+<div class="stat-item glass reveal" style="padding: 2.5rem;">
+<span class="stat-number" style="color: #3B82F6; font-size: 3.5rem;">10 → 1</span>
+<p style="font-size: 1.1rem; color: white; margin-top: 1rem;">Consolidation of consulted systems into a single environment.</p>
+</div>
+<div class="stat-item glass reveal" style="padding: 2.5rem;">
+<span class="stat-number" style="color: #3B82F6; font-size: 3.5rem;">MVP</span>
+<p style="font-size: 1.1rem; color: white; margin-top: 1rem;">Reusable baseline para adaptar marca y estructura a nuevos bancos.</p>
+</div>
+</div>
+<!-- Operational impact -->
+<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 4rem;">
+<div class="reveal">
+<h4 style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Client</h4>
+<p style="font-size: 1rem;">Unified scattered information and accelerated critical queries.</p>
+</div>
+<div class="reveal">
+<h4 style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">User</h4>
+<p style="font-size: 1rem;">Reduced time and effort by avoiding hopping between systems.</p>
+</div>
+<div class="reveal">
+<h4 style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Team</h4>
+<p style="font-size: 1rem;">Left a clear baseline for design and development in v1.</p>
+</div>
+<div class="reveal">
+<h4 style="color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Scale</h4>
+<p style="font-size: 1rem;">The solution was ready for simple per‑bank customizations.</p>
+</div>
+</div>
+</section>
+<!-- UI KIT Y APRENDIZAJES -->
+<section class="section-container" id="aprendizajes">
+<!-- UI KIT -->
+<div class="grid-2" style="margin-bottom: 100px;">
+<div class="content-block reveal">
+<h2 style="margin-bottom: 1.5rem;">Reusable system</h2>
+<p>I designed an organized UI kit to adapt the product to different brands without rebuilding the system foundation.</p>
+<p style="margin-top: 1rem; color: var(--text-dim);">The library helped align components with engineering and speed up future implementations.</p>
+</div>
+<div class="reveal">
+<div class="image-placeholder3" style="aspect-ratio: 16/9;">
+</div>
+</div>
+</div>
+<h2 style="margin-bottom: 3rem;">Learnings</h2>
+<div class="highlight-box reveal" style="border-left: 4px solid var(--accent); margin-bottom: 3rem; background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);">
+<p style="font-size: 1.3rem; font-weight: 500; font-style: italic; color: white; margin: 0; line-height: 1.6;">“Today, I’d complement this work with a measurement plan from the first version to keep iterating with stronger evidence.”</p>
+</div>
+<ul class="learnings-list reveal">
+<li>
+<div style="font-size: 2rem; color: var(--accent);">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32">
+<path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<path d="M3 15h6"></path>
+<path d="M3 18h6"></path>
+</svg>
+</div>
+<div>
+<h4 style="margin-bottom: 0.5rem; color: white;">Alignment</h4>
+<p>Defining the MVP, architecture, and working cadence early unblocked decisions between business and engineering.</p>
+</div>
+</li>
+<li>
+<div style="font-size: 2rem; color: var(--accent);">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+</div>
+<div>
+<h4 style="margin-bottom: 0.5rem; color: white;">Banking domain</h4>
+<p>Understanding rules, approvals, and business language was key to designing better solutions.</p>
+</div>
+</li>
+<li>
+<div style="font-size: 2rem; color: var(--accent);">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32">
+<path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+</svg>
+</div>
+<div>
+<h4 style="margin-bottom: 0.5rem; color: white;">Scalability</h4>
+<p>Designing for components and customization from the start made the product more scalable—and more sellable.</p>
+</div>
+</li>
+</ul>
+</section>
+</main>
+<footer id="contacto">
+<h2 class="section-title" style="color: white; margin-bottom: 3rem;">Want to see more case studies like this?</h2>
+<div class="socials">
+<a class="back-link" href="https://www.linkedin.com/in/denisluyo/" style="padding: 15px 40px; font-size: 1.2rem;" target="_blank">Let's talk on LinkedIn</a>
+</div>
+<p style="margin-top: 3rem; opacity: 0.5;">© 2024 Denis Luyo. Product Design &amp; UX Lead.</p>
+</footer>
+<script src="main.js"></script>
+<script>
         // --- Banking Sphere: Network Nodes (Trust & Connections) ---
         const initSphere = () => {
             const container = document.getElementById('banking-sphere-3d');
@@ -919,5 +864,4 @@
         });
     </script>
 </body>
-
 </html>

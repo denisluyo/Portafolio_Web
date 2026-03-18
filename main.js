@@ -91,21 +91,35 @@ const skillObserver = new IntersectionObserver((entries) => {
 
 skillBars.forEach(bar => skillObserver.observe(bar));
 
-// --- Project Filtering ---
-const filterButtons = document.querySelectorAll('.filter-chip[data-filter]');
-const projectCards = document.querySelectorAll('.project-card');
+// --- Project Filtering with Tabs ---
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabIndicator = document.querySelector('.tab-indicator');
+const projectCards = document.querySelectorAll('.project-card, .outcome-card');
 
-filterButtons.forEach(btn => {
+const updateTabIndicator = (btn) => {
+    if (!tabIndicator || !btn) return;
+    tabIndicator.style.width = `${btn.offsetWidth}px`;
+    tabIndicator.style.left = `${btn.offsetLeft}px`;
+};
+
+// Initialize indicator position
+window.addEventListener('load', () => {
+    const activeBtn = document.querySelector('.tab-btn.active');
+    if (activeBtn) updateTabIndicator(activeBtn);
+});
+
+tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         // Toggle active class
-        filterButtons.forEach(b => b.classList.remove('active'));
+        tabButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+        updateTabIndicator(btn);
 
         const filter = btn.getAttribute('data-filter');
 
         projectCards.forEach(card => {
-            const categories = card.getAttribute('data-category');
-            if (filter === 'all' || categories.includes(filter)) {
+            const category = card.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
                 card.classList.remove('hidden');
                 // Re-trigger reveal for filtered items
                 setTimeout(() => card.classList.add('active'), 50);
@@ -114,6 +128,11 @@ filterButtons.forEach(btn => {
             }
         });
     });
+});
+
+window.addEventListener('resize', () => {
+    const activeBtn = document.querySelector('.tab-btn.active');
+    if (activeBtn) updateTabIndicator(activeBtn);
 });
 
 // Initialize

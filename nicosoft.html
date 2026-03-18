@@ -45,7 +45,31 @@
             text-align: left;
         }
 
-        .hero-content {
+        
+        /* Hero image overlay (same effect as frameworkmetricas) */
+        .hero-bg-placeholder {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            pointer-events: none;
+            background:
+                linear-gradient(90deg, #050509 0%, rgba(5, 5, 9, 0.35) 55%, transparent 100%),
+                url('imglanding/nico4.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            mask-image: linear-gradient(to left, black 60%, transparent 100%);
+            opacity: 0.85;
+            animation: hero-pan 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes hero-pan {
+            from { transform: scale(1) translateX(0); }
+            to { transform: scale(1.08) translateX(-2%); }
+        }
+.hero-content {
             position: relative;
             z-index: 10;
             max-width: 1200px;
@@ -356,6 +380,13 @@
                 --section-spacing: 60px;
             }
 
+            .hero-bg-placeholder {
+                width: 100%;
+                opacity: 0.25;
+                mask-image: linear-gradient(to bottom, black 35%, transparent 85%);
+            }
+
+
             .project-hero {
                 padding: 0 5%;
                 height: auto;
@@ -452,7 +483,8 @@
     </nav>
 
     <header class="project-hero">
-        <div class="hero-content">
+                <div class="hero-bg-placeholder"></div>
+<div class="hero-content">
             <span class="hero-tag reveal">
                 <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
                     <path

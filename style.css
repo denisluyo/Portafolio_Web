@@ -279,6 +279,75 @@ header nav a:hover::after {
     font-weight: 400;
 }
 
+/* Tabs System */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.tabs-switcher {
+    position: relative;
+    display: flex;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--surface-border);
+    padding: 6px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+}
+
+.tab-btn {
+    position: relative;
+    z-index: 2;
+    padding: 12px 30px;
+    border: none;
+    background: transparent;
+    color: var(--text-dim);
+    font-family: var(--font-headings);
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab-btn:hover {
+    color: white;
+}
+
+.tab-btn.active {
+    color: white;
+}
+
+.tab-indicator {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    height: calc(100% - 12px);
+    background: var(--primary);
+    border-radius: 100px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+    z-index: 1;
+}
+
+/* Category Labels */
+.category-label {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    padding: 4px 12px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    z-index: 10;
+}
+
 /* Filter Chips */
 .filter-container {
     display: flex;
@@ -313,6 +382,9 @@ header nav a:hover::after {
     color: white;
     box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
 }
+
+
+
 
 /* Projects Grid */
 .projects {
@@ -460,8 +532,9 @@ header nav a:hover::after {
     z-index: 10;
 }
 
-.project-card.hidden {
-    display: none;
+.project-card.hidden,
+.outcome-card.hidden {
+    display: none !important;
 }
 
 /* Skills */
@@ -599,4 +672,186 @@ footer {
 .socials a:hover {
     opacity: 1;
     color: var(--primary);
+}
+
+/* ======================== 
+   OUTCOME CARDS (ENTREGABLES)
+   ======================== */
+
+.outcome-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.outcome-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.oc-image-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background: #111;
+}
+
+.oc-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.outcome-card:hover .oc-image {
+    transform: scale(1.05);
+}
+
+.oc-type {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--secondary);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.oc-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.oc-project-name {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.oc-title {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    font-family: var(--font-headings);
+    line-height: 1.2;
+}
+
+.oc-summary {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.oc-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.oc-tags span {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.oc-highlight {
+    background: rgba(124, 58, 237, 0.05);
+    border-left: 2px solid var(--primary);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.oc-quote {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 0.8rem 0;
+    line-height: 1.4;
+}
+
+.oc-quote::before {
+    content: '"';
+    color: var(--primary);
+    font-size: 1.2em;
+    font-family: serif;
+}
+
+.oc-quote::after {
+    content: '"';
+    color: var(--primary);
+    font-size: 1.2em;
+    font-family: serif;
+}
+
+.oc-metric {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.oc-metric-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--secondary);
+    font-family: var(--font-headings);
+}
+
+.oc-metric-text {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+.oc-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--surface-border);
+    padding-top: 1.2rem;
+}
+
+.oc-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    background: transparent;
+    color: #fff;
+    border: 1px solid var(--surface-border);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.outcome-card:hover .oc-button {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
 }

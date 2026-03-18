@@ -33,7 +33,31 @@
             text-align: left;
         }
 
-        .hero-content {
+        
+        /* Hero image overlay (ported from frameworkmetricas) */
+        .hero-bg-placeholder {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background:
+                linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0.45) 50%, transparent 100%),
+                url('imglanding/logi5.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            mask-image: linear-gradient(to left, black 60%, transparent 100%);
+            opacity: 0.85;
+            animation: hero-pan 20s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes hero-pan {
+            from { transform: scale(1) translateX(0); }
+            to { transform: scale(1.08) translateX(-2%); }
+        }
+.hero-content {
             position: relative;
             z-index: 10;
             max-width: 1200px;
@@ -330,6 +354,12 @@
         }
 
         @media (max-width: 992px) {
+            .hero-bg-placeholder {
+                width: 100%;
+                opacity: 0.25;
+                mask-image: linear-gradient(to bottom, black 35%, transparent 85%);
+            }
+
             :root {
                 --section-spacing: 60px;
             }
@@ -430,7 +460,8 @@
     </nav>
 
     <header class="project-hero">
-        <div class="hero-content">
+                <div class="hero-bg-placeholder"></div>
+<div class="hero-content">
             <span class="hero-tag reveal">
                 <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -442,9 +473,7 @@
                 Logística<br>Internacional
             </h1>
             <p class="hero-description reveal">
-                Liderando la transformación digital de un ecosistema complejo mediante diseño estratégico y alineación
-                de
-                equipos senior.
+                Liderando la transformación digital de un ecosistema complejo mediante diseño estratégico y alineación de equipos senior (con mi guía directa y coordinación diaria).
             </p>
 
             <div class="project-meta-minimal reveal">
@@ -511,8 +540,7 @@
                         style="background: linear-gradient(to right, #fff, #ef4444); -webkit-background-clip: text; background-clip: text;">
                         El
                         Desafío</h2>
-                    <p>La logística internacional es un mundo de alta complejidad donde la precisión es vital. Nos
-                        encontramos con:</p>
+                    <p>La logística internacional es un mundo de alta complejidad donde la precisión es vital. Me encontré con:</p>
                     <div class="highlight-box">
                         <h4 style="color: white; margin-bottom: 0.5rem;">Caos Operativo</h4>
                         <p style="font-size: 1rem; margin-bottom: 0;">Funciones críticas no coordinadas y duplicidad de
@@ -533,15 +561,12 @@
         <section id="estrategia" class="section-container">
             <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
                 <h2>Estrategia y Procesos</h2>
-                <p>Implementamos un marco de trabajo basado en <strong>Lean UX</strong> y <strong>Continuous
-                        Discovery</strong>, asegurando que cada decisión estuviera respaldada por datos y validada con
-                    usuarios reales.</p>
+                <p>Implementé y lideré un marco de trabajo basado en <strong>Lean UX</strong> y <strong>Continuous Discovery</strong>, asegurando que cada decisión estuviera respaldada por datos y validada con usuarios reales.</p>
             </div>
             <div class="grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
                 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
                     <h3 style="margin-bottom: 1.5rem;">Facilitación</h3>
-                    <p style="font-size: 1rem;">Lideré <strong>3 Workshops de Design Thinking</strong> con más de 30
-                        involucrados para definir el MVP y el roadmap de producto.</p>
+                    <p style="font-size: 1rem;">Facilité y lideré <strong>3 workshops de Design Thinking</strong> con más de 30 involucrados para definir el MVP y el roadmap de producto.</p>
                 </div>
                 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
                     <h3 style="margin-bottom: 1.5rem;">Auditoría</h3>
@@ -566,8 +591,7 @@
                 <div class="content-block reveal">
                     <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">1. Design System
                         Escalable</h3>
-                    <p>Para resolver la inconsistencia, construimos un ecosistema de diseño modular que sirve tanto a
-                        Web como a Mobile.</p>
+                    <p>Para resolver la inconsistencia, diseñé y lideré la construcción de un ecosistema de diseño modular que funciona tanto en Web como en Mobile.</p>
                     <ul style="color: var(--text-dim); line-height: 2;">
                         <li><strong>+50 Componentes UI</strong> maestros con arquitectura atómica.</li>
                         <li><strong>+40 Variantes</strong> para cubrir todos los estados operativos.</li>
@@ -588,10 +612,9 @@
                 <div class="content-block reveal">
                     <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">2. Arquitectura de
                         Información</h3>
-                    <p>Simplificamos flujos de trabajo logísticos densos en interfaces claras y orientadas a la tarea.
+                    <p>Simplifiqué flujos de trabajo logísticos densos en interfaces claras y orientadas a la tarea.
                     </p>
-                    <p>Mapeamos el <strong>Service Blueprint</strong> completo, conectando las acciones del usuario con
-                        los procesos internos y sistemas de soporte, eliminando pasos redundantes.</p>
+                    <p>Mapeé el <strong>Service Blueprint</strong> completo, conectando las acciones del usuario con los procesos internos y sistemas de soporte, eliminando pasos redundantes.</p>
                 </div>
             </div>
 
@@ -602,8 +625,7 @@
                         (Handover)</h3>
                     <p>Establecí una metodología de trabajo Design-Dev basada en transparencia y documentación técnica.
                     </p>
-                    <p>Creamos guías de integración y manuales de Handover que eliminaron la fricción en la fase de
-                        implementación, asegurando que la visión de diseño se tradujera píxel por píxel.</p>
+                    <p>Definí guías de integración y manuales de handover que eliminaron fricción en la implementación, asegurando que la visión de diseño se tradujera píxel por píxel.</p>
                 </div>
                 <div class="reveal">
                     <div class="image-placeholder4"></div>
@@ -638,19 +660,19 @@
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; width: 100%;">
                 <div class="deliverable-card reveal">
                     <h4>User Research Report</h4>
-                    <p>Findings detallados y validation roadmap.</p>
+                    <p>Hallazgos clave y plan de validación para decisiones de producto.</p>
                 </div>
                 <div class="deliverable-card reveal">
                     <h4>Service Blueprint</h4>
-                    <p>Visión 360 del ecosistema logístico.</p>
+                    <p>Visión 360 del ecosistema logístico para alinear roles, pasos y sistemas.</p>
                 </div>
                 <div class="deliverable-card reveal">
                     <h4>UI Kit Maestro</h4>
-                    <p>Librería de componentes en Figma.</p>
+                    <p>Librería de componentes en Figma para acelerar diseño y desarrollo.</p>
                 </div>
                 <div class="deliverable-card reveal">
                     <h4>Handover Manual</h4>
-                    <p>Documentación técnica para desarrollo.</p>
+                    <p>Documentación técnica para ejecución consistente (design → dev).</p>
                 </div>
             </div>
         </section>

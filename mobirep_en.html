@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
 
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MobiRep | Product Lead Designer | Denis Luyo</title>
-    <meta name="description"
-        content="Case study: MobiRep - Transforming Medical Visits in the pharmaceutical industry." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MobiRep | Product Lead Designer | Denis Luyo</title>
+<meta content="Case study: MobiRep — transforming medical visits in the pharmaceutical industry." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="style.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<style>
         :root {
             --card-bg: rgba(255, 255, 255, 0.02);
             --section-spacing: 120px;
@@ -211,7 +210,7 @@
             color: var(--text-dim);
             margin-top: 2rem;
         }
-          .image-placeholder1 {
+         .image-placeholder1 {
             width: 100%;
             aspect-ratio: 16/10;
             background-image: url(imglanding/mobirep1.png);
@@ -225,7 +224,7 @@
             color: var(--text-dim);
             margin-top: 2rem;
         }
-            .image-placeholder2 {
+         .image-placeholder2 {
             width: 100%;
             aspect-ratio: 16/10;
             background-image: url(imglanding/mobirep2.png);
@@ -239,7 +238,7 @@
             color: var(--text-dim);
             margin-top: 2rem;
         }
-            .image-placeholder3 {
+         .image-placeholder3 {
             width: 100%;
             aspect-ratio: 16/10;
             background-image: url(imglanding/mobirep3.png);
@@ -253,7 +252,7 @@
             color: var(--text-dim);
             margin-top: 2rem;
         }
-            .image-placeholder4 {
+         .image-placeholder4 {
             width: 100%;
             aspect-ratio: 16/10;
             background-image: url(imglanding/mobirep4.png);
@@ -329,7 +328,41 @@
             gap: 20px;
         }
 
+        
+        /* Hero image background (same effect as frameworkmetricas.html) */
+        .project-hero .hero-bg-placeholder{
+            position:absolute;
+            top:0;
+            right:0;
+            width:60%;
+            height:100%;
+            background: linear-gradient(90deg, #020205 0%, rgba(2, 2, 5, 0.4) 50%, transparent 100%),
+                url('imglanding/mobirep1.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            mask-image: linear-gradient(to left, black 60%, transparent 100%);
+            opacity: 0.8;
+            animation: hero-pan 20s ease-in-out infinite alternate;
+            pointer-events:none;
+        }
+        @keyframes hero-pan{
+            from{ transform: scale(1) translateX(0); }
+            to{ transform: scale(1.06) translateX(-18px); }
+        }
+        .project-hero .scroll-indicator{ z-index: 10; }
+
+
         @media (max-width: 992px) {
+            .project-hero .hero-bg-placeholder{
+                width:100%;
+                opacity:0.25;
+                mask-image:none;
+                background: linear-gradient(180deg, rgba(2,2,5,0.9) 0%, rgba(2,2,5,0.35) 55%, transparent 100%),
+                    url('imglanding/mobirep1.png');
+                background-position: center;
+            }
+
             :root {
                 --section-spacing: 60px;
             }
@@ -420,284 +453,235 @@
             }
         }
     </style>
-</head>
-
+</link></head>
 <body>
-    <div id="bg-canvas" style="position: fixed; inset: 0; z-index: -1;"></div>
-
-    <nav class="back-nav">
-        <a href="index_en.html" class="back-btn">← Volver al Listado</a>
-    </nav>
-
-    <header class="project-hero">
-        <div class="hero-content">
-            <span class="hero-tag reveal">
-                <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
+<div id="bg-canvas" style="position: fixed; inset: 0; z-index: -1;"></div>
+<nav class="back-nav">
+<a class="back-btn" href="index.html">← Volver al Listado</a>
+</nav>
+<header class="project-hero">
+<div class="hero-bg-placeholder"></div>
+<div class="hero-content">
+<span class="hero-tag reveal">
+<svg fill="currentColor" height="12" viewbox="0 0 24 24" width="12">
+<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+</svg>
                 Case Study
             </span>
-            <h1 class="hero-title reveal">
-                MobiRep<br>Program
+<h1 class="hero-title reveal">
+                Program<br/>MobiRep
             </h1>
-            <p class="hero-description reveal">
-                Transforming the medical visit with an innovative platform for automation and real-time management.
+<p class="hero-description reveal">
+                Transforming medical visits with an innovative platform for real-time automation and management.
             </p>
-
-            <div class="project-meta-minimal reveal">
-                <div class="meta-item-min"><span>ROLE</span>
-                    <p>Product Lead Designer</p>
-                </div>
-                <div class="meta-item-min"><span>YEAR</span>
-                    <p>2017</p>
-                </div>
-                <div class="meta-item-min"><span>INDUSTRY</span>
-                    <p>Pharmaceutical</p>
-                </div>
-                <div class="meta-item-min"><span>KEY ACHIEVEMENT</span>
-                    <p>90% reduction in physical materials</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="scroll-indicator reveal">
-            <div class="scroll-line"></div>
-            <span>EXPLORE CASE</span>
-        </div>
-    </header>
-
-    <main>
-        <!-- RESUMEN -->
-        <section id="resumen" class="section-container">
-            <div class="grid-2">
-                <div class="content-block reveal">
-                    <h2>Summary</h2>
-                    <p>
-                        In an environment where digital solutions were in their early stages of adoption,
-                        <strong>MobiRep</strong> emerged as an innovative platform designed to revolutionize the
-                        medical visit process for pharmaceutical labs.
+<div class="project-meta-minimal reveal">
+<div class="meta-item-min"><span>ROLE</span>
+<p>Product Lead Designer</p>
+</div>
+<div class="meta-item-min"><span>YEAR</span>
+<p>2017</p>
+</div>
+<div class="meta-item-min"><span>INDUSTRY</span>
+<p>Farmacéutico</p>
+</div>
+<div class="meta-item-min"><span>KEY WIN</span>
+<p>90% reduction in physical materials</p>
+</div>
+</div>
+</div>
+<div class="scroll-indicator reveal">
+<div class="scroll-line"></div>
+<span>EXPLORE CASE</span>
+</div>
+</header>
+<main>
+<!-- RESUMEN -->
+<section class="section-container" id="resumen">
+<div class="grid-2">
+<div class="content-block reveal">
+<h2>Overview</h2>
+<p>
+                        At a time when digital solutions were still in the early stages of adoption,
+                        <strong>MobiRep</strong> emerged as an innovative platform designed to modernize how labs run medical visits.
                     </p>
-                    <div class="leadership-badge">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        Product Designer & UX Strategist
+<div class="leadership-badge">
+<svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+</svg>
+                        Product Designer &amp; UX Strategist
                     </div>
-                    <p>
-                        I led this platform's development from scratch, designing a seamless experience on both
-                        iPads and the web, optimizing processes and providing a solution that saves time,
-                        resources, and enables data-driven decision making.
+<p>
+                        I led the end-to-end build of this platform from scratch, designing a seamless experience across iPad and web, streamlining workflows, reducing costs, and enabling data-driven decision-making.
                     </p>
-                </div>
-                <div class="reveal">
-                    <div id="logistic-sphere-3d" style="width: 100%; height: 400px;"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- THE CHALLENGE -->
-        <section id="desafio" class="section-container">
-            <div class="grid-2">
-                <div class="reveal">
-                    <div class="image-placeholder1"></div>
-                </div>
-                <div class="content-block reveal">
-                    <h2
-                        style="background: linear-gradient(to right, #fff, #ef4444); -webkit-background-clip: text; background-clip: text;">
+</div>
+<div class="reveal">
+<div id="logistic-sphere-3d" style="width: 100%; height: 400px;"></div>
+</div>
+</div>
+</section>
+<!-- EL DESAFÍO -->
+<section class="section-container" id="desafio">
+<div class="grid-2">
+<div class="reveal">
+<div class="image-placeholder1"></div>
+</div>
+<div class="content-block reveal">
+<h2 style="background: linear-gradient(to right, #fff, #ef4444); -webkit-background-clip: text; background-clip: text;">
                         Key Problems</h2>
-                    <p>Understanding the core challenge for the sales team and management:</p>
-                    <div class="highlight-box" style="padding: 1.5rem; margin-bottom: 1.5rem;">
-                        <h4 style="color: white; margin-bottom: 0.5rem;">Lack of Digital Tools</h4>
-                        <p style="font-size: 1rem; margin-bottom: 0;">The market was just adopting iPads; designing an
-                            intuitive and efficient interface for this platform was crucial.</p>
-                    </div>
-                    <div class="highlight-box" style="padding: 1.5rem; margin-bottom: 1.5rem;">
-                        <h4 style="color: white; margin-bottom: 0.5rem;">Inefficient Management</h4>
-                        <p style="font-size: 1rem; margin-bottom: 0;">Representatives wasted time carrying heavy,
-                            outdated materials to visits, reducing productivity.</p>
-                    </div>
-                    <div class="highlight-box" style="padding: 1.5rem; margin-bottom: 1.5rem;">
-                        <h4 style="color: white; margin-bottom: 0.5rem;">Low Visibility for Managers</h4>
-                        <p style="font-size: 1rem; margin-bottom: 0;">Limited information about visit performance,
-                            making key KPIs difficult to track.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- APPROACH & RESEARCH -->
-        <section id="estrategia" class="section-container">
-            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
-                <h2>Approach & Research</h2>
-                <p>We implemented a <strong>Design Thinking</strong> process that included 5 key workshops,
-                    ensuring data-driven decisions from our 20 field interviews.</p>
-            </div>
-            <div class="grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
-                <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
-                    <h3 style="margin-bottom: 1.5rem;">Rep Interviews</h3>
-                    <p style="font-size: 1rem;">We conducted 20 field interviews. We discovered that
-                        <strong>98%</strong> of representatives believed their work was delayed by not having the
-                        right updated materials during medical visits.
+<p>Understanding the core challenge for the sales team and leadership:</p>
+<div class="highlight-box" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+<h4 style="color: white; margin-bottom: 0.5rem;">Lack of Digital Tools</h4>
+<p style="font-size: 1rem; margin-bottom: 0;">iPads were just being adopted; building an intuitive and efficient interface was critical.</p>
+</div>
+<div class="highlight-box" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+<h4 style="color: white; margin-bottom: 0.5rem;">Inefficient Workflow</h4>
+<p style="font-size: 1rem; margin-bottom: 0;">Representatives lost time carrying heavy, outdated materials, reducing productivity.</p>
+</div>
+<div class="highlight-box" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+<h4 style="color: white; margin-bottom: 0.5rem;">Limited Manager Visibility</h4>
+<p style="font-size: 1rem; margin-bottom: 0;">There was little visibility into visit performance, making key KPIs hard to track.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ESTRATEGIA Y PROCESOS -->
+<section class="section-container" id="estrategia">
+<div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+<h2>Approach &amp; Research</h2>
+<p>Definí y lideré un proceso de <strong>Design Thinking</strong> with 5 key workshops, grounding decisions in data from 20 field interviews.</p>
+</div>
+<div class="grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+<div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
+<h3 style="margin-bottom: 1.5rem;">Rep Interviews</h3>
+<p style="font-size: 1rem;">Conduje 20 entrevistas de campo y sintetizé los hallazgos. El <strong>98%</strong> of representatives said their work was slowed down by not having up-to-date materials during medical visits.
                     </p>
-                </div>
-                <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
-                    <h3 style="margin-bottom: 1.5rem;">Managers' Vision</h3>
-                    <p style="font-size: 1rem;">We focused on understanding what information was critical to them. A
-                        striking <strong>99%</strong> felt they were not leveraging the generated data and that the
-                        marketing spending (paper) was poorly utilized.</p>
-                </div>
-            </div>
-            <div class="image-placeholder2 reveal" style="margin-top: 40px; aspect-ratio: 21/9;"></div>
-        </section>
-
-        <!-- SOLUTIONS -->
-        <section id="soluciones" class="section-container">
-            <h2 style="margin-bottom: 4rem;">High-Impact Solutions</h2>
-
-            <!-- App for Reps -->
-            <div class="grid-2">
-                <div class="content-block reveal">
-                    <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">1. iOS/iPad App for
-                        Representatives</h3>
-                    <p>We built an iPad app that allowed representatives to digitize all supporting materials,
-                        reducing physical load and enabling automatic content updates.
+</div>
+<div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
+<h3 style="margin-bottom: 1.5rem;">Managers’ Perspective</h3>
+<p style="font-size: 1rem;">Me enfoqué en entender qué información era crítica para gerencia. Un <strong>99%</strong> said the data being generated wasn’t being used effectively, and paper-based marketing spend was poorly optimized.</p>
+</div>
+</div>
+<div class="image-placeholder2 reveal" style="margin-top: 40px; aspect-ratio: 21/9;"></div>
+</section>
+<!-- SOLUCIONES -->
+<section class="section-container" id="soluciones">
+<h2 style="margin-bottom: 4rem;">High-Impact Solutions</h2>
+<!-- App para Representantes -->
+<div class="grid-2">
+<div class="content-block reveal">
+<h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">1. iPad iOS App for Representatives</h3>
+<p>I led the design and delivery of an iPad app that digitized sales materials, reduced physical load, and enabled automatic content updates.
                     </p>
-                    <ul style="color: var(--text-dim); line-height: 2;">
-                        <li><strong>Digitization</strong> of product catalog and medical presentations.</li>
-                        <li><strong>Automatic capture</strong> of visit data (location, duration, doctor
-                            visited).</li>
-                        <li><strong>Minimalist interface</strong> that reduces required actions, letting the app
-                            work in the background.</li>
-                    </ul>
-                </div>
-                <div class="reveal">
-                    <div class="image-placeholder3"></div>
-                </div>
-            </div>
-
-            <!-- Manager Dashboard -->
-            <div class="grid-2" style="margin-bottom: 100px;">
-                <div class="reveal">
-                    <div id="ia-visualization-3d" style="width: 100%; height: 350px;"></div>
-                </div>
-                <div class="content-block reveal">
-                    <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">2. Web Dashboard for
-                        Managers</h3>
-                    <p>We developed a real-time web control panel so managers could access key KPIs from
-                        each visit.</p>
-                    <p>We simplified the interface so decision-making was fast, data-driven, and without
-                        depending on spreadsheets or manual reports.</p>
-                </div>
-            </div>
-
-            <!-- UI/UX Optimization -->
-            <div class="grid-2">
-                <div class="content-block reveal">
-                    <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">3. UI/UX Optimization
+<ul style="color: var(--text-dim); line-height: 2;">
+<li><strong>Digitization</strong> of product catalogs and medical presentations.</li>
+<li><strong>Automatic capture</strong> of visit data (location, duration, physician visited).</li>
+<li><strong>Minimal interface</strong> that reduces required actions, letting the app do the heavy lifting in the background.</li>
+</ul>
+</div>
+<div class="reveal">
+<div class="image-placeholder3"></div>
+</div>
+</div>
+<!-- Dashboard Gerentes -->
+<div class="grid-2" style="margin-bottom: 100px;">
+<div class="reveal">
+<div id="ia-visualization-3d" style="width: 100%; height: 350px;"></div>
+</div>
+<div class="content-block reveal">
+<h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">2. Real-Time Web Dashboard for Managers</h3>
+<p>I led the design of a real-time web dashboard so managers could track key visit KPIs.</p>
+<p>I defined a simple UI that speeds up data-driven decisions without relying on spreadsheets or manual reports.</p>
+</div>
+</div>
+<!-- Optimización UI/UX -->
+<div class="grid-2">
+<div class="content-block reveal">
+<h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">3. UI/UX Optimization
                     </h3>
-                    <p>For managers: a simple and clear interface adapted to their busy profile, showing
-                        only the most relevant data immediately.</p>
-                    <p>For representatives: a fully digitized workflow that <strong>eliminates manual
-                            tasks</strong> and improves the quality of information captured on each visit.</p>
-                </div>
-                <div class="reveal">
-                    <div class="image-placeholder4"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RESULTS -->
-        <section id="resultados" class="section-container" style="background: rgba(16, 185, 129, 0.03);">
-            <h2 class="section-title">Tangible Results</h2>
-            <div class="grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 4rem;">
-                <div class="stat-item glass reveal" style="padding: 3rem;">
-                    <span class="stat-number" style="color: #10b981;">90%</span>
-                    <p style="font-size: 1.2rem;">Reduction in physical material usage by digitizing the medical visit
-                        catalog.</p>
-                </div>
-                <div class="stat-item glass reveal" style="padding: 3rem;">
-                    <span class="stat-number" style="color: #10b981;">99%</span>
-                    <p style="font-size: 1.2rem;">Optimization in leveraging visit data for managerial
-                        decision-making.</p>
-                </div>
-                <div class="stat-item glass reveal" style="padding: 3rem;">
-                    <span class="stat-number" style="color: #10b981;">$M+</span>
-                    <p style="font-size: 1.2rem;">Savings in marketing costs thanks to the elimination of printed
-                        materials.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- KEY DELIVERABLES -->
-        <section id="entregables" class="section-container">
-            <h2 style="margin-bottom: 4rem;">Key Deliverables</h2>
-            <div class="grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; width: 100%;">
-                <div class="deliverable-card reveal">
-                    <h4>User Research Report</h4>
-                    <p>20 field interviews synthesized into actionable insights.</p>
-                </div>
-                <div class="deliverable-card reveal">
-                    <h4>iPad App (iOS)</h4>
-                    <p>Minimalist interface for medical representatives during visits.</p>
-                </div>
-                <div class="deliverable-card reveal">
-                    <h4>Web Dashboard</h4>
-                    <p>Real-time KPI panel for laboratory managers.</p>
-                </div>
-                <div class="deliverable-card reveal">
-                    <h4>5 Design Thinking Workshops</h4>
-                    <p>Facilitated as Product Owner to define the product roadmap.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- LEARNINGS -->
-        <section id="aprendizajes" class="section-container">
-            <h2 style="margin-bottom: 4rem;">Key Learnings</h2>
-            <ul class="learnings-list reveal">
-                <li>
-                    <div style="font-size: 2rem; color: var(--primary);">01</div>
-                    <div>
-                        <h4 style="margin-bottom: 0.5rem; color: white;">Listen and Understand Deeply</h4>
-                        <p>Field interviews revealed key issues that hadn't been considered
-                            initially and became the foundation of our most valued solutions by users.</p>
-                    </div>
-                </li>
-                <li>
-                    <div style="font-size: 2rem; color: var(--primary);">02</div>
-                    <div>
-                        <h4 style="margin-bottom: 0.5rem; color: white;">Automation as a Key Tool</h4>
-                        <p>Reducing manual tasks not only optimized the workflow, but also improved the
-                            quality of captured information, generating a virtuous cycle of continuous improvement.</p>
-                    </div>
-                </li>
-                <li>
-                    <div style="font-size: 2rem; color: var(--primary);">03</div>
-                    <div>
-                        <h4 style="margin-bottom: 0.5rem; color: white;">Adapting to New Technologies</h4>
-                        <p>Working with iPads and HTML5 in 2017 was a technical challenge, but it allowed creating a
-                            richer and more dynamic experience that transformed the medical representatives' daily work.
-                        </p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    </main>
-
-    <footer id="contact">
-        <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Have a Similar Challenge?</h2>
-        <div class="socials">
-            <a href="index_en.html" class="back-link" style="padding: 15px 40px; font-size: 1.2rem;">Let's Talk on
-                LinkedIn</a>
-        </div>
-    </footer>
-
-    <script src="main.js"></script>
-    <script>
+<p>For managers: a clear, lightweight interface tailored to busy users, surfacing only what matters.</p>
+<p>Para los representantes: un flujo de trabajo completamente digitalizado que <strong>eliminates manual tasks</strong> y mejora la calidad de la información capturada en cada visita.</p>
+</div>
+<div class="reveal">
+<div class="image-placeholder4"></div>
+</div>
+</div>
+</section>
+<!-- RESULTADOS -->
+<section class="section-container" id="resultados" style="background: rgba(16, 185, 129, 0.03);">
+<h2 class="section-title">Measurable Outcomes</h2>
+<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 4rem;">
+<div class="stat-item glass reveal" style="padding: 3rem;">
+<span class="stat-number" style="color: #10b981;">90%</span>
+<p style="font-size: 1.2rem;">Reduction in physical materials by digitizing the medical-visit catalog.</p>
+</div>
+<div class="stat-item glass reveal" style="padding: 3rem;">
+<span class="stat-number" style="color: #10b981;">99%</span>
+<p style="font-size: 1.2rem;">Better use of visit data for managerial decision-making.</p>
+</div>
+<div class="stat-item glass reveal" style="padding: 3rem;">
+<span class="stat-number" style="color: #10b981;">$M+</span>
+<p style="font-size: 1.2rem;">Marketing cost savings by eliminating printed materials.</p>
+</div>
+</div>
+</section>
+<!-- ENTREGABLES CLAVES -->
+<section class="section-container" id="entregables">
+<h2 style="margin-bottom: 4rem;">Key Deliverables</h2>
+<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; width: 100%;">
+<div class="deliverable-card reveal">
+<h4>User Research Report</h4>
+<p>I synthesized 20 field interviews into actionable insights to shape the product.</p>
+</div>
+<div class="deliverable-card reveal">
+<h4>App iPad (iOS)</h4>
+<p>I designed a minimal interface for medical reps during their visits.</p>
+</div>
+<div class="deliverable-card reveal">
+<h4>Dashboard Web</h4>
+<p>I designed a real-time KPI dashboard for lab management.</p>
+</div>
+<div class="deliverable-card reveal">
+<h4>5 Design Thinking Workshops</h4>
+<p>I facilitated them to align decisions and define the product roadmap.</p>
+</div>
+</div>
+</section>
+<!-- APRENDIZAJES -->
+<section class="section-container" id="aprendizajes">
+<h2 style="margin-bottom: 4rem;">Key Learnings</h2>
+<ul class="learnings-list reveal">
+<li>
+<div style="font-size: 2rem; color: var(--primary);">01</div>
+<div>
+<h4 style="margin-bottom: 0.5rem; color: white;">Listen and Understand Deeply</h4>
+<p>Field interviews surfaced critical issues that hadn’t been considered initially—and became the foundation for the most valued solutions.</p>
+</div>
+</li>
+<li>
+<div style="font-size: 2rem; color: var(--primary);">02</div>
+<div>
+<h4 style="margin-bottom: 0.5rem; color: white;">Automation as a Core Lever</h4>
+<p>Reducing manual tasks not only streamlined work, it also improved data quality—enabling continuous improvement.</p>
+</div>
+</li>
+<li>
+<div style="font-size: 2rem; color: var(--primary);">03</div>
+<div>
+<h4 style="margin-bottom: 0.5rem; color: white;">Adapting to New Technologies</h4>
+<p>Working with iPads and HTML5 in 2017 was technically challenging, but it enabled a richer, more dynamic experience that transformed reps’ daily work.</p>
+</div>
+</li>
+</ul>
+</section>
+</main>
+<footer id="contacto">
+<h2 class="section-title" style="color: white; margin-bottom: 3rem;">Have a similar challenge?</h2>
+<div class="socials">
+<a class="back-link" href="index.html" style="padding: 15px 40px; font-size: 1.2rem;">Let’s talk on LinkedIn</a>
+</div>
+</footer>
+<script src="main.js"></script>
+<script>
         // --- Detailed 3D Sphere (Complexity) ---
         const initSphere = () => {
             const container = document.getElementById('logistic-sphere-3d');
@@ -817,5 +801,4 @@
         });
     </script>
 </body>
-
 </html>

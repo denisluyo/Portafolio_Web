@@ -329,7 +329,41 @@
             gap: 20px;
         }
 
+        
+        /* Hero image background (same effect as frameworkmetricas.html) */
+        .project-hero .hero-bg-placeholder{
+            position:absolute;
+            top:0;
+            right:0;
+            width:60%;
+            height:100%;
+            background: linear-gradient(90deg, #020205 0%, rgba(2, 2, 5, 0.4) 50%, transparent 100%),
+                url('imglanding/mobirep2.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            mask-image: linear-gradient(to left, black 60%, transparent 100%);
+            opacity: 0.8;
+            animation: hero-pan 20s ease-in-out infinite alternate;
+            pointer-events:none;
+        }
+        @keyframes hero-pan{
+            from{ transform: scale(1) translateX(0); }
+            to{ transform: scale(1.06) translateX(-18px); }
+        }
+        .project-hero .scroll-indicator{ z-index: 10; }
+
+
         @media (max-width: 992px) {
+            .project-hero .hero-bg-placeholder{
+                width:100%;
+                opacity:0.25;
+                mask-image:none;
+                background: linear-gradient(180deg, rgba(2,2,5,0.9) 0%, rgba(2,2,5,0.35) 55%, transparent 100%),
+                    url('imglanding/mobirep2.png');
+                background-position: center;
+            }
+
             :root {
                 --section-spacing: 60px;
             }
@@ -430,6 +464,7 @@
     </nav>
 
     <header class="project-hero">
+        <div class="hero-bg-placeholder"></div>
         <div class="hero-content">
             <span class="hero-tag reveal">
                 <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
@@ -531,22 +566,17 @@
         <section id="estrategia" class="section-container">
             <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
                 <h2>El Enfoque e Investigación</h2>
-                <p>Implementamos un proceso de <strong>Design Thinking</strong> que incluyó 5 workshops clave,
-                    asegurando decisiones basadas en datos de nuestras 20 entrevistas de campo.</p>
+                <p>Definí y lideré un proceso de <strong>Design Thinking</strong> con 5 workshops clave, asegurando decisiones basadas en datos a partir de 20 entrevistas de campo.</p>
             </div>
             <div class="grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
                 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
                     <h3 style="margin-bottom: 1.5rem;">Entrevistas a Representantes</h3>
-                    <p style="font-size: 1rem;">Realizamos 20 entrevistas de campo. Descubrimos que el
-                        <strong>98%</strong> de los representantes creía que su trabajo se retrasaba al no tener el
-                        material adecuado actualizado durante las visitas médicas.
+                    <p style="font-size: 1rem;">Conduje 20 entrevistas de campo y sintetizé los hallazgos. El <strong>98%</strong> de los representantes indicó que su trabajo se retrasaba por no contar con material actualizado durante las visitas médicas.
                     </p>
                 </div>
                 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
                     <h3 style="margin-bottom: 1.5rem;">Visión de los Gerentes</h3>
-                    <p style="font-size: 1rem;">Nos enfocamos en entender qué información era crítica para ellos. Un
-                        contundente <strong>99%</strong> sentía que no estaban aprovechando los datos generados y que el
-                        gasto en marketing (papel) era mal aprovechado.</p>
+                    <p style="font-size: 1rem;">Me enfoqué en entender qué información era crítica para gerencia. Un <strong>99%</strong> señaló que no se aprovechaban los datos generados y que el gasto en marketing (papel) estaba mal optimizado.</p>
                 </div>
             </div>
             <div class="image-placeholder2 reveal" style="margin-top: 40px; aspect-ratio: 21/9;"></div>
@@ -561,8 +591,7 @@
                 <div class="content-block reveal">
                     <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">1. App iOS/iPad para
                         Representantes</h3>
-                    <p>Creamos una aplicación para iPads que permitió a los representantes digitalizar todo el material
-                        de apoyo, reduciendo la carga física y facilitando actualizaciones automáticas de contenidos.
+                    <p>Dirigí el diseño y la ejecución de una aplicación para iPad que permitió digitalizar el material de apoyo, reduciendo la carga física y habilitando actualizaciones automáticas de contenidos.
                     </p>
                     <ul style="color: var(--text-dim); line-height: 2;">
                         <li><strong>Digitalización</strong> del catálogo de productos y presentaciones médicas.</li>
@@ -585,10 +614,8 @@
                 <div class="content-block reveal">
                     <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">2. Dashboard Web para
                         Gerentes</h3>
-                    <p>Desarrollamos un panel de control web en tiempo real para que los gerentes accedieran a los KPI
-                        clave de cada visita.</p>
-                    <p>Simplificamos la interfaz para que la toma de decisiones fuera rápida, basada en datos y sin
-                        depender de hojas de cálculo o reportes manuales.</p>
+                    <p>Lideré el diseño de un panel de control web en tiempo real para que gerencia accediera a los KPI clave de cada visita.</p>
+                    <p>Definí una interfaz simple para acelerar la toma de decisiones basada en datos, sin depender de hojas de cálculo o reportes manuales.</p>
                 </div>
             </div>
 
@@ -638,19 +665,19 @@
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; width: 100%;">
                 <div class="deliverable-card reveal">
                     <h4>User Research Report</h4>
-                    <p>20 entrevistas de campo sintetizadas en insights accionables.</p>
+                    <p>Sinteticé 20 entrevistas de campo en insights accionables para definir el producto.</p>
                 </div>
                 <div class="deliverable-card reveal">
                     <h4>App iPad (iOS)</h4>
-                    <p>Interfaz minimalista para representantes médicos en visitas.</p>
+                    <p>Diseñé una interfaz minimalista para representantes médicos durante sus visitas.</p>
                 </div>
                 <div class="deliverable-card reveal">
                     <h4>Dashboard Web</h4>
-                    <p>Panel de KPI en tiempo real para gerentes de laboratorio.</p>
+                    <p>Diseñé un panel de KPI en tiempo real para gerencia de laboratorio.</p>
                 </div>
                 <div class="deliverable-card reveal">
                     <h4>5 Design Thinking Workshops</h4>
-                    <p>Facilitados como Product Owner para definir el roadmap del producto.</p>
+                    <p>Los facilité para alinear decisiones y definir el roadmap del producto.</p>
                 </div>
             </div>
         </section>
@@ -664,8 +691,7 @@
                     <div>
                         <h4 style="margin-bottom: 0.5rem; color: white;">Escuchar y Entender Profundamente</h4>
                         <p>Las entrevistas de campo revelaron problemas clave que no habían sido contemplados
-                            inicialmente y que se convirtieron en la base de nuestras soluciones más valoradas por los
-                            usuarios.</p>
+                            inicialmente y que se convirtieron en la base de las soluciones más valoradas por los usuarios.</p>
                     </div>
                 </li>
                 <li>
@@ -673,7 +699,7 @@
                     <div>
                         <h4 style="margin-bottom: 0.5rem; color: white;">Automatización como Herramienta Clave</h4>
                         <p>Reducir las tareas manuales no solo optimizó el flujo de trabajo, sino que también mejoró la
-                            calidad de la información capturada, generando un ciclo virtuoso de mejora continua.</p>
+                            calidad de la información capturada, habilitando un ciclo de mejora continua.</p>
                     </div>
                 </li>
                 <li>

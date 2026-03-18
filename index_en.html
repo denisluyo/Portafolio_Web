@@ -61,7 +61,7 @@
                 Luyo</h1>
             <p class="reveal"
                 style="font-size: clamp(1.1rem, 4vw, 1.5rem); opacity: 0.8; max-width: 600px; text-align: center;">
-               UX Lead | DX Transformation & Design Systems Leader</p>
+                UX Lead | DX Transformation & Design Systems Leader</p>
             <div class="reveal" style="margin-top: 3rem;">
                 <a href="#projects" class="filter-chip active" style="text-decoration: none;">View My Work</a>
             </div>
@@ -134,21 +134,22 @@
 
         <!-- Projects Grid -->
         <section id="projects" class="projects">
-            <h2 class="section-title reveal">Featured Projects</h2>
-<!-- 
-            <div class="filter-container reveal">
-                <button class="filter-chip active" data-filter="all">All</button>
-                <button class="filter-chip" data-filter="Product">Product</button>
-                <button class="filter-chip" data-filter="Design System">Design System</button>
-                <button class="filter-chip" data-filter="Concepts">Concepts</button>
-                <button class="filter-chip" data-filter="Redesigns">Redesigns</button>
-            </div> -->
+            <h2 class="section-title reveal">Featured Work</h2>
+            <div class="tabs-container reveal">
+                <div class="tabs-switcher">
+                    <button class="tab-btn active" data-filter="Proyecto">Projects</button>
+                    <button class="tab-btn" data-filter="Entregable">Deliverables</button>
+                    <div class="tab-indicator"></div>
+                </div>
+            </div>
 
             <div class="grid" id="project-grid">
-                <a href="banca_en.html" class="project-card glass reveal" data-category="Product"
+                <a href="banca_en.html" class="project-card glass reveal" data-category="Proyecto"
                     style="text-decoration: none; display: flex; color: inherit;">
                     <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-                        <div class="project-image" style="background-image: url(imgproyectos/banca.jpg);"></div>
+                        <div class="project-image" style="background-image: url(imgproyectos/banca.jpg);">
+                            <span class="category-label">Project</span>
+                        </div>
                         <span class="tag">Banking</span>
                         <div class="content">
                             <h3>Banking Product</h3>
@@ -156,10 +157,12 @@
                         </div>
                     </div>
                 </a>
-                <a href="logistica_en.html" class="project-card glass reveal" data-category="Product Redesigns"
+                <a href="logistica_en.html" class="project-card glass reveal" data-category="Proyecto"
                     style="text-decoration: none; display: flex; color: inherit;">
                     <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-                        <div class="project-image" style="background-image: url(imgproyectos/boxmis.jpg);"></div>
+                        <div class="project-image" style="background-image: url(imgproyectos/boxmis.jpg);">
+                            <span class="category-label">Project</span>
+                        </div>
                         <span class="tag">Logistics</span>
                         <div class="content">
                             <h3>International Logistics</h3>
@@ -167,10 +170,12 @@
                         </div>
                     </div>
                 </a>
-                <a href="nicosoft_en.html" class="project-card glass reveal" data-category="Product"
+                <a href="nicosoft_en.html" class="project-card glass reveal" data-category="Proyecto"
                     style="text-decoration: none; display: flex; color: inherit;">
                     <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-                        <div class="project-image" style="background-image: url(imgproyectos/nicosoft.jpg);"></div>
+                        <div class="project-image" style="background-image: url(imgproyectos/nicosoft.jpg);">
+                            <span class="category-label">Project</span>
+                        </div>
                         <span class="tag">Consumer</span>
                         <div class="content">
                             <h3>Nicosoft-Alicorp</h3>
@@ -178,10 +183,12 @@
                         </div>
                     </div>
                 </a>
-                <a href="mobitrack_en.html" class="project-card glass reveal" data-category="Product"
+                <a href="mobitrack_en.html" class="project-card glass reveal" data-category="Proyecto"
                     style="text-decoration: none; display: flex; color: inherit;">
                     <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-                        <div class="project-image" style="background-image: url(imgproyectos/mobitrack.jpg);"></div>
+                        <div class="project-image" style="background-image: url(imgproyectos/mobitrack.jpg);">
+                            <span class="category-label">Project</span>
+                        </div>
                         <span class="tag">Tracking</span>
                         <div class="content">
                             <h3>Mobitrack</h3>
@@ -189,22 +196,142 @@
                         </div>
                     </div>
                 </a>
-                <a href="designsystem_en.html" class="project-card glass reveal" data-category="Design System"
+                <a href="designsystem_en.html" class="project-card glass reveal" data-category="Proyecto"
                     style="text-decoration: none; display: flex; color: inherit;">
                     <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-                        <div class="project-image" style="background-image: url(imgproyectos/designsystem.jpg);"></div>
-                        <span class="tag">UI</span>
+                        <div class="project-image" style="background-image: url(imgproyectos/designsystem.jpg);">
+                            <span class="category-label">Project</span>
+                        </div>
+                        <span class="tag">Design System</span>
                         <div class="content">
-                            <h3>Design System</h3>
-                            <p>Scalability and visual consistency.</p>
+                            <h3>Modular Design System</h3>
+                            <p>Atomic architecture and tokens for global scale.</p>
                         </div>
                     </div>
                 </a>
-                <a href="mobirep_en.html" class="project-card glass reveal" data-category="Product"
+
+                <!-- DELIVERABLE: Service Blueprint -->
+                <!-- <article class="outcome-card reveal hidden" data-category="Entregable">
+                    <div class="oc-image-container">
+                        <img src="imgproyectos/service_blueprint.png"
+                            alt="Detailed Service Blueprint diagram for digital banking" class="oc-image">
+                        <span class="oc-type">Service Design</span>
+                    </div>
+                    <div class="oc-content">
+                        <div class="oc-project-name">Digital Banking</div>
+                        <h3 class="oc-title">Comprehensive Service Blueprint</h3>
+                        <p class="oc-summary">End-to-end mapping of the service ecosystem: user actions, internal
+                            processes, and support systems in a single view.</p>
+                        <div class="oc-tags">
+                            <span>Blueprint</span>
+                            <span>Journey Map</span>
+                            <span>Research</span>
+                            <span>Stakeholders</span>
+                        </div>
+                        <div class="oc-highlight">
+                            <p class="oc-quote">Allowed identifying 6 critical friction points that were not visible
+                                before.</p>
+                            <div class="oc-metric">
+                                <span class="oc-metric-number">12</span>
+                                <span class="oc-metric-text">mapped touchpoints</span>
+                            </div>
+                        </div>
+                        <div class="oc-footer">
+                            <a href="banca_en.html" class="oc-button" role="button"
+                                aria-label="View deliverable: Comprehensive Service Blueprint">
+                                View deliverable
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+ -->
+                <!-- DELIVERABLE: Handover Manual -->
+                <!-- <article class="outcome-card reveal hidden" data-category="Entregable">
+                    <div class="oc-image-container">
+                        <img src="imgproyectos/handover.png"
+                            alt="Technical design-to-development handover documentation" class="oc-image">
+                        <span class="oc-type">Documentation</span>
+                    </div>
+                    <div class="oc-content">
+                        <div class="oc-project-name">MobiRep · Pharmaceutical</div>
+                        <h3 class="oc-title">Design‑Dev Handover Manual</h3>
+                        <p class="oc-summary">Technical integration guide that establishes the delivery process between
+                            design and development with zero ambiguities.</p>
+                        <div class="oc-tags">
+                            <span>Handover</span>
+                            <span>Dev Specs</span>
+                            <span>Figma</span>
+                            <span>Documentation</span>
+                        </div>
+                        <div class="oc-highlight">
+                            <p class="oc-quote">Eliminates rework and guarantees the design vision reaches production
+                                pixel by pixel.</p>
+                            <div class="oc-metric">
+                                <span class="oc-metric-number">-40%</span>
+                                <span class="oc-metric-text">errors detected in production</span>
+                            </div>
+                        </div>
+                        <div class="oc-footer">
+                            <a href="mobirep_en.html" class="oc-button" role="button"
+                                aria-label="View deliverable: Design-Dev Handover Manual">
+                                View deliverable
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article> -->
+
+                <!-- DELIVERABLE: Metrics Framework -->
+                <article class="outcome-card reveal hidden" data-category="Entregable">
+                    <div class="oc-image-container">
+                        <img src="imgDeliverable/scopeCanvan.png"
+                            alt="Metrics-based design framework diagram" class="oc-image">
+                        <span class="oc-type">Strategic Framework</span>
+                    </div>
+                    <div class="oc-content">
+                        <div class="oc-project-name">Metrics for Designers</div>
+                        <h3 class="oc-title">Scope Canvas: Understand Your Client’s Context</h3>
+                            <p class="oc-summary">I designed an organizational framework that helps designers capture key client information and run a diagnostic to define metrics-driven strategies.</p>
+                        <div class="oc-tags">
+  <span>ux-metrics</span>
+  <span>design-leadership</span>
+  <span>strategy</span>
+                        </div>
+                        <div class="oc-highlight">
+  <p class="oc-quote">It shifted the team’s conversations from opinions to evidence.</p>
+  <div class="oc-metric">
+    <span class="oc-metric-number">100%</span>
+    <span class="oc-metric-text">of projects diagnosed</span>
+  </div>
+                        </div>
+                        <div class="oc-footer">
+                            <a href="scope_canvas_en.html" class="oc-button" role="button"
+                                aria-label="View deliverable: Organizational framework for designing with metrics">
+                                View deliverable
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <a href="mobirep_en.html" class="project-card glass reveal" data-category="Proyecto"
                     style="text-decoration: none; display: flex; color: inherit;">
                     <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-                        <div class="project-image" style="background-image: url(imgproyectos/mobirep.jpg);"></div>
-                        <span class="tag">Sales Force</span>
+                        <div class="project-image" style="background-image: url(imgproyectos/mobirep.jpg);">
+                            <span class="category-label">Project</span>
+                        </div>
+                        <span class="tag">Pharmaceutical</span>
                         <div class="content">
                             <h3>MobiRep Program</h3>
                             <p>Empowering the commercial team.</p>

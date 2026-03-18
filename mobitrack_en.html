@@ -5,16 +5,16 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Denis Luyo · Mobitrack</title>
-<meta content="Case study: Mobitrack - Motorcycle Courier Tracking Platform for Medication Delivery." name="description"/>
-<meta content="UX Design, Product Design, Mobitrack, App, Logistics, Pharmaceutical, Portfolio, Denis Luyo" name="keywords"/>
+<meta content="Case study: Mobitrack — Rider tracking platform for temperature-controlled medicine deliveries." name="description"/>
+<meta content="UX Design, Product Design, Mobitrack, Logistics, Pharma, Portfolio, Denis Luyo" name="keywords"/>
 <!-- Open Graph tags for social sharing -->
 <meta content="Denis Luyo · Mobitrack" property="og:title"/>
-<meta content="Case study: Improvements in usability and real-time monitoring for medication delivery with temperature control." property="og:description"/>
+<meta content="Case study: Usability and real‑time monitoring improvements for temperature‑controlled medicine deliveries." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://denisluyo.com/mobitrack.html" property="og:url"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="style.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
 <style>
         :root {
@@ -37,8 +37,42 @@
             overflow: hidden;
             text-align: left;
         }
+        
+/* Hero background image effect (matched to frameworkmetricas) */
+.hero-bg-placeholder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0.4) 50%, transparent 100%),
+        url('imglanding/mobi5.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    opacity: 0.8;
+    animation: hero-pan 20s ease-in-out infinite alternate;
+    pointer-events: none;
+}
 
-        .hero-content {
+@keyframes hero-pan {
+    0% {
+        transform: scale(1) translateX(0);
+        background-position: 100% 50%;
+    }
+    50% {
+        transform: scale(1.1) translateX(-1%);
+        background-position: 80% 55%;
+    }
+    100% {
+        transform: scale(1.06) translateX(-2%);
+        background-position: 20% 30%;
+    }
+}
+
+.hero-content {
             position: relative;
             z-index: 10;
             max-width: 1200px;
@@ -335,7 +369,16 @@
         }
 
         @media (max-width: 992px) {
-            :root {
+
+            
+            .hero-bg-placeholder{
+                width: 100%;
+                opacity: 0.35;
+                mask-image: linear-gradient(to bottom, black 45%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 100%);
+            }
+
+:root {
                 --section-spacing: 60px;
             }
 
@@ -425,17 +468,18 @@
             }
         }
     </style>
-</head>
+</link></head>
 <body>
 <div id="bg-canvas" style="position: fixed; inset: 0; z-index: -1;"></div>
 <nav class="back-nav">
-<a class="back-btn" href="index_en.html">← Back to List</a>
+<a class="back-btn" href="index.html">← Back to projects</a>
 </nav>
 <header class="project-hero">
+<div aria-hidden="true" class="hero-bg-placeholder"></div>
 <div class="hero-content">
 <span class="hero-tag">Product Lead Designer</span>
 <h1 class="hero-title">Mobitrack</h1>
-<p class="hero-description desktop-only">Motorcycle courier tracking platform for delivering medications under critical temperature control.</p>
+<p class="hero-description desktop-only">Rider tracking platform for temperature‑controlled medicine deliveries.</p>
 <div class="project-meta">
 <div class="meta-item">
 <span class="meta-label">Role</span>
@@ -465,9 +509,9 @@
 <section class="section-container" id="resumen">
 <div class="grid-2">
 <div class="content-block reveal">
-<h2>Summary</h2>
+<h2>Overview</h2>
 <p>
-                        Como <strong>Product Lead Designer</strong>, desarrollé Mobitrack, una plataforma móvil y web
+                        As <strong>Product Lead Designer</strong>, desarrollé Mobitrack, una plataforma móvil y web
                         para <strong>Consorcio HBO</strong>, con el objetivo de optimizar el seguimiento de motorizados
                         que entregan medicamentos bajo control de temperatura crítico.
                     </p>
@@ -475,11 +519,11 @@
 <svg fill="currentColor" viewbox="0 0 24 24">
 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
 </svg>
-                        Focus on Operational Efficiency and Hardware Integration
+                        Focused on operational efficiency &amp; hardware integration
                     </div>
 <p>
                         A través de la <strong>automatización de tareas</strong>, la integración de <strong>hardware
-                            (Arduino)</strong> y el rediseño de la experiencia de usuario, logramos mejorar radicalmente
+                            (Arduino)</strong> y el rediseño de la experiencia de usuario, lideré la ejecución con el equipo y logré mejorar radicalmente
                         la usabilidad, reduciendo la fricción y elevando la eficiencia en las entregas.
                     </p>
 </div>
@@ -496,17 +540,18 @@
 </div>
 <div class="content-block reveal">
 <h2 style="background: linear-gradient(to right, #fff, #ef4444); -webkit-background-clip: text; background-clip: text;">
-                        Key Challenges</h2>
-<p>Achieving efficient, reliable tracking of refrigerated cargo came with critical challenges:</p>
+                        Key Problems</h2>
+<p>Achieving reliable tracking for refrigerated cargo introduced critical challenges:</p>
 <div class="highlight-box">
-<h4 style="color: white; margin-bottom: 0.5rem;">Limited Usability</h4>
-<p style="font-size: 1rem; margin-bottom: 0;">Couriers didn’t understand key terms or core app functions, which led to constant calls to confirm whether tasks were completed.</p>
+<h4 style="color: white; margin-bottom: 0.5rem;">Limited usability</h4>
+<p style="font-size: 1rem; margin-bottom: 0;">Riders didn’t understand key terms or core app actions, causing frequent calls to confirm whether tasks were completed.</p>
 </div>
 <div class="highlight-box">
-<h4 style="color: white; margin-bottom: 0.5rem;">Critical Temperature Control</h4>
-<p style="font-size: 1rem; margin-bottom: 0;">A transportation mistake could mean losing high‑value medications. We lacked automated integration to monitor temperature fluctuations in real time.</p>
+<h4 style="color: white; margin-bottom: 0.5rem;">Critical temperature control</h4>
+<p style="font-size: 1rem; margin-bottom: 0;">A transportation mistake meant losing high‑value medication. There was no automated integration to monitor temperature spikes in real time.</p>
 </div>
-<p>The main challenge wasn’t only digital—it was <strong>in the field</strong>—reducing bottlenecks through <strong>automation</strong> so couriers wouldn’t be slowed down.</p>
+<p>The main challenge no era solo digital, sino <strong>terreno</strong>: reducir los cuellos de
+                        botella mediante <strong>automatización</strong> para no ralentizar a los motorizados.</p>
 </div>
 </div>
 </section>
@@ -514,33 +559,38 @@
 <section class="section-container" id="estrategia">
 <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
 <h2>Approach &amp; Discovery</h2>
-<p>We implemented a <strong>Design Thinking</strong> framework that took us into the field with couriers to understand the real problem and explore cutting-edge solutions (both software and hardware).</p>
+<p>Implementé un marco de <strong>Design Thinking</strong> y lideré al equipo para ir directamente al campo con
+                    los motorizados para entender el problema real y explorar soluciones de frontera (tanto software
+                    como hardware).</p>
 </div>
 <div class="grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
-<h3 style="margin-bottom: 1.5rem;">UX Research &amp; Benchmarking</h3>
-<p style="font-size: 1rem;">Interviews with couriers revealed the app was used only at the end of the day. We mapped journeys and identified key pain points.</p>
+<h3 style="margin-bottom: 1.5rem;">UX research &amp; benchmarking</h3>
+<p style="font-size: 1rem;">Rider interviews showed the app was mostly used at the end of the day. I mapped journeys, identified critical pain points, and aligned findings with the team to prioritize decisions.</p>
 </div>
 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
-<h3 style="margin-bottom: 1.5rem;">Feedback &amp; Automation</h3>
-<p style="font-size: 1rem;">We designed a real-time system to log activities in the background, dramatically reducing calls about delivery status.</p>
+<h3 style="margin-bottom: 1.5rem;">Feedback &amp; automation</h3>
+<p style="font-size: 1rem;">I designed and led the implementation of a real‑time system that logged activities in the background, dramatically reducing calls about delivery status.</p>
 </div>
 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
-<h3 style="margin-bottom: 1.5rem;">Hardware Integration</h3>
-<p style="font-size: 1rem;">We explored and built prototypes in <strong>Arduino</strong> to sync temperature sensors with the mobile app via Bluetooth.</p>
+<h3 style="margin-bottom: 1.5rem;">Hardware integration</h3>
+<p style="font-size: 1rem;">Exploré y prototipé soluciones en <strong>Arduino</strong> para
+                        sincronizar sensores de temperatura con la App Móvil vía Bluetooth.</p>
 </div>
 </div>
 <div class="image-placeholder2 reveal" style="margin-top: 40px; aspect-ratio: 21/9;"></div>
 </section>
 <!-- SOLUCIONES -->
 <section class="section-container" id="soluciones">
-<h2 style="margin-bottom: 4rem;">High-Impact Solutions</h2>
+<h2 style="margin-bottom: 4rem;">High‑Impact Solutions</h2>
 <!-- Design System / UI UX -->
 <div class="grid-2">
 <div class="content-block reveal">
-<h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">1. UI/UX Interface Optimization</h3>
-<p>I simplified confusing technical terms so couriers could understand them, improving clarity around essential functions.</p>
-<p>I redesigned the home screen so temperature monitoring is the first priority before starting any delivery, with <strong>automatic alerts</strong> if the ideal range was exceeded.</p>
+<h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">1. UI/UX optimization</h3>
+<p>I simplified confusing technical language so riders could understand it, improving clarity of essential actions.</p>
+<p>Rediseñé la pantalla principal para que el monitoreo de la temperatura fuera la prioridad antes
+                        de iniciar cualquier entrega, con <strong>alertas automáticas</strong> si se superaba el rango
+                        ideal.</p>
 </div>
 <div class="reveal">
 <div class="image-placeholder3"></div>
@@ -552,18 +602,20 @@
 <div id="ia-visualization-3d" style="width: 100%; height: 350px;"></div>
 </div>
 <div class="content-block reveal">
-<h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">2. Smart Monitoring
+<h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">2. Smart monitoring
                     </h3>
-<p>In addition to the mobile app, we built a web platform for supervisors.</p>
-<p>This enabled them to track in real time the <strong>routes, deliveries, and thermal conditions</strong> of vehicles and medications, providing a holistic view of operations from a single screen.</p>
+<p>Beyond the mobile app, I led the design and execution of a web platform for supervisors.</p>
+<p>Esto les permitió seguir en tiempo real las <strong>rutas, entregas y condiciones
+                            térmicas</strong> de los vehículos y medicamentos, logrando una visión holística de las
+                        operaciones desde una sola pantalla.</p>
 </div>
 </div>
 <!-- Definición de Procesos / Automatizacion -->
 <div class="grid-2">
 <div class="content-block reveal">
-<h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">3. Task Automation</h3>
-<p>The work environment didn’t allow distractions. We implemented automatic functions that logged deliveries and actions in the background.</p>
-<p>Couriers no longer needed to manually interact at every step, speeding up their workflow and preventing typing errors.</p>
+<h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">3. Task automation</h3>
+<p>In the field, distractions are costly. I defined and led the implementation of automatic features that logged deliveries and actions in the background.</p>
+<p>Riders no longer had to manually update every step, speeding up the workflow and preventing input errors.</p>
 </div>
 <div class="reveal">
 <div class="image-placeholder4"></div>
@@ -572,16 +624,16 @@
 </section>
 <!-- RESULTADOS -->
 <section class="section-container" id="resultados" style="background: rgba(16, 185, 129, 0.03);">
-<h2 class="section-title">Tangible Results</h2>
+<h2 class="section-title">Tangible Outcomes</h2>
 <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 4rem;">
 <div class="stat-item glass reveal" style="padding: 3rem;">
 <span class="stat-number" style="color: #10b981;">98%</span>
-<p style="font-size: 1.2rem;">Increase in app usage thanks to trust in real-time feedback.
+<p style="font-size: 1.2rem;">Increase in app usage thanks to reliable feedback loops.
                     </p>
 </div>
 <div class="stat-item glass reveal" style="padding: 3rem;">
 <span class="stat-number" style="color: #10b981;">-90%</span>
-<p style="font-size: 1.2rem;">Reduction in courier calls to verify tasks.</p>
+<p style="font-size: 1.2rem;">Reduction in rider calls to verify tasks.</p>
 </div>
 <div class="stat-item glass reveal" style="padding: 3rem;">
 <span class="stat-number" style="color: #10b981;">95%</span>
@@ -594,19 +646,19 @@
 <h2 style="margin-bottom: 4rem;">Key Deliverables</h2>
 <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; width: 100%;">
 <div class="deliverable-card reveal">
-<h4>User Research</h4>
-<p>Interviews and surveys with couriers.</p>
+<h4>User research</h4>
+<p>Interviews and surveys with riders.</p>
 </div>
 <div class="deliverable-card reveal">
-<h4>UI/UX Prototypes</h4>
-<p>Simplification of technical jargon and usability improvements.</p>
+<h4>UI/UX prototypes</h4>
+<p>Simplified technical language and improved usability.</p>
 </div>
 <div class="deliverable-card reveal">
-<h4>Hardware Integration</h4>
-<p>Arduino sync via Bluetooth.</p>
+<h4>Hardware integration</h4>
+<p>Arduino synchronization via Bluetooth.</p>
 </div>
 <div class="deliverable-card reveal">
-<h4>Live Dashboards</h4>
+<h4>Live dashboards</h4>
 <p>Web platform for monitoring and tracking.</p>
 </div>
 </div>
@@ -618,22 +670,22 @@
 <li>
 <div style="font-size: 2rem; color: var(--primary);">01</div>
 <div>
-<h4 style="margin-bottom: 0.5rem; color: white;">Listen to Users</h4>
-<p>Interviews uncovered urgent issues that weren’t considered in the initial phase, allowing me to adjust the solution much more effectively for real life.</p>
+<h4 style="margin-bottom: 0.5rem; color: white;">Listen to users</h4>
+<p>Interviews revealed urgent issues that weren’t considered initially, allowing me to adapt the solution to real‑world conditions.</p>
 </div>
 </li>
 <li>
 <div style="font-size: 2rem; color: var(--primary);">02</div>
 <div>
-<h4 style="margin-bottom: 0.5rem; color: white;">Smart Automation</h4>
-<p>Reducing tasks not only dramatically improved the user experience (couriers), it also significantly accelerated the end-to-end workflow.</p>
+<h4 style="margin-bottom: 0.5rem; color: white;">Smart automation</h4>
+<p>Reducing manual tasks improved the rider experience and significantly accelerated the end‑to‑end workflow.</p>
 </div>
 </li>
 <li>
 <div style="font-size: 2rem; color: var(--primary);">03</div>
 <div>
-<h4 style="margin-bottom: 0.5rem; color: white;">Hardware–Software Integration</h4>
-<p>Working with Arduino devices was an exciting and challenging endeavor; it was key to ensuring real-time temperature control for critical medications.</p>
+<h4 style="margin-bottom: 0.5rem; color: white;">Hardware–software integration</h4>
+<p>Working with Arduino devices was challenging and rewarding—and it was key to ensuring real‑time temperature control for critical medicines.</p>
 </div>
 </li>
 </ul>
@@ -642,7 +694,8 @@
 <footer id="contacto">
 <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Have a similar challenge?</h2>
 <div class="socials">
-<a class="back-link" href="index.html" style="padding: 15px 40px; font-size: 1.2rem;">Let’s talk on LinkedIn</a>
+<a class="back-link" href="index.html" style="padding: 15px 40px; font-size: 1.2rem;">Hablemos por
+                LinkedIn</a>
 </div>
 </footer>
 <script src="main.js"></script>

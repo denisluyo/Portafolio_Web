@@ -419,7 +419,41 @@
                 font-size: 2rem;
             }
         }
-    </style>
+    
+        /* Hero background image effect (matched to frameworkmetricas) */
+        .project-hero .hero-bg-placeholder {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0.4) 50%, transparent 100%),
+                url('imglanding/ds1.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            mask-image: linear-gradient(to left, black 60%, transparent 100%);
+            opacity: 0.8;
+            animation: hero-pan 20s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes hero-pan {
+            from { transform: scale(1) translateX(0); }
+            to { transform: scale(1.1) translateX(-2%); }
+        }
+
+        @media (max-width: 992px) {
+            .project-hero .hero-bg-placeholder {
+                width: 100%;
+                opacity: 0.25;
+                mask-image: linear-gradient(to top, black 40%, transparent 100%);
+                background: linear-gradient(180deg, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.55) 45%, rgba(5, 5, 5, 0.0) 100%),
+                    url('imglanding/ds1.png');
+                background-position: center;
+            }
+        }
+</style>
 </head>
 
 <body>
@@ -430,6 +464,7 @@
     </nav>
 
     <header class="project-hero">
+        <div class="hero-bg-placeholder" aria-hidden="true"></div>
         <div class="hero-content">
             <span class="hero-tag reveal">
                 <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
@@ -487,7 +522,7 @@
                         Liderazgo de equipo de 7 diseñadores
                     </div>
                     <p>
-                        Mi misión fue dirigir a un <strong>equipo de 7 diseñadores</strong>, conduíendo 7 workshops de
+                        Mi misión fue dirigir a un <strong>equipo de 7 diseñadores</strong>, conduciendo 7 workshops de
                         Design Thinking y creando un sistema que integraba <strong>3 sub-marcas</strong> en una sola
                         librería de <strong>30 componentes UI y 40 variantes</strong>.
                     </p>
@@ -531,26 +566,26 @@
         <section id="estrategia" class="section-container">
             <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
                 <h2>Estrategia y Construcción</h2>
-                <p>Mapeamos todos los stakeholders y realizamos <strong>7 workshops de Design Thinking</strong> para
+                <p>Mapeé a todos los stakeholders y facilité <strong>7 workshops de Design Thinking</strong> para
                     comprender no solo qué necesitaban, sino también qué temores tenían sobre el concepto de un design
                     system.</p>
             </div>
             <div class="grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
                 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
                     <h3 style="margin-bottom: 1.5rem;">Principios del Sistema</h3>
-                    <p style="font-size: 1rem;">Definimos principios claros basados en los mejores Design Systems:
+                    <p style="font-size: 1rem;">Definí principios claros basados en los mejores Design Systems:
                         <strong>coherencia, accesibilidad y modularidad</strong>. Estos serían la brújula de cada
                         decisión de diseño.</p>
                 </div>
                 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
                     <h3 style="margin-bottom: 1.5rem;">Guías de Estilo</h3>
-                    <p style="font-size: 1rem;">Desarrollamos guías detalladas que incluían tipografía, paletas de
+                    <p style="font-size: 1rem;">Desarrollé guías detalladas que incluían tipografía, paletas de
                         colores e iconografía, asegurando que cada elemento visual contribuya a una experiencia cohesiva
                         y accesible.</p>
                 </div>
                 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
                     <h3 style="margin-bottom: 1.5rem;">Casos de Estudio</h3>
-                    <p style="font-size: 1rem;">Presentamos comparaciones de antes y después para demostrar el valor del
+                    <p style="font-size: 1rem;">Presenté comparaciones de antes y después para demostrar el valor del
                         sistema, mostrando cómo resolvía problemas existentes y abría nuevas posibilidades.</p>
                 </div>
             </div>
@@ -566,7 +601,7 @@
                 <div class="content-block reveal">
                     <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">1. Fundamentos del Design
                         System</h3>
-                    <p>Construimos la base sólida del sistema inspirado en los mejores Design Systems del mercado, con
+                    <p>Construí la base sólida del sistema inspirada en los mejores Design Systems del mercado, con
                         principios claros que guiarían cada decisión.</p>
                     <ul style="color: var(--text-dim); line-height: 2;">
                         <li><strong>30 Componentes UI</strong> maestros con arquitectura modular.</li>
@@ -587,7 +622,7 @@
                 <div class="content-block reveal">
                     <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">2. Integración Scrum &
                         Herramientas</h3>
-                    <p>Alineamos el flujo de trabajo con <strong>metodologías ágiles (Scrum)</strong>, haciendo que el
+                    <p>Alineé el flujo de trabajo con <strong>metodologías ágiles (Scrum)</strong>, haciendo que el
                         Design System fuera parte integral y constante del desarrollo de productos.</p>
                     <p>Esto permitió que el sistema <strong>evolucionara orgánicamente</strong> sin necesitar un equipo
                         dedicado exclusivamente a su mantenimiento.</p>
@@ -599,7 +634,7 @@
                 <div class="content-block reveal">
                     <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">3. Documentación y
                         Gobernanza</h3>
-                    <p>Creamos guías detalladas que describían cómo usar los componentes y los principios subyacentes,
+                    <p>Creé guías detalladas que describían cómo usar los componentes y los principios subyacentes,
                         asegurando una aplicación coherente en todos los productos.</p>
                     <p>Desde tokens de diseño hasta guías de accesibilidad y storybook, toda la documentación fue
                         diseñada para que los equipos de diseño y desarrollo trabajaran en total sincronía.</p>
@@ -674,7 +709,7 @@
                     <div>
                         <h4 style="margin-bottom: 0.5rem; color: white;">El Sistema es un Organismo Vivo</h4>
                         <p>Un Design System no es un proyecto estático. Debe evolucionar junto con la empresa y sus
-                            productos, por lo que planificamos su mantenimiento y evolución continua desde el primer
+                            productos, por lo que planifiqué su mantenimiento y evolución continua desde el primer
                             día.</p>
                     </div>
                 </li>

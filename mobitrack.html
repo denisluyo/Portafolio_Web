@@ -41,6 +41,42 @@
             overflow: hidden;
             text-align: left;
         }
+        
+/* Hero background image effect (matched to frameworkmetricas) */
+.hero-bg-placeholder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0.4) 50%, transparent 100%),
+        url('imglanding/mobi5.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    opacity: 0.8;
+    animation: hero-pan 20s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes hero-pan {
+    0% {
+        transform: scale(1) translateX(0);
+        background-position: 100% 50%;
+    }
+    50% {
+        transform: scale(1.1) translateX(-1%);
+        background-position: 80% 55%;
+    }
+    100% {
+        transform: scale(1.06) translateX(-2%);
+        background-position: 20% 30%;
+    }
+}
+
+
 
         .hero-content {
             position: relative;
@@ -339,7 +375,16 @@
         }
 
         @media (max-width: 992px) {
-            :root {
+
+            
+            .hero-bg-placeholder{
+                width: 100%;
+                opacity: 0.35;
+                mask-image: linear-gradient(to bottom, black 45%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 100%);
+            }
+
+:root {
                 --section-spacing: 60px;
             }
 
@@ -439,6 +484,7 @@
     </nav>
 
     <header class="project-hero">
+        <div class="hero-bg-placeholder" aria-hidden="true"></div>
         <div class="hero-content">
             <span class="hero-tag">Product Lead Designer</span>
             <h1 class="hero-title">Mobitrack</h1>
@@ -491,7 +537,7 @@
                     </div>
                     <p>
                         A través de la <strong>automatización de tareas</strong>, la integración de <strong>hardware
-                            (Arduino)</strong> y el rediseño de la experiencia de usuario, logramos mejorar radicalmente
+                            (Arduino)</strong> y el rediseño de la experiencia de usuario, lideré la ejecución con el equipo y logré mejorar radicalmente
                         la usabilidad, reduciendo la fricción y elevando la eficiencia en las entregas.
                     </p>
                 </div>
@@ -521,7 +567,7 @@
                     <div class="highlight-box">
                         <h4 style="color: white; margin-bottom: 0.5rem;">Control de Temperatura Crítico</h4>
                         <p style="font-size: 1rem; margin-bottom: 0;">Un error en el transporte significaba la pérdida
-                            de medicamentos de alto valor. Carecíamos de integración automatizada para monitorear
+                            de medicamentos de alto valor. No existía una integración automatizada para monitorear
                             ráfagas de clima en tiempo real.</p>
                     </div>
                     <p>El reto principal no era solo digital, sino <strong>terreno</strong>: reducir los cuellos de
@@ -534,7 +580,7 @@
         <section id="estrategia" class="section-container">
             <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
                 <h2>El Enfoque y Descubrimiento</h2>
-                <p>Implementamos un marco de <strong>Design Thinking</strong> que nos llevó directamente al campo con
+                <p>Implementé un marco de <strong>Design Thinking</strong> y lideré al equipo para ir directamente al campo con
                     los motorizados para entender el problema real y explorar soluciones de frontera (tanto software
                     como hardware).</p>
             </div>
@@ -542,16 +588,16 @@
                 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
                     <h3 style="margin-bottom: 1.5rem;">UX Research & Benchmarking</h3>
                     <p style="font-size: 1rem;">Entrevistas a motorizados revelaron que la app se usaba solo al final
-                        del día. Mapeamos journeys e identificamos los puntos críticos de dolor.</p>
+                        del día. Mapeé journeys e identifiqué los puntos críticos de dolor, alineando hallazgos con el equipo para priorizar decisiones.</p>
                 </div>
                 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
                     <h3 style="margin-bottom: 1.5rem;">Feedback & Automatización</h3>
-                    <p style="font-size: 1rem;">Diseñamos un sistema en tiempo real para registro de actividades en
+                    <p style="font-size: 1rem;">Diseñé y lideré la implementación de un sistema en tiempo real para registro de actividades en
                         segundo plano, disminuyendo dramáticamente las llamadas por dudas de estado de entrega.</p>
                 </div>
                 <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
                     <h3 style="margin-bottom: 1.5rem;">Hardware Integration</h3>
-                    <p style="font-size: 1rem;">Exploramos y construimos prototipos en <strong>Arduino</strong> para
+                    <p style="font-size: 1rem;">Exploré y prototipé soluciones en <strong>Arduino</strong> para
                         sincronizar sensores de temperatura con la App Móvil vía Bluetooth.</p>
                 </div>
             </div>
@@ -586,7 +632,7 @@
                 <div class="content-block reveal">
                     <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">2. Monitoreo Inteligente
                     </h3>
-                    <p>Además de la app móvil, desarrollamos una plataforma web para supervisores.</p>
+                    <p>Además de la app móvil, lideré el diseño y la ejecución de una plataforma web para supervisores.</p>
                     <p>Esto les permitió seguir en tiempo real las <strong>rutas, entregas y condiciones
                             térmicas</strong> de los vehículos y medicamentos, logrando una visión holística de las
                         operaciones desde una sola pantalla.</p>
@@ -598,7 +644,7 @@
                 <div class="content-block reveal">
                     <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">3. Automatización de
                         Tareas</h3>
-                    <p>El terreno no permitía distracciones. Implementamos funciones automáticas que registraban
+                    <p>El terreno no permitía distracciones. Definí y lideré la implementación de funciones automáticas que registraban
                         entregas y acciones en segundo plano.</p>
                     <p>Los motorizados ya no tenían que intervenir manualmente a cada momento, agilizando todo su flujo
                         de trabajo y previniendo errores de tipeo.</p>
