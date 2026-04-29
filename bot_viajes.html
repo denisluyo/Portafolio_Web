@@ -980,29 +980,42 @@
 
     <script src="main.js"></script>
     <script>
-        // --- Detailed 3D Sphere (Complexity) ---
+        if (typeof THREE === 'undefined') console.warn('Three.js no cargado');
+
+        // Helper: get real container size (fallback if offsetWidth=0)
+        const getSize = (el) => ({
+            w: el.offsetWidth  || el.getBoundingClientRect().width  || 400,
+            h: el.offsetHeight || el.getBoundingClientRect().height || 400,
+        });
+
+        // --- Detailed 3D Sphere (Resumen) ---
         const initSphere = () => {
+            if (typeof THREE === 'undefined') return;
             const container = document.getElementById('logistic-sphere-3d');
             if (!container) return;
+            const { w, h } = getSize(container);
             const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            renderer.setSize(w, h);
             container.appendChild(renderer.domElement);
 
             const group = new THREE.Group();
-            const geometry = new THREE.SphereGeometry(2, 32, 32);
-            const material = new THREE.MeshBasicMaterial({ color: '#7C3AED', wireframe: true, transparent: true, opacity: 0.2 });
-            const sphere = new THREE.Mesh(geometry, material);
-            group.add(sphere);
 
+            // Wireframe sphere
+            const sphereMesh = new THREE.Mesh(
+                new THREE.SphereGeometry(2, 32, 32),
+                new THREE.MeshBasicMaterial({ color: '#7C3AED', wireframe: true, transparent: true, opacity: 0.25 })
+            );
+            group.add(sphereMesh);
+
+            // Floating particles
             const pGeom = new THREE.BufferGeometry();
             const pCount = 200;
             const pPos = new Float32Array(pCount * 3);
             for (let i = 0; i < pCount * 3; i++) pPos[i] = (Math.random() - 0.5) * 5;
             pGeom.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
-            const points = new THREE.Points(pGeom, new THREE.PointsMaterial({ color: '#10B981', size: 0.05 }));
-            group.add(points);
+            group.add(new THREE.Points(pGeom, new THREE.PointsMaterial({ color: '#10B981', size: 0.09 })));
 
             scene.add(group);
             camera.position.z = 6;
@@ -1013,24 +1026,27 @@
                 renderer.render(scene, camera);
             };
             animate();
-            return { renderer, camera };
+            return { renderer, camera, container };
         };
 
-        // --- IA / Service Blueprint Visualization ---
+        // --- IA / Rings Visualization (Captura automática) ---
         const initIA = () => {
+            if (typeof THREE === 'undefined') return;
             const container = document.getElementById('ia-visualization-3d');
             if (!container) return;
+            const { w, h } = getSize(container);
             const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            renderer.setSize(w, h);
             container.appendChild(renderer.domElement);
 
             const group = new THREE.Group();
             for (let i = 0; i < 5; i++) {
-                const geom = new THREE.TorusGeometry(1 + i * 0.4, 0.02, 16, 100);
-                const mat = new THREE.MeshBasicMaterial({ color: i % 2 === 0 ? '#7C3AED' : '#10B981', transparent: true, opacity: 0.4 });
-                const ring = new THREE.Mesh(geom, mat);
+                const ring = new THREE.Mesh(
+                    new THREE.TorusGeometry(1 + i * 0.4, 0.025, 16, 100),
+                    new THREE.MeshBasicMaterial({ color: i % 2 === 0 ? '#7C3AED' : '#10B981', transparent: true, opacity: 0.5 })
+                );
                 ring.rotation.x = Math.PI / 2.2;
                 group.add(ring);
             }
@@ -1044,10 +1060,12 @@
                 renderer.render(scene, camera);
             };
             animate();
-            return { renderer, camera };
+            return { renderer, camera, container };
         };
 
+        // --- Background star field ---
         const initBG = () => {
+            if (typeof THREE === 'undefined') return;
             const container = document.getElementById('bg-canvas');
             if (!container) return;
             const scene = new THREE.Scene();
@@ -1055,14 +1073,13 @@
             const renderer = new THREE.WebGLRenderer({ alpha: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
             container.appendChild(renderer.domElement);
-            const geometry = new THREE.BufferGeometry();
-            const points = new Float32Array(1500 * 3);
-            for (let i = 0; i < 1500 * 3; i++) points[i] = (Math.random() - 0.5) * 15;
-            geometry.setAttribute('position', new THREE.BufferAttribute(points, 3));
-            const star = new THREE.Points(geometry, new THREE.PointsMaterial({ color: '#ffffff', size: 0.005, transparent: true, opacity: 0.2 }));
+            const pts = new Float32Array(1500 * 3);
+            for (let i = 0; i < 1500 * 3; i++) pts[i] = (Math.random() - 0.5) * 15;
+            const geom = new THREE.BufferGeometry();
+            geom.setAttribute('position', new THREE.BufferAttribute(pts, 3));
+            const star = new THREE.Points(geom, new THREE.PointsMaterial({ color: '#ffffff', size: 0.02, transparent: true, opacity: 0.25 }));
             scene.add(star);
             camera.position.z = 5;
-
             const animate = () => {
                 requestAnimationFrame(animate);
                 star.rotation.y += 0.0002;
@@ -1072,30 +1089,32 @@
             return { renderer, camera };
         };
 
-        const setupResize = (renderer, camera, container) => {
-            if (!container) return;
+        const setupResize = (data) => {
+            if (!data) return;
             window.addEventListener('resize', () => {
-                const width = container.offsetWidth;
-                const height = container.offsetHeight;
-                renderer.setSize(width, height);
-                camera.aspect = width / height;
-                camera.updateProjectionMatrix();
+                const { w, h } = getSize(data.container || { offsetWidth: window.innerWidth, offsetHeight: window.innerHeight });
+                data.renderer.setSize(w, h);
+                data.camera.aspect = w / h;
+                data.camera.updateProjectionMatrix();
             });
         };
 
-        const sphereData = initSphere();
-        const iaData = initIA();
-        const bgData = initBG();
+        // Init after full layout is ready
+        window.addEventListener('load', () => {
+            const sphereData = initSphere();
+            const iaData     = initIA();
+            const bgData     = initBG();
 
-        if (sphereData) setupResize(sphereData.renderer, sphereData.camera, document.getElementById('logistic-sphere-3d'));
-        if (iaData) setupResize(iaData.renderer, iaData.camera, document.getElementById('ia-visualization-3d'));
+            setupResize(sphereData);
+            setupResize(iaData);
 
-        window.addEventListener('resize', () => {
-            if (bgData) {
-                bgData.renderer.setSize(window.innerWidth, window.innerHeight);
-                bgData.camera.aspect = window.innerWidth / window.innerHeight;
-                bgData.camera.updateProjectionMatrix();
-            }
+            window.addEventListener('resize', () => {
+                if (bgData) {
+                    bgData.renderer.setSize(window.innerWidth, window.innerHeight);
+                    bgData.camera.aspect = window.innerWidth / window.innerHeight;
+                    bgData.camera.updateProjectionMatrix();
+                }
+            });
         });
         // ── GALLERY LIGHTBOX ──
         (function () {

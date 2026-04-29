@@ -62,8 +62,18 @@
             <p class="reveal"
                 style="font-size: clamp(1.1rem, 4vw, 1.5rem); opacity: 0.8; max-width: 600px; text-align: center;">
                 UX Lead | DX Transformation & Design Systems Leader</p>
-            <div class="reveal" style="margin-top: 3rem;">
+            <div class="reveal active" style="margin-top: 3rem;">
                 <a href="#projects" class="filter-chip active" style="text-decoration: none;">View My Work</a>
+            </div>
+        </section>
+
+        <!-- Comments -->
+        <section id="testimonials" class="comments-section reveal">
+            <h2 class="section-title" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 2rem;">Testimonials</h2>
+            <div class="comments-track-container">
+                <div class="comments-track" id="comments-track">
+                    <!-- Comments via JS -->
+                </div>
             </div>
         </section>
 
@@ -304,7 +314,7 @@
                 <!-- DELIVERABLE: Metrics Framework -->
                 <article class="outcome-card reveal hidden" data-category="Entregable">
                     <div class="oc-image-container">
-                        <img src="imgDeliverable/scopeCanvan.png"
+                        <img src="imgDeliverable/Sistema.png"
                             alt="Metrics-based design framework diagram" class="oc-image">
                         <span class="oc-type">Strategic Framework</span>
                     </div>
@@ -503,6 +513,37 @@
         </div>
         <p style="margin-top: 3rem; opacity: 0.5;">&copy; 2024 Denis Luyo</p>
     </footer>
+
+    <!-- Comment Modal (Desktop) -->
+    <div class="comment-modal-overlay" id="comment-modal-overlay"></div>
+    <div class="comment-modal glass" id="comment-modal">
+        <button class="cm-close" id="cm-close">&times;</button>
+        <div class="cm-content">
+            <h4 id="cm-author-name">Name</h4>
+            <p id="cm-author-role">Role</p>
+            <div id="cm-tags" class="cm-tags"></div>
+            <p id="cm-comment-text" class="cm-text">Comment</p>
+        </div>
+    </div>
+
+    <!-- Bottom Sheet -->
+    <div class="bottom-sheet-overlay" id="bs-overlay"></div>
+    <div class="bottom-sheet glass" id="bottom-sheet">
+        <div class="bs-header">
+            <div class="bs-handle"></div>
+            <button class="bs-close" id="bs-close">&times;</button>
+        </div>
+        <div class="bs-content">
+            <div class="bs-author-info">
+                <h4 id="bs-author-name">Name</h4>
+                <p id="bs-author-role">Role</p>
+            </div>
+            <div class="bs-tags">
+                <span id="bs-impact-tag">Tags</span>
+            </div>
+            <p id="bs-public-comment" class="bs-text">Comment</p>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>

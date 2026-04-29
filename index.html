@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css" />
-  <!-- Three.js CDN (Standard script instead of module for local file compatibility) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
 </head>
 
@@ -64,6 +63,16 @@
         UX Lead | DX Transformation & Design Systems Leader</p>
       <div class="reveal active" style="margin-top: 3rem;">
         <a href="#proyectos" class="filter-chip active" style="text-decoration: none;">Ver Mi Trabajo</a>
+      </div>
+    </section>
+
+    <!-- Comments -->
+    <section id="testimonios" class="comments-section reveal">
+      <h2 class="section-title" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 2rem;">Testimonios</h2>
+      <div class="comments-track-container">
+        <div class="comments-track" id="comments-track">
+          <!-- Comments via JS -->
+        </div>
       </div>
     </section>
 
@@ -498,6 +507,37 @@
     </div>
     <p style="margin-top: 3rem; opacity: 0.5;">&copy; 2024 Denis Luyo</p>
   </footer>
+
+  <!-- Comment Modal (Desktop) -->
+  <div class="comment-modal-overlay" id="comment-modal-overlay"></div>
+  <div class="comment-modal glass" id="comment-modal">
+    <button class="cm-close" id="cm-close">&times;</button>
+    <div class="cm-content">
+      <h4 id="cm-author-name">Nombre</h4>
+      <p id="cm-author-role">Rol</p>
+      <div id="cm-tags" class="cm-tags"></div>
+      <p id="cm-comment-text" class="cm-text">Comentario</p>
+    </div>
+  </div>
+
+  <!-- Bottom Sheet -->
+  <div class="bottom-sheet-overlay" id="bs-overlay"></div>
+  <div class="bottom-sheet glass" id="bottom-sheet">
+    <div class="bs-header">
+      <div class="bs-handle"></div>
+      <button class="bs-close" id="bs-close">&times;</button>
+    </div>
+    <div class="bs-content">
+      <div class="bs-author-info">
+        <h4 id="bs-author-name">Nombre</h4>
+        <p id="bs-author-role">Rol</p>
+      </div>
+      <div class="bs-tags">
+        <span id="bs-impact-tag">Tags</span>
+      </div>
+      <p id="bs-public-comment" class="bs-text">Comentario</p>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
