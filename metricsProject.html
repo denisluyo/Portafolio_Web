@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Framework Diseñar con Métricas | UX Metrics Framework | Product Designer & UX Lead | Denis Luyo</title>
+    <meta name="description" content="Framework UX metrics para alinear diseño, negocio y data; +80% proyectos con hipótesis claras y 3 niveles de madurez." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <style>
+        :root {
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --section-spacing: 120px;
+        }
+
+        body {
+            background: #050505;
+        }
+
+        .project-hero {
+            min-height: 100vh;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 120px 10% 80px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        
+        /* Hero image overlay (ported from frameworkmetricas) */
+        .hero-bg-placeholder {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background:
+                linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0.45) 50%, transparent 100%),
+                url('imglanding/metric1.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            mask-image: linear-gradient(to left, black 60%, transparent 100%);
+            opacity: 0.85;
+            animation: hero-pan 20s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes hero-pan {
+            from { transform: scale(1) translateX(0); }
+            to { transform: scale(1.08) translateX(-2%); }
+        }
+.hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            color: var(--primary);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: clamp(1.8rem, 10vw, 8.5rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            margin-bottom: 2rem;
+            background: linear-gradient(to bottom, #fff 40%, rgba(255, 255, 255, 0.4));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: left;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .hero-description {
+            font-size: 1.4rem;
+            max-width: 650px;
+            color: var(--text-dim);
+            line-height: 1.5;
+            margin-bottom: 4rem;
+        }
+
+        .project-meta-minimal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 3rem;
+        }
+
+        .meta-item-min {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .meta-item-min span {
+            font-size: 0.7rem;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .meta-item-min p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+            margin: 0;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 10%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .scroll-line {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            animation: scrollAnim 2s infinite;
+        }
+
+        @keyframes scrollAnim {
+            0% {
+                left: -100%;
+            }
+
+            50% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .section-container {
+            padding: var(--section-spacing) 10%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .content-block h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content-block p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--card-bg);
+            border: 1px solid var(--surface-border);
+            padding: 2.5rem;
+            border-radius: 32px;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .highlight-box:hover {
+            border-color: var(--primary);
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: #0a0a0a;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        .image-placeholder1 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image: url(imglanding/metric2.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+         .image-placeholder2 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image: url(imgDeliverable/Sistema.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+         .image-placeholder3 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image: url(imgDeliverable/scopeCanvan.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+         .image-placeholder4 {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-image: url(imglanding/metric3.png);
+            background-size: cover;
+            border: 1px dashed var(--surface-border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+
+        .image-placeholder label {
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .leadership-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leadership-badge svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 30px;
+            left: 10%;
+            z-index: 1000;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 24px;
+            border-radius: 100px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            background: var(--primary);
+        }
+
+        .learnings-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .learnings-list li {
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--surface-border);
+            display: flex;
+            gap: 20px;
+        }
+
+        /* ── GALERÍA ── */
+        .gallery-section {
+            padding: var(--section-spacing) 10%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-section .section-title {
+            margin-bottom: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 280px;
+            gap: 16px;
+        }
+
+        /* Span patterns for visual variety */
+        .gallery-item:nth-child(1) { grid-column: span 2; }
+        .gallery-item:nth-child(4) { grid-column: span 2; }
+        .gallery-item:nth-child(7) { grid-column: span 2; }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #0d0d0d;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: brightness(0.85) saturate(0.9);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+            filter: brightness(1) saturate(1.1);
+        }
+
+        /* Glint overlay on hover */
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(124, 58, 237, 0) 0%,
+                rgba(124, 58, 237, 0.18) 50%,
+                rgba(16, 185, 129, 0.12) 100%
+            );
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        /* Shimmer sweep on hover */
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.07),
+                transparent
+            );
+            transition: left 0.7s ease;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .gallery-item:hover::after {
+            left: 150%;
+        }
+
+        /* Caption */
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 22px 18px;
+            background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+            color: rgba(255,255,255,0.85);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            z-index: 4;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Empty slot — dashed placeholder */
+        .gallery-slot-empty {
+            border-radius: 20px;
+            border: 2px dashed rgba(124, 58, 237, 0.25);
+            background: rgba(124, 58, 237, 0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.2);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: default;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .gallery-slot-empty:hover {
+            border-color: rgba(124, 58, 237, 0.5);
+            background: rgba(124, 58, 237, 0.06);
+        }
+
+        .gallery-slot-empty svg {
+            opacity: 0.3;
+        }
+
+        /* Lightbox */
+        .gallery-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(18px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .gallery-lightbox img {
+            max-width: 88vw;
+            max-height: 85vh;
+            border-radius: 16px;
+            object-fit: contain;
+            box-shadow: 0 40px 120px rgba(0,0,0,0.8);
+            transform: scale(0.92);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .gallery-lightbox.active img {
+            transform: scale(1);
+        }
+
+        .gallery-lightbox-close {
+            position: absolute;
+            top: 28px;
+            right: 36px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .gallery-lightbox-close:hover {
+            background: var(--primary);
+        }
+
+        .gallery-lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .gallery-lightbox-nav:hover { background: var(--primary); }
+        .gallery-lightbox-nav.prev { left: 24px; }
+        .gallery-lightbox-nav.next { right: 24px; }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: 180px;
+            }
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(4),
+            .gallery-item:nth-child(7) { grid-column: span 2; }
+        }
+
+        @media (max-width: 992px) {
+            .hero-bg-placeholder {
+                width: 100%;
+                opacity: 0.25;
+                mask-image: linear-gradient(to bottom, black 35%, transparent 85%);
+            }
+
+            :root {
+                --section-spacing: 60px;
+            }
+
+            .project-hero {
+                padding: 0 5%;
+                height: auto;
+                min-height: 80vh;
+                padding-top: 120px;
+                padding-bottom: 60px;
+                align-items: flex-start !important;
+                text-align: left !important;
+            }
+
+            .hero-title {
+                font-size: clamp(1.8rem, 10vw, 4rem) !important;
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+                text-align: left !important;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+                margin-bottom: 2.5rem;
+                text-align: left !important;
+            }
+
+            .project-meta-minimal {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                padding-top: 2rem;
+                align-items: flex-start !important;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+
+            .grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+
+            .section-container {
+                padding: var(--section-spacing) 5%;
+            }
+
+            .back-nav {
+                left: 5%;
+                top: 20px;
+            }
+
+            #logistic-sphere-3d,
+            #ia-visualization-3d {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 300px !important;
+            }
+
+            canvas {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem !important;
+            }
+
+            .hero-tag {
+                margin-bottom: 1.2rem;
+                padding: 6px 12px;
+                font-size: 0.65rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .meta-item-min p {
+                font-size: 0.95rem;
+            }
+
+            .content-block h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg-canvas" style="position: fixed; inset: 0; z-index: -1;"></div>
+
+    <nav class="back-nav">
+        <a href="index.html" class="back-btn">← Volver al Listado</a>
+    </nav>
+
+    <header class="project-hero">
+                <div class="hero-bg-placeholder"></div>
+<div class="hero-content">
+            <span class="hero-tag reveal">
+                <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Caso de Estudio
+            </span>
+            <h1 class="hero-title reveal">
+                Framework<br>Diseñar con Métricas
+            </h1>
+            <p class="hero-description reveal">
+                Diseñé un framework transversal de UX metrics para conectar diseño, negocio y data, logrando mayor claridad y decisiones basadas en evidencia.
+            </p>
+
+            <div class="project-meta-minimal reveal">
+                <div class="meta-item-min"><span>ROL</span>
+                    <p>UX Lead / Referente de métricas</p>
+                </div>
+                <div class="meta-item-min"><span>AÑO</span>
+                    <p>—</p>
+                </div>
+                <div class="meta-item-min"><span>DURACIÓN</span>
+                    <p>—</p>
+                </div>
+                <div class="meta-item-min"><span>LOGRO CLAVE</span>
+                    <p>3 niveles de madurez implementados</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator reveal">
+            <div class="scroll-line"></div>
+            <span>EXPLORAR CASO</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- RESUMEN -->
+        <section id="resumen" class="section-container">
+            <div class="grid-2">
+                <div class="content-block reveal">
+                    <h2>Resumen</h2>
+                    <p>
+                        Como <strong>UX Lead</strong>, diseñé un framework transversal para que distintos proyectos
+                        pudieran tomar decisiones de diseño con métricas claras, incluso en contextos de baja madurez en data.
+                    </p>
+                    <div class="leadership-badge">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        Enfoque en UX Strategy, UX Metrics & Stakeholder Alignment
+                    </div>
+                    <p>
+                        Mi foco fue <strong>estructura, estrategia, proceso y adopción</strong>. No diseñé pantallas:
+                        diseñé cómo el equipo entiende problemas, formula hipótesis y aprende de la evidencia.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <div id="logistic-sphere-3d" style="width: 100%; height: 400px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EL DESAFÍO -->
+        <section id="desafio" class="section-container">
+            <div class="grid-2">
+                <div class="reveal">
+                    <div class="image-placeholder1"></div>
+                </div>
+                <div class="content-block reveal">
+                    <h2
+                        style="background: linear-gradient(to right, #fff, #ef4444); -webkit-background-clip: text; background-clip: text;">
+                        El
+                        Desafío</h2>
+                    <p>El equipo trabajaba en proyectos donde el diseño no siempre estaba conectado a negocio ni a evidencia. Me encontré con:</p>
+                    <div class="highlight-box">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">Decisiones por Opinión</h4>
+                        <p style="font-size: 1rem; margin-bottom: 0;">Los diseñadores trabajaban sin métricas claras y cada proyecto tomaba decisiones de forma distinta.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4 style="color: white; margin-bottom: 0.5rem;">Baja Claridad de Impacto</h4>
+                        <p style="font-size: 1rem; margin-bottom: 0;">El diseño tenía dificultad para demostrar valor, priorizar iniciativas y ganar influencia estructurada.</p>
+                    </div>
+                    <p>El reto principal fue cambiar conversaciones basadas en opinión por <strong>decisiones medibles</strong> y alineadas a negocio.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTRATEGIA Y PROCESOS -->
+        <section id="estrategia" class="section-container">
+            <div class="content-block reveal" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+                <h2>Estrategia y Procesos</h2>
+                <p>Lideré un sistema de trabajo para pasar de “qué diseño hacemos” a “qué queremos lograr y cómo lo vamos a medir”.</p>
+            </div>
+            <div class="grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
+                    <h3 style="margin-bottom: 1.5rem;">Diagnóstico</h3>
+                    <p style="font-size: 1rem;">Facilité sesiones con el <strong>Scope Canvas</strong> para alinear problema, objetivo y comportamiento esperado.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
+                    <h3 style="margin-bottom: 1.5rem;">Decisiones</h3>
+                    <p style="font-size: 1rem;">Definí que no todos los proyectos debían medir impacto desde el inicio; algunos necesitaban exploración.</p>
+                </div>
+                <div class="highlight-box reveal" style="border-top: 4px solid var(--primary);">
+                    <h3 style="margin-bottom: 1.5rem;">Proceso</h3>
+                    <p style="font-size: 1rem;">Introduje modelo de madurez, sistema de hipótesis y estructura de aprendizaje replicable.</p>
+                </div>
+            </div>
+            <div class="image-placeholder2 reveal" style="margin-top: 40px; aspect-ratio: 21/9;"></div>
+        </section>
+
+        <!-- SOLUCIONES -->
+        <section id="soluciones" class="section-container">
+            <h2 style="margin-bottom: 4rem;">Soluciones de Alto Impacto</h2>
+
+            <!-- Modelo de madurez -->
+            <div class="grid-2">
+                <div class="content-block reveal">
+                    <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">1. Framework de UX Metrics</h3>
+                    <p>Diseñé un sistema completo para conectar objetivos de negocio, decisiones de diseño y evidencia disponible.</p>
+                    <ul style="color: var(--text-dim); line-height: 2;">
+                        <li><strong>Framework de métricas</strong> adaptable por contexto.</li>
+                        <li><strong>Modelo de madurez</strong> con 3 niveles de proyecto.</li>
+                        <li><strong>Sistema de seguimiento</strong> para aprendizaje continuo.</li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <div class="image-placeholder3"></div>
+                </div>
+            </div>
+
+            <!-- Canvas -->
+            <div class="grid-2" style="margin-bottom: 100px;">
+                <div class="reveal">
+                    <div id="ia-visualization-3d" style="width: 100%; height: 350px;"></div>
+                </div>
+                <div class="content-block reveal">
+                    <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">2. Scope Canvas y Diagnóstico</h3>
+                    <p>Creé el <strong>Scope Canvas</strong> para capturar contexto, stakeholders, problema y objetivos antes de definir métricas.
+                    </p>
+                    <p>Mapeé flujos y puntos de decisión para conectar comportamientos esperados con métricas y aprendizaje.</p>
+                </div>
+            </div>
+
+            <!-- Definición de Procesos -->
+            <div class="grid-2">
+                <div class="content-block reveal">
+                    <h3 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">3. Hipótesis y Aprendizaje</h3>
+                    <p>Diseñé un sistema para formular hipótesis, decidir qué medir y documentar aprendizajes por nivel de madurez.
+                    </p>
+                    <p>Mi aporte fue hacer que el proceso fuera replicable por un equipo de aproximadamente 12 diseñadores.</p>
+                </div>
+                <div class="reveal">
+                    <div class="image-placeholder4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTADOS -->
+        <section id="resultados" class="section-container" style="background: rgba(16, 185, 129, 0.03);">
+            <h2 class="section-title">Resultados y Adopción</h2>
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 4rem;">
+                <div class="stat-item glass reveal" style="padding: 3rem;">
+                    <span class="stat-number" style="color: #10b981;">+80%</span>
+                    <p style="font-size: 1.2rem;">Proyectos con hipótesis claras para orientar decisiones de diseño.</p>
+                </div>
+                <div class="stat-item glass reveal" style="padding: 3rem;">
+                    <span class="stat-number" style="color: #10b981;">+50%</span>
+                    <p style="font-size: 1.2rem;">Decisiones con algún tipo de evidencia disponible.</p>
+                </div>
+                <div class="stat-item glass reveal" style="padding: 3rem;">
+                    <span class="stat-number" style="color: #10b981;">3</span>
+                    <p style="font-size: 1.2rem;">Niveles de madurez implementados para adaptar la estrategia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENTREGABLES CLAVES -->
+        <section id="entregables" class="section-container">
+            <h2 style="margin-bottom: 4rem;">Entregables Clave</h2>
+            <div class="grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; width: 100%;">
+                <div class="deliverable-card reveal">
+                    <h4>Framework de Métricas</h4>
+                    <p>Sistema transversal para conectar diseño, negocio y data.</p>
+                </div>
+                <div class="deliverable-card reveal">
+                    <h4>Modelo de Madurez</h4>
+                    <p>3 niveles para decidir si medir impacto o explorar primero.</p>
+                </div>
+                <div class="deliverable-card reveal">
+                    <h4>Scope Canvas</h4>
+                    <p>Canvas de diagnóstico estratégico para iniciar proyectos con claridad.</p>
+                </div>
+                <div class="deliverable-card reveal">
+                    <h4>Sistema de Hipótesis</h4>
+                    <p>Estructura para formular, medir y aprender con evidencia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA -->
+        <section id="galeria" class="gallery-section">
+            <h2 class="section-title">Galería del Proyecto</h2>
+
+            <div class="gallery-grid" id="galleryGrid">
+
+                <!-- Imagen 1 — span 2 -->
+                <div class="gallery-item reveal" data-index="0">
+                    <img src="imgDeliverable/scopeFrame.png" alt="Vista general del framework de métricas" />
+                    <div class="gallery-caption">Framework</div>
+                </div>
+
+                <!-- Imagen 2 -->
+                <div class="gallery-item reveal" data-index="1">
+                    <img src="imgDeliverable/_equipos.png" alt="Estrategia UX metrics" />
+                    <div class="gallery-caption">Estrategia</div>
+                </div>
+
+                <!-- Imagen 3 -->
+                <div class="gallery-item reveal" data-index="2">
+                    <img src="imgDeliverable/Sistema.png" alt="Modelo de madurez" />
+                    <div class="gallery-caption">Modelo de madurez</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="gallery-lightbox" id="galleryLightbox">
+            <button class="gallery-lightbox-close" id="galleryClose">✕</button>
+            <button class="gallery-lightbox-nav prev" id="galleryPrev">&#8592;</button>
+            <img id="galleryLightboxImg" src="" alt="" />
+            <button class="gallery-lightbox-nav next" id="galleryNext">&#8594;</button>
+        </div>
+
+        <!-- APRENDIZAJES -->
+        <section id="aprendizajes" class="section-container">
+            <h2 style="margin-bottom: 4rem;">Aprendizajes y Liderazgo</h2>
+            <ul class="learnings-list reveal">
+                <li>
+                    <div style="font-size: 2rem; color: var(--primary);">01</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">Diseño con Sistema</h4>
+                        <p>Aprendí que el diseño no escala sin sistema: necesita criterios, lenguaje común y adopción del equipo.</p>
+                    </div>
+                </li>
+                <li>
+                    <div style="font-size: 2rem; color: var(--primary);">02</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">Métricas con Contexto</h4>
+                        <p>Las métricas no sirven sin contexto; primero hay que entender madurez, objetivo y evidencia disponible.</p>
+                    </div>
+                </li>
+                <li>
+                    <div style="font-size: 2rem; color: var(--primary);">03</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: white;">Liderazgo de Criterio</h4>
+                        <p>No diseñé solo soluciones, diseñé un sistema para que el equipo tome mejores decisiones de forma consistente.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <h2 class="section-title" style="color: white; margin-bottom: 3rem;">¿Tienes un reto similar?</h2>
+        <div class="socials">
+            <a href="index.html" class="back-link" style="padding: 15px 40px; font-size: 1.2rem;">Hablemos por
+                LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // --- Detailed 3D Sphere (Complexity) ---
+        const initSphere = () => {
+            const container = document.getElementById('logistic-sphere-3d');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            container.appendChild(renderer.domElement);
+
+            const group = new THREE.Group();
+            const geometry = new THREE.SphereGeometry(2, 32, 32);
+            const material = new THREE.MeshBasicMaterial({ color: '#7C3AED', wireframe: true, transparent: true, opacity: 0.2 });
+            const sphere = new THREE.Mesh(geometry, material);
+            group.add(sphere);
+
+            const pGeom = new THREE.BufferGeometry();
+            const pCount = 200;
+            const pPos = new Float32Array(pCount * 3);
+            for (let i = 0; i < pCount * 3; i++) pPos[i] = (Math.random() - 0.5) * 5;
+            pGeom.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+            const points = new THREE.Points(pGeom, new THREE.PointsMaterial({ color: '#10B981', size: 0.05 }));
+            group.add(points);
+
+            scene.add(group);
+            camera.position.z = 6;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                group.rotation.y += 0.003;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        // --- IA / Modelo de Madurez Visualization ---
+        const initIA = () => {
+            const container = document.getElementById('ia-visualization-3d');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            container.appendChild(renderer.domElement);
+
+            const group = new THREE.Group();
+            for (let i = 0; i < 5; i++) {
+                const geom = new THREE.TorusGeometry(1 + i * 0.4, 0.02, 16, 100);
+                const mat = new THREE.MeshBasicMaterial({ color: i % 2 === 0 ? '#7C3AED' : '#10B981', transparent: true, opacity: 0.4 });
+                const ring = new THREE.Mesh(geom, mat);
+                ring.rotation.x = Math.PI / 2.2;
+                group.add(ring);
+            }
+            scene.add(group);
+            camera.position.z = 5;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                group.rotation.z += 0.005;
+                group.rotation.y += 0.002;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        const initBG = () => {
+            const container = document.getElementById('bg-canvas');
+            if (!container) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+            const geometry = new THREE.BufferGeometry();
+            const points = new Float32Array(1500 * 3);
+            for (let i = 0; i < 1500 * 3; i++) points[i] = (Math.random() - 0.5) * 15;
+            geometry.setAttribute('position', new THREE.BufferAttribute(points, 3));
+            const star = new THREE.Points(geometry, new THREE.PointsMaterial({ color: '#ffffff', size: 0.005, transparent: true, opacity: 0.2 }));
+            scene.add(star);
+            camera.position.z = 5;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                star.rotation.y += 0.0002;
+                renderer.render(scene, camera);
+            };
+            animate();
+            return { renderer, camera };
+        };
+
+        const setupResize = (renderer, camera, container) => {
+            if (!container) return;
+            window.addEventListener('resize', () => {
+                const width = container.offsetWidth;
+                const height = container.offsetHeight;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+            });
+        };
+
+        const sphereData = initSphere();
+        const iaData = initIA();
+        const bgData = initBG();
+
+        if (sphereData) setupResize(sphereData.renderer, sphereData.camera, document.getElementById('logistic-sphere-3d'));
+        if (iaData) setupResize(iaData.renderer, iaData.camera, document.getElementById('ia-visualization-3d'));
+
+        window.addEventListener('resize', () => {
+            if (bgData) {
+                bgData.renderer.setSize(window.innerWidth, window.innerHeight);
+                bgData.camera.aspect = window.innerWidth / window.innerHeight;
+                bgData.camera.updateProjectionMatrix();
+            }
+        });
+        // ── GALLERY LIGHTBOX ──
+        (function () {
+            const items = document.querySelectorAll('.gallery-item[data-index]');
+            const lightbox = document.getElementById('galleryLightbox');
+            const lbImg = document.getElementById('galleryLightboxImg');
+            const closeBtn = document.getElementById('galleryClose');
+            const prevBtn = document.getElementById('galleryPrev');
+            const nextBtn = document.getElementById('galleryNext');
+
+            // Build ordered list of real images (skip empty slots)
+            const imgs = Array.from(items).map(el => ({
+                src: el.querySelector('img').src,
+                alt: el.querySelector('img').alt
+            }));
+
+            let current = 0;
+
+            const open = (i) => {
+                current = i;
+                lbImg.src = imgs[i].src;
+                lbImg.alt = imgs[i].alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const close = () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+                setTimeout(() => { lbImg.src = ''; }, 300);
+            };
+
+            const go = (dir) => {
+                current = (current + dir + imgs.length) % imgs.length;
+                lbImg.style.opacity = '0';
+                lbImg.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    lbImg.src = imgs[current].src;
+                    lbImg.alt = imgs[current].alt;
+                    lbImg.style.opacity = '1';
+                    lbImg.style.transform = 'scale(1)';
+                }, 180);
+            };
+
+            lbImg.style.transition = 'opacity 0.18s ease, transform 0.18s ease';
+
+            items.forEach((el, i) => {
+                el.addEventListener('click', () => open(i));
+            });
+
+            closeBtn.addEventListener('click', close);
+            prevBtn.addEventListener('click', () => go(-1));
+            nextBtn.addEventListener('click', () => go(1));
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) close();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowLeft') go(-1);
+                if (e.key === 'ArrowRight') go(1);
+            });
+        })();
+
+    </script>
+
+
+</html>
