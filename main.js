@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js-enabled');
+
 // --- Hero 3D background (Three.js) ---
 const initHero3D = () => {
     if (typeof THREE === 'undefined') return;
@@ -58,13 +60,18 @@ const initHero3D = () => {
         renderer.render(scene, camera);
     }
 
-    animate();
-
     window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        renderer.render(scene, camera);
+        return;
+    }
+
+    animate();
 };
 
 // --- Reveal Animations ---
@@ -85,7 +92,8 @@ const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const bar = entry.target;
-            bar.style.width = bar.getAttribute('data-width');
+            const width = parseFloat(bar.getAttribute('data-width')) || 0;
+            bar.style.transform = `scaleX(${Math.min(width, 100) / 100})`;
             skillObserver.unobserve(bar);
         }
     });
@@ -101,7 +109,7 @@ const projectCards = document.querySelectorAll('.project-card, .outcome-card');
 const updateTabIndicator = (btn) => {
     if (!tabIndicator || !btn) return;
     tabIndicator.style.width = `${btn.offsetWidth}px`;
-    tabIndicator.style.left = `${btn.offsetLeft}px`;
+    tabIndicator.style.transform = `translateX(${btn.offsetLeft - 6}px)`;
 };
 
 // Initialize indicator position
