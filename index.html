@@ -1,568 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Denis Luyo | Product Designer & UX Lead</title>
-  <meta name="description"
-    content="Portafolio profesional de Denis Luyo, Product Designer & UX Lead con más de 13 años de experiencia." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+  <title>Denis Luyo | Nueva página</title>
+  <style>
+    :root {
+      --bg: #050505;
+      --card: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.14);
+      --text: #ffffff;
+      --muted: #b7b7c2;
+      --primary: #7c3aed;
+      --accent: #bef264;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.28), transparent 34%),
+        radial-gradient(circle at 80% 70%, rgba(190, 242, 100, 0.18), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(100%, 680px);
+      padding: 44px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: var(--card);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.36);
+      text-align: center;
+    }
+
+    .logo {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: #fff;
+      color: #050505;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 auto 32px;
+      max-width: 480px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--primary);
+    }
+
+    .button-secondary {
+      background: var(--accent);
+      color: #101010;
+    }
+
+    @media (max-width: 560px) {
+      main {
+        padding: 32px 22px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <input type="checkbox" id="menu-toggle" />
-  <div class="mobile-overlay"><label for="menu-toggle"></label></div>
-  <nav class="mobile-drawer">
-    <a href="#proyectos" onclick="document.getElementById('menu-toggle').checked=false">Proyectos</a>
-    <a href="#testimonios" onclick="document.getElementById('menu-toggle').checked=false">Testimonios</a>
-    <a href="#sobre-mi" onclick="document.getElementById('menu-toggle').checked=false">Sobre mí</a>
-    <a href="#skills" onclick="document.getElementById('menu-toggle').checked=false">Skills</a>
-    <a href="#certificaciones" onclick="document.getElementById('menu-toggle').checked=false">Certificaciones</a>
-    <a href="#contacto" onclick="document.getElementById('menu-toggle').checked=false">Contacto</a>
-    <div class="drawer-lang">
-      <span class="active">ES</span>
-      <span>|</span>
-      <a href="index_en.html">EN</a>
-    </div>
-  </nav>
-  <header class="glass">
-    <div class="logo" style="font-family: var(--font-headings); font-weight: 800; font-size: 1.2rem;">DL.</div>
-    <nav>
-      <ul>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#certificaciones">Certificaciones</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-    <div class="lang-switcher">
-      <span class="active">ES</span>
-      <span class="separator">|</span>
-      <a href="index_en.html">EN</a>
-    </div>
-    <label class="hamburger" for="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-  </header>
-
   <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div id="hero-canvas"></div>
-      <h1 class="reveal" style="font-size: clamp(2.5rem, 10vw, 6rem); margin-bottom: 1rem; text-align: center;">Denis
-        Luyo
-      </h1>
-      <p class="reveal"
-        style="font-size: clamp(1.1rem, 4vw, 1.5rem); opacity: 0.8; max-width: 600px; text-align: center;">
-        UX Lead | DX Transformation & Design Systems Leader</p>
-      <div class="reveal active" style="margin-top: 3rem;">
-        <a href="#proyectos" class="filter-chip active" style="text-decoration: none;">Ver Mi Trabajo</a>
-      </div>
-    </section>
+    <div class="logo">DL</div>
+    <h1>Elige tu siguiente destino</h1>
+    <p>Accede a mi web principal o agenda una asesoría gratuita para revisar tu producto digital.</p>
 
-    <!-- Comments -->
-    <section id="testimonios" class="comments-section reveal">
-      <h2 class="section-title" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 2rem;">Testimonios</h2>
-      <div class="comments-track-container">
-        <div class="comments-track" id="comments-track">
-          <!-- Comments via JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats -->
-    <section id="stats" class="stats-bento">
-      <style>
-        @media (max-width: 768px) {
-          .stats-bento {
-            display: flex !important;
-            flex-wrap: wrap !important;
-            gap: 1.5rem !important;
-            padding: 40px 5% !important;
-          }
-
-          .stats-bento .stat-item {
-            flex: 1 1 calc(50% - 1.5rem);
-            padding: 1.5rem !important;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .stats-bento .stat-item {
-            flex: 1 1 100%;
-          }
-        }
-      </style>
-      <div class="stat-item glass reveal">
-        <span class="stat-number">+13 años</span>
-        <p>Product Design</p>
-      </div>
-      <div class="stat-item glass reveal">
-        <span class="stat-number">+20</span>
-        <p>Proyectos Mobile</p>
-      </div>
-      <div class="stat-item glass reveal">
-        <span class="stat-number">+350</span>
-        <p>Alumnos (Docencia)</p>
-      </div>
-    </section>
-
-    <!-- Bio -->
-    <section id="sobre-mi" class="bio-section reveal">
-      <h2 class="section-title">¿Quién soy?</h2>
-      <div class="bio-content">
-        <p>
-          <strong>Product Designer con más de 13 años</strong> creando soluciones digitales centradas en las personas,
-          liderando equipos multifuncionales y escalando procesos de diseño en empresas de tecnología, banca, salud,
-          educación y E-commerce.
-        </p>
-        <p>
-          <strong>Con visión estratégica y habilidades de facilitación, he diseñado y optimizado productos</strong> que
-          no solo funcionan, sino que inspiran y generan resultados de negocio.
-        </p>
-        <p>
-          <strong>Mi enfoque une diseño, datos y liderazgo.</strong> Creo en la construcción de Design Systems
-          escalables, en la potencia del discovery continuo y en el poder de un equipo motivado. <strong>He formado y
-            guiado chapters de diseño,</strong> alineado objetivos de negocio con necesidades de usuarios y contribuido
-          al crecimiento profesional de otros diseñadores.
-        </p>
-      </div>
-    </section>
-
-    <!-- Projects Grid -->
-    <section id="proyectos" class="projects">
-      <h2 class="section-title reveal">Trabajos Destacados</h2>
-
-      <div class="tabs-container reveal">
-        <div class="tabs-switcher">
-          <button class="tab-btn active" data-filter="Proyecto">Proyectos</button>
-          <button class="tab-btn" data-filter="Entregable">Entregables</button>
-          <div class="tab-indicator"></div>
-        </div>
-      </div>
-
-      <div class="grid" id="project-grid">
-        <a href="metricsProject.html" class="project-card glass reveal" data-category="Proyecto"
-          style="text-decoration: none; display: flex; color: inherit;">
-          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-            <div class="project-image" style="background-image: url(imglanding/metric1.png); background-size: cover;">
-              <span class="category-label">Proyecto</span>
-            </div>
-            <span class="tag">UX Metrics</span>
-            <div class="content">
-              <h3>Framework Diseñar con Métricas</h3>
-              <p>Sistema transversal para conectar diseño, negocio y data.</p>
-            </div>
-          </div>
-        </a>
-        <a href="bot_viajes.html" class="project-card glass reveal" data-category="Proyecto"
-          style="text-decoration: none; display: flex; color: inherit;">
-          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-            <div class="project-image" style="background-image: url(imgproyectos/botWhatsapp.jpg);">
-              <span class="category-label">Proyecto</span>
-            </div>
-            <span class="tag">Travel</span>
-            <div class="content">
-              <h3>Bot Operador de Viajes</h3>
-              <p>Proceso de creación de itinerarios de 15-20 minutos reducido a un mensaje.</p>
-            </div>
-          </div>
-        </a>
-        <a href="banca.html" class="project-card glass reveal" data-category="Proyecto"
-          style="text-decoration: none; display: flex; color: inherit;">
-          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-            <div class="project-image" style="background-image: url(imgproyectos/banca.jpg);">
-              <span class="category-label">Proyecto</span>
-            </div>
-            <span class="tag">Banca</span>
-            <div class="content">
-              <h3>Producto de Banca</h3>
-              <p>Rediseño end-to-end de experiencia financiera digital. -38% abandono.</p>
-            </div>
-          </div>
-        </a>
-        <a href="logistica.html" class="project-card glass reveal" data-category="Proyecto"
-          style="text-decoration: none; display: flex; color: inherit;">
-          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-            <div class="project-image" style="background-image: url(imgproyectos/boxmis.jpg);">
-              <span class="category-label">Proyecto</span>
-            </div>
-            <span class="tag">Logística</span>
-            <div class="content">
-              <h3>Logística internacional</h3>
-              <p>Transformación de experiencia digital global.</p>
-            </div>
-          </div>
-        </a>
-        <a href="nicosoft.html" class="project-card glass reveal" data-category="Proyecto"
-          style="text-decoration: none; display: flex; color: inherit;">
-          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-            <div class="project-image" style="background-image: url(imgproyectos/nicosoft.jpg);">
-              <span class="category-label">Proyecto</span>
-            </div>
-            <span class="tag">Consumo</span>
-            <div class="content">
-              <h3>Nicosoft-Alicorp</h3>
-              <p>Eficiencia para la industria camaronera.</p>
-            </div>
-          </div>
-        </a>
-        <a href="mobitrack.html" class="project-card glass reveal" data-category="Proyecto"
-          style="text-decoration: none; display: flex; color: inherit;">
-          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-            <div class="project-image" style="background-image: url(imgproyectos/mobitrack.jpg);">
-              <span class="category-label">Proyecto</span>
-            </div>
-            <span class="tag">Tracking</span>
-            <div class="content">
-              <h3>Mobitrack</h3>
-              <p>Optimización de seguimiento logístico.</p>
-            </div>
-          </div>
-        </a>
-        <a href="designsystem.html" class="project-card glass reveal" data-category="Proyecto"
-          style="text-decoration: none; display: flex; color: inherit;">
-          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-            <div class="project-image" style="background-image: url(imgproyectos/designsystem.jpg);">
-              <span class="category-label">Proyecto</span>
-            </div>
-            <span class="tag">Design System</span>
-            <div class="content">
-              <h3>Design System modular</h3>
-              <p>Arquitectura atómica y tokens para escala global.</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- ENTREGABLE: Service Blueprint -->
-        <!-- <article class="outcome-card reveal hidden" data-category="Entregable">
-          <div class="oc-image-container">
-            <img src="imgproyectos/service_blueprint.png"
-              alt="Diagrama detallado de Service Blueprint para banca digital" class="oc-image">
-            <span class="oc-type">Service Design</span>
-          </div>
-          <div class="oc-content">
-            <div class="oc-project-name">Banca Digital</div>
-            <h3 class="oc-title">Service Blueprint Completo</h3>
-            <p class="oc-summary">Mapeo de extremo a extremo del ecosistema de servicio: acciones del usuario, procesos
-              internos y sistemas de soporte en una sola vista.</p>
-            <div class="oc-tags">
-              <span>Blueprint</span>
-              <span>Journey Map</span>
-              <span>Research</span>
-              <span>Stakeholders</span>
-            </div>
-            <div class="oc-highlight">
-              <p class="oc-quote">Permitió identificar 6 puntos de fricción críticos que no eran visibles antes.</p>
-              <div class="oc-metric">
-                <span class="oc-metric-number">12</span>
-                <span class="oc-metric-text">puntos de contacto mapeados</span>
-              </div>
-            </div>
-            <div class="oc-footer">
-              <a href="banca.html" class="oc-button" role="button"
-                aria-label="Ver entregable: Service Blueprint Completo">
-                Ver entregable
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </article> -->
-
-        <!-- ENTREGABLE: Handover Manual -->
-        <!-- <article class="outcome-card reveal hidden" data-category="Entregable">
-          <div class="oc-image-container">
-            <img src="imgproyectos/handover.png" alt="Documentación técnica de handover de diseño a desarrollo"
-              class="oc-image">
-            <span class="oc-type">Documentación</span>
-          </div>
-          <div class="oc-content">
-            <div class="oc-project-name">MobiRep · Farmacéutico</div>
-            <h3 class="oc-title">Handover Manual Design‑Dev</h3>
-            <p class="oc-summary">Guía técnica de integración que establece el proceso de entrega entre diseño y
-              desarrollo con cero ambigüedades.</p>
-            <div class="oc-tags">
-              <span>Handover</span>
-              <span>Dev Specs</span>
-              <span>Figma</span>
-              <span>Documentación</span>
-            </div>
-            <div class="oc-highlight">
-              <p class="oc-quote">Elimina el retrabajo y garantiza que la visión de diseño llega píxel a píxel a
-                producción.</p>
-              <div class="oc-metric">
-                <span class="oc-metric-number">-40%</span>
-                <span class="oc-metric-text">errores detectados en producción</span>
-              </div>
-            </div>
-            <div class="oc-footer">
-              <a href="mobirep.html" class="oc-button" role="button"
-                aria-label="Ver entregable: Handover Manual Design-Dev">
-                Ver entregable
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </article> -->
-
-        <!-- ENTREGABLE: Framework Metricas -->
-        <article class="outcome-card reveal hidden" data-category="Entregable">
-          <div class="oc-image-container">
-            <img src="imgDeliverable/Sistema.png"
-              alt="Diagrama del framework de diseño basado en métricas" class="oc-image">
-            <span class="oc-type">Framework estratégico</span>
-          </div>
-          <div class="oc-content">
-            <div class="oc-project-name">Métricas para diseñadores</div>
-            <h3 class="oc-title">Scope Canvan: Conoce el contexto de tu cliente</h3>
-            <p class="oc-summary">Diseñé un framework organizacional que permite a los diseñadores capturar información clave de su cliente y hacer un diagnóstico para 
-              Trabajar estrategias de métricas.</p>
-            <div class="oc-tags">
-              <span>ux-metrics</span>
-              <span>design-leadership</span>
-              <span>strategy</span>
-            </div>
-            <div class="oc-highlight">
-              <p class="oc-quote">Cambió las conversaciones del equipo de opiniones a evidencia.</p>
-              <div class="oc-metric">
-                <span class="oc-metric-number">100%</span>
-                <span class="oc-metric-text">de proyectos diagnosticados</span>
-              </div>
-            </div>
-            <div class="oc-footer">
-              <a href="del_scopecanvan.html" class="oc-button" role="button"
-                aria-label="Ver entregable: Framework organizacional para diseñar con métricas">
-                Ver entregable
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-
-        <a href="mobirep.html" class="project-card glass reveal" data-category="Proyecto"
-          style="text-decoration: none; display: flex; color: inherit;">
-          <div style="flex: 1; display: flex; flex-direction: column; width: 100%;">
-            <div class="project-image" style="background-image: url(imgproyectos/mobirep.jpg);">
-              <span class="category-label">Proyecto</span>
-            </div>
-            <span class="tag">Farmaceutico</span>
-            <div class="content">
-              <h3>Programa MobiRep</h3>
-              <p>Empoderando al equipo comercial.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="skills-container reveal">
-      <h2 class="section-title">Habilidades Técnicas</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>UX & Strategy</h3>
-          <div class="skill-item">
-            <div class="skill-info"><span>User Research</span><span>90%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info"><span>Design Thinking / Lean UX</span><span>98%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="98%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info"><span>Service Design</span><span>80%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>UI & Design</h3>
-          <div class="skill-item">
-            <div class="skill-info"><span>Design Systems</span><span>99%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="99%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info"><span>Figma / Sketch</span><span>99%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="99%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info"><span>Prototipado Avanzado</span><span>99%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="99%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Web & Mobile Dev</h3>
-          <div class="skill-item">
-            <div class="skill-info"><span>HTML5 / CSS3</span><span>80%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info"><span>Swift (iOS)</span><span>50%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="50%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info"><span>React Native / Flutter</span><span>50%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="50%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Liderazgo & Gestión</h3>
-          <div class="skill-item">
-            <div class="skill-info"><span>Gestión de Equipos</span><span>99%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="99%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info"><span>Scrum / Agile</span><span>90%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Gestión y Negocios</h3>
-          <div class="skill-item">
-            <div class="skill-info"><span>Business Strategy</span><span>90%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info"><span>Product Discovery</span><span>95%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="95%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Marketing Digital</h3>
-          <div class="skill-item">
-            <div class="skill-info"><span>Growth Hacking</span><span>80%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info"><span>SEO / SEM</span><span>85%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certificaciones" class="certs-section">
-      <h2 class="section-title reveal">Certificaciones</h2>
-      <div class="certs-grid">
-        <div class="cert-card glass reveal">
-          <h3>Product Design</h3>
-          <p>Design Sprint, Lean UX, Business Canvas, Transformación Digital.</p>
-        </div>
-        <div class="cert-card glass reveal">
-          <h3>UX / UI</h3>
-          <p>Research & Testing, UX Writing, Estrategia UX, Arquitectura de Información, AI.</p>
-        </div>
-        <div class="cert-card glass reveal">
-          <h3>Liderazgo</h3>
-          <p>Organización de equipos de diseño, Liderazgo Estratégico.</p>
-        </div>
-        <div class="cert-card glass reveal">
-          <h3>Front-end</h3>
-          <p>HTML5, CSS3, Javascript, Swift (iOS), Diseño de Interfaces.</p>
-        </div>
-      </div>
-    </section>
+    <div class="actions">
+      <a class="button button-primary" href="https://www.denisluyo.com">Ahora deben ir a esta web</a>
+      <a class="button button-secondary" href="https://designpartner.denisluyo.com">Asesoría gratis</a>
+    </div>
   </main>
-
-  <footer id="contacto">
-    <h2 class="section-title" style="color: white;">¿Trabajamos juntos?</h2>
-    <p style="margin-bottom: 2rem; font-size: 1.2rem;">denisluyo@gmail.com</p>
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/denisluyo/" target="_blank">LinkedIn</a>
-      <a href="https://denisluyo.medium.com/" target="_blank">Medium</a>
-      <a href="https://github.com/denisluyo" target="_blank">GitHub</a>
-    </div>
-    <p style="margin-top: 3rem; opacity: 0.5;">&copy; 2024 Denis Luyo</p>
-  </footer>
-
-  <!-- Comment Modal (Desktop) -->
-  <div class="comment-modal-overlay" id="comment-modal-overlay"></div>
-  <div class="comment-modal glass" id="comment-modal">
-    <button class="cm-close" id="cm-close">&times;</button>
-    <div class="cm-content">
-      <h4 id="cm-author-name">Nombre</h4>
-      <p id="cm-author-role">Rol</p>
-      <div id="cm-tags" class="cm-tags"></div>
-      <p id="cm-comment-text" class="cm-text">Comentario</p>
-    </div>
-  </div>
-
-  <!-- Bottom Sheet -->
-  <div class="bottom-sheet-overlay" id="bs-overlay"></div>
-  <div class="bottom-sheet glass" id="bottom-sheet">
-    <div class="bs-header">
-      <div class="bs-handle"></div>
-      <button class="bs-close" id="bs-close">&times;</button>
-    </div>
-    <div class="bs-content">
-      <div class="bs-author-info">
-        <h4 id="bs-author-name">Nombre</h4>
-        <p id="bs-author-role">Rol</p>
-      </div>
-      <div class="bs-tags">
-        <span id="bs-impact-tag">Tags</span>
-      </div>
-      <p id="bs-public-comment" class="bs-text">Comentario</p>
-    </div>
-  </div>
-
-  <a class="whatsapp-float" href="https://wa.me/51955933582?text=hola%20me%20gustaria%20trabajar%20contigo" target="_blank" rel="noopener noreferrer"
-    aria-label="Escribirme por WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M20.52 3.48A11.88 11.88 0 0 0 12.06 0C5.46 0 .1 5.36.1 11.96c0 2.1.55 4.16 1.6 5.97L0 24l6.22-1.63a11.95 11.95 0 0 0 5.84 1.49h.01c6.6 0 11.96-5.36 11.96-11.96 0-3.2-1.25-6.2-3.51-8.42ZM12.07 21.84h-.01a9.94 9.94 0 0 1-5.06-1.38l-.36-.21-3.69.97.98-3.6-.23-.37a9.9 9.9 0 0 1-1.52-5.29c0-5.46 4.44-9.9 9.9-9.9 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.44 9.89-9.9 9.89Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z" />
-    </svg>
-  </a>
-
-  <script src="main.js"></script>
 </body>
-
 </html>
